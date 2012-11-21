@@ -1,0 +1,44 @@
+2012/11/20 22:44:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('test')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/index.php/test
+---
+2012/11/20 22:44:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('about')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('about')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/about')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/index.php/site/about
+---
+2012/11/20 22:52:20 [error] [exception.CDbException] exception 'CDbException' with message 'Table "users" does not have a column named "username".' in C:\xampp\htdocs\frameworks\yii\db\schema\CDbCommandBuilder.php:570
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1458): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\sim\protected\components\UserIdentity.php(18): CActiveRecord->findByAttributes(Array)
+#2 C:\xampp\htdocs\sim\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#4 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\xampp\htdocs\sim\protected\components\Controller.php(28): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): Controller->filterHttps(Object(CFilterChain))
+#13 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('login')
+#17 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/login')
+#18 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sim/site/login
+HTTP_REFERER=https://localhost/sim/site/login
+---
