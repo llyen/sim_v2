@@ -42,3 +42,48 @@ Stack trace:
 REQUEST_URI=/sim/site/login
 HTTP_REFERER=https://localhost/sim/site/login
 ---
+2012/11/27 21:33:59 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('username')
+#1 C:\xampp\htdocs\sim\protected\views\layouts\sim.php(25): CWebUser->__get('username')
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(32): CController->render('index')
+#6 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/
+---
+2012/11/27 21:35:13 [error] [php] Object of class CWebUser could not be converted to string (C:\xampp\htdocs\sim\protected\views\layouts\sim.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(785): SiteController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(32): SiteController->render()
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/
+in C:\xampp\htdocs\sim\protected\views\layouts\sim.php (25)
+in C:\xampp\htdocs\sim\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/11/27 21:38:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "logout".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('logout')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/logout
+---

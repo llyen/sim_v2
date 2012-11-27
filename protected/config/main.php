@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'System Informacji o Mediach',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -44,6 +44,7 @@ return array(
 			'rules'=>array(
 				//'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+                                //'/'=>'site/login',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //default route
 			),
 		),
