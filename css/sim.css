@@ -32,5 +32,6 @@ general
 */
 body { background: url('../images/bg.png') repeat-x; }
 div#container { width: 950px; margin: 75px auto; }
+div#content { width: 100%; margin: 30px auto; background: #efefef; }
 div#headerOneCol { width: 295px; margin: 0px auto; }
 div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 450px; height: 300px; margin: 50px auto; background: #efefef; }

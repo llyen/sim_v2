@@ -19,10 +19,10 @@
 <body>
 
 <div id="container">
-    <div id="header">
+    <div id="headerOneCol">
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logotype.png" alt="sim - System Informacji o Mediach" />
     </div><!-- header -->
-    <div id="content">
+    <div id="contentOneCol">
         <?php echo $content; ?>    
     </div><!-- content -->
 </div><!-- container -->
