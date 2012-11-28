@@ -30,7 +30,7 @@ blockquote, q { quotes: "" ""; }
 /*
 general
 */
-body { background: url('../images/bg.png') repeat-x; }
+body { background: url('../images/bg.png') repeat-x; font: normal 11px "Verdana"; color: #6a6a6a; }
 div#container { width: 950px; margin: 75px auto; }
 div#content { width: 100%; margin: 30px auto; background: #efefef; }
 div#headerOneCol { width: 295px; margin: 0px auto; }

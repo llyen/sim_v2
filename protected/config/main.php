@@ -45,6 +45,7 @@ return array(
 				//'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                                 '/login'=>'site/login',
+                                '/logout'=>'site/logout',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //default route
 			),
 		),

@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'users':
  * @property integer $id
  * @property integer $unit_id
- * @property string $login
+ * @property string $username
  * @property string $password
  *
  * The followings are the available model relations:
@@ -40,12 +40,13 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, password', 'required'),
+			array('username, password', 'required'),
+			array('username', 'unique'),
 			array('unit_id', 'numerical', 'integerOnly'=>true),
-			array('login, password', 'length', 'max'=>100),
+			array('username, password', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, unit_id, login, password', 'safe', 'on'=>'search'),
+			array('id, unit_id, username, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,7 +70,7 @@ class Users extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'unit_id' => 'Unit',
-			'login' => 'Login',
+			'username' => 'Username',
 			'password' => 'Password',
 		);
 	}
@@ -87,11 +88,21 @@ class Users extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('unit_id',$this->unit_id);
-		$criteria->compare('login',$this->login,true);
+		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+         * @return actions to perform before saving ie: hash password
+         */
+        public function beforeSave()
+        {
+		$pass = sha1(md5($this->password));
+		$this->password = $pass;
+		return true;
+        }
 }
