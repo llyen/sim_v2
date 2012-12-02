@@ -30,8 +30,8 @@ blockquote, q { quotes: "" ""; }
 /*
 general
 */
-body { background: url('../images/bg.png') repeat-x; font: normal 11px "Verdana"; color: #6a6a6a; }
+body { background: url('../images/bg.png') repeat-x; font: normal 12px "Segoe UI"; color: #393939; }
 div#container { width: 950px; margin: 75px auto; }
-div#content { width: 100%; margin: 30px auto; background: #efefef; }
+div#content { width: 100%; margin: 30px auto; background: #f3f3f3; }
 div#headerOneCol { width: 295px; margin: 0px auto; }
-div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 450px; height: 300px; margin: 50px auto; background: #efefef; }
+div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 450px; height: 300px; margin: 50px auto; background: #f3f3f3; }

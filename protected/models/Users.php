@@ -69,9 +69,9 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'unit_id' => 'Unit',
-			'username' => 'Username',
-			'password' => 'Password',
+			'unit_id' => 'Jednostka',
+			'username' => 'Użytkownik',
+			'password' => 'Hasło',
 		);
 	}
 
