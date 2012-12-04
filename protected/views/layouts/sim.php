@@ -23,6 +23,19 @@
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logotype.png" alt="sim - System Informacji o Mediach" />
     </div><!-- header -->
     <div id="content">
+	<div id="menu">
+		<?php $this->widget('zii.widgets.CMenu',array(
+		'items'=>array(
+			array('label'=>'OBIEKTY', 'url'=>array('/objects')),
+			array('label'=>'PUNKTY POBORU', 'url'=>array('/collection_points')),
+			array('label'=>'LICZNIKI', 'url'=>array('/counters')),
+			array('label'=>'FAKTURY', 'url'=>array('/invoices')),
+			array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+			array('label'=>'WYLOGUJ ('.Yii::app()->user->name.')', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); ?>
+	</div><!-- menu -->
+	<div class="clear" />
         <?php echo $content; ?>    
     </div><!-- content -->
 </div><!-- container -->
