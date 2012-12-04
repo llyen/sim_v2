@@ -8,6 +8,7 @@ $this->layout='//layouts/oneCol';
 ?>
 
 <div id="login">
+	<div id="title">Formularz logowania</div>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
