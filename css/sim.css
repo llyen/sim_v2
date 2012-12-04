@@ -34,4 +34,13 @@ body { background: url('../images/bg.png') repeat-x; font: normal 12px "Segoe UI
 div#container { width: 950px; margin: 75px auto; }
 div#content { width: 100%; margin: 30px auto; background: #f3f3f3; }
 div#headerOneCol { width: 295px; margin: 0px auto; }
-div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 450px; height: 300px; margin: 50px auto; background: #f3f3f3; }
+
+/*
+login form
+*/
+div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 300px; height: 150px; margin: 50px auto; background: #f3f3f3; }
+form#login-form { width: 80%; margin: 0px auto; padding: 30px 0px; }
+div#login div.row { clear: both; text-align: left; font-weight: bold; padding-bottom: 15px; }
+div#login div.row input { float: right; }
+div#login div.buttons, div#login div.error { clear: both; }
+div#login div.error { font-weight: bold; color: #e10c0c;  }
