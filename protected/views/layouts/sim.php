@@ -20,14 +20,13 @@
 
 <div id="container">
     <div id="header">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logotype.png" alt="sim - System Informacji o Mediach" />
+        <a href="<?php echo Yii::app()->request->baseurl; ?>" title="System Informacji o Mediach"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logotype.png" alt="sim - System Informacji o Mediach" /></a>
     </div><!-- header -->
     <div id="content">
 	<div id="menu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 		'items'=>array(
-			array('label'=>'OBIEKTY', 'url'=>array('/objects')),
-			array('label'=>'PUNKTY POBORU', 'url'=>array('/collection_points')),
+			array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionpoints')),
 			array('label'=>'LICZNIKI', 'url'=>array('/counters')),
 			array('label'=>'FAKTURY', 'url'=>array('/invoices')),
 			array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
