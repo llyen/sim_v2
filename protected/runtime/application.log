@@ -331,3 +331,388 @@ Stack trace:
 #7 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/objects
 in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 07:45:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/collectionpoints/admin
+HTTP_REFERER=https://localhost/sim/collectionpoints
+---
+2012/12/05 08:26:46 [error] [php] include(Object.php): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\YiiBase.php:423)
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): spl_autoload_call()
+#1 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#12 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 08:26:57 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
+2012/12/05 08:27:54 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/index.php
+---
+2012/12/05 08:56:49 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
+2012/12/05 08:57:58 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
+2012/12/05 08:59:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 08:59:44 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
+2012/12/05 09:05:41 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
+2012/12/05 09:10:01 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:13:05 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\components\WebUser.php(10): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): WebUser->__get('unit_id')
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:20:41 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:22:16 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:22:43 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:26:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.unit_id" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('unit_id')
+#1 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(122): CWebUser->__get('unit_id')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---
+2012/12/05 09:27:18 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 09:32:03 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 09:36:12 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\views\collectionPoints\index.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CollectionPointsController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CollectionPointsController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(126): CollectionPointsController->render()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\views\collectionPoints\index.php (14)
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (126)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 09:36:55 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.getModel" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('getModel')
+#1 C:\xampp\htdocs\sim\protected\views\collectionPoints\index.php(14): CWebUser->__get('getModel')
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php(126): CController->render('index', Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CollectionPointsController->actionIndex()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#17 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#18 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/
+---

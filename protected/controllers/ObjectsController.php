@@ -33,7 +33,7 @@ class ObjectsController extends Controller
 			),
 			array('allow',
 			      'actions'=>array('view'),
-			      'roles'=>array('@'),
+			      'users'=>array('@'),
 			),
 			/*array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),

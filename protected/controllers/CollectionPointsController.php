@@ -27,17 +27,13 @@ class CollectionPointsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
+			array('allow',
+				'actions'=>array('index', 'view', 'create', 'update'),
+				'roles'=>array('unit_admin'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow',
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -123,7 +119,9 @@ class CollectionPointsController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('CollectionPoints');
+		//$dataProvider = CollectionPoints::model()->findAll('object_id=:object_id', array(':object_id'=>1)); //array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>Yii::app()->user->model->unit_id))->id));
 		$this->render('index',array(
+			//'dataProvider'=>$dataProvider,
 			'dataProvider'=>$dataProvider,
 		));
 	}
