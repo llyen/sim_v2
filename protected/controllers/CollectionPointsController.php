@@ -118,8 +118,18 @@ class CollectionPointsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CollectionPoints');
-		//$dataProvider = CollectionPoints::model()->findAll('object_id=:object_id', array(':object_id'=>1)); //array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>Yii::app()->user->model->unit_id))->id));
+		//$dataProvider=new CActiveDataProvider('CollectionPoints');
+		/*$model = CollectionPoints::model()->findAll('object_id=:object_id', array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id));
+		$this->render('index',array(
+			//'dataProvider'=>$dataProvider,
+			'model'=>$model,
+		));*/
+		$dataProvider = new CActiveDataProvider('CollectionPoints', array(
+					'criteria' => array(
+						'condition' => 'object_id=:object_id',
+						'params' => array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id),
+					),
+				)); //CollectionPoints::model()->findAll('object_id=:object_id', array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id));
 		$this->render('index',array(
 			//'dataProvider'=>$dataProvider,
 			'dataProvider'=>$dataProvider,

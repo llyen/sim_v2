@@ -716,3 +716,84 @@ Stack trace:
 REQUEST_URI=/sim/collectionpoints
 HTTP_REFERER=https://localhost/sim/
 ---
+2012/12/05 10:32:43 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 10:34:02 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 10:34:06 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:122)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 10:51:06 [error] [php] Creating default object from empty value (C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php:129)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CollectionPointsController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CollectionPointsController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CollectionPointsController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CollectionPointsController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/collectionpoints
+in C:\xampp\htdocs\sim\protected\controllers\CollectionPointsController.php (129)
+in C:\xampp\htdocs\sim\index.php (13)
+2012/12/05 10:53:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionpoint...')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/collectionpoints
+HTTP_REFERER=https://localhost/sim/login
+---
