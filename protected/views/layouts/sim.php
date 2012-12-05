@@ -35,6 +35,16 @@
 		)); ?>
 	</div><!-- menu -->
 	<div class="clear"></div>
+	<?php
+		$this->beginWidget('zii.widgets.CPortlet', array(
+			'title'=>'',
+		));
+		$this->widget('zii.widgets.CMenu', array(
+			'items'=>$this->menu,
+			'htmlOptions'=>array('class'=>'operations'),
+		));
+		$this->endWidget();
+	?>
         <?php echo $content; ?>    
     </div><!-- content -->
 </div><!-- container -->
