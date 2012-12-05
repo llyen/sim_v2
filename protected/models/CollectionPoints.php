@@ -64,7 +64,7 @@ class CollectionPoints extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'object' => array(self::BELONGS_TO, 'Objects', 'object_id'),
+			'object' => array(self::BELONGS_TO, 'Objects', 'object_id'),//'alias' => 'object'),
 			'counters' => array(self::HAS_MANY, 'Counters', 'collection_point_id'),
 		);
 	}
@@ -76,13 +76,13 @@ class CollectionPoints extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'object_id' => 'Object',
+			'object_id' => 'Obiekt',
 			'symbol' => 'Symbol',
-			'multiplicand' => 'Multiplicand',
-			'create_date' => 'Create Date',
-			'create_user' => 'Create User',
-			'update_date' => 'Update Date',
-			'update_user' => 'Update User',
+			'multiplicand' => 'Mnożnik',
+			'create_date' => 'Data utworzenia',
+			'create_user' => 'Utworzony przez',
+			'update_date' => 'Data aktualizacji',
+			'update_user' => 'Aktualizowany przez',
 		);
 	}
 

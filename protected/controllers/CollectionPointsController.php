@@ -6,7 +6,7 @@ class CollectionPointsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/sim';
 
 	/**
 	 * @return array action filters
@@ -120,6 +120,7 @@ class CollectionPointsController extends Controller
 	{
 		$dataProvider = new CActiveDataProvider('CollectionPoints', array(
 					'criteria' => array(
+						//'with' => 'object',
 						'condition' => 'object_id=:object_id',
 						'params' => array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id),
 					),

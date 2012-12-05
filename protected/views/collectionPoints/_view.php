@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('object_id')); ?>:</b>
-	<?php echo CHtml::encode($data->object_id); ?>
+	<?php echo CHtml::encode($data->object->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('symbol')); ?>:</b>
