@@ -34,7 +34,7 @@
 			),
 		)); ?>
 	</div><!-- menu -->
-	<div class="clear" />
+	<div class="clear"></div>
         <?php echo $content; ?>    
     </div><!-- content -->
 </div><!-- container -->
