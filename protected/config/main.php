@@ -13,7 +13,7 @@ return array(
 	'preload'=>array(
                          'log',
                          // to enable bootstrap uncomment below
-                         //'bootstrap',
+                         'bootstrap',
         ),
 
 	// autoloading model and component classes
@@ -31,7 +31,7 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
                         // to enable bootstrap uncomment below
-                        // 'generatorPaths'=>array('bootstrap.gii'),
+                        'generatorPaths'=>array('bootstrap.gii'),
 		),
 		
 	),
@@ -95,9 +95,9 @@ return array(
                         'connectionID'=>'db',
                 ),
                 // to enable bootstrap uncomment below
-                /*'bootstrap'=>array(
+                'bootstrap'=>array(
                         'class'=>'ext.bootstrap.components.Bootstrap',
-                ),*/
+                ),
 	),
 
 	// application-level parameters that can be accessed

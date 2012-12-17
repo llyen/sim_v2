@@ -39,9 +39,13 @@ div.clear { clear: both; }
 /*
 login form
 */
-div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 300px; height: 200px; margin: 50px auto; background: #f3f3f3; }
-div#login div#title { background: url('../images/window_bar_bg.png') repeat-x; width: 290px; height: 33px; padding: 5px; -moz-border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px 5px 0px 0px; border-radius: 5px 5px 0px 0px; font: 13px "Segoe UI"; color: #fff; }
-form#login-form { width: 80%; margin: 0px auto; padding: 30px 0px; }
+div#login { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 350px; height: 220px; margin: 50px auto; background: #f3f3f3; }
+div#login div#title { background: url('../images/window_bar_bg.png') repeat-x; width: 340px; height: 33px; padding: 5px; -moz-border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px 5px 0px 0px; border-radius: 5px 5px 0px 0px; font: 13px "Segoe UI"; color: #fff; }
+form#login-form { width: 90%%; margin: 0px auto; padding: 15px 0px; }
+form#login-form label { width: 90px; }
+form#login-form .controls { margin-left: 100px; }
+form#login-form button { float: right; margin-right: 30px; }
+form#login-form .error { margin-bottom: 5px; }
 div#login div.row { clear: both; text-align: left; font-weight: bold; padding-bottom: 15px; }
 div#login div.row input { float: right; }
 div#login div.buttons, div#login div.error { clear: both; }
