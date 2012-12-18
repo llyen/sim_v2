@@ -227,3 +227,9 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+/*
+other
+*/
+.wrapper { width: 950px; padding-top: 40px; margin: 0 auto; }
+.span4 { margin: 0 305px; }

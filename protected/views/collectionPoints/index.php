@@ -6,11 +6,11 @@ $this->breadcrumbs=array(
 	'Collection Points',
 );
 
-$this->menu=array(
-	array('label'=>'Create CollectionPoints', 'url'=>array('create')),
-	array('label'=>'Manage CollectionPoints', 'url'=>array('admin')),
-);
-?>
+ $this->menu = array(
+	array('label'=>'PUNKTY POBORU'),
+        array('label'=>'Utwórz punkt poboru', 'url'=>array('create'), 'icon'=>'pencil'),
+    ); ?>
+
 <div class="window">
 	<div class="title">Zestawienie punktów poboru dla jednostki</div>
 	<table>
