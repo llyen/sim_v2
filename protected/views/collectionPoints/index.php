@@ -21,9 +21,6 @@ $this->menu=array(
 			<th>Obiekt</th>
 			<th>Mnożnik</th>
 			<th>Data utworzenia</th>
-			<th>Utworzony przez</th>
-			<th>Data aktualizacji</th>
-			<th>Aktualizowany przez</th>
 			<th>Opcje</th>
 		</thead>
 		<tbody>

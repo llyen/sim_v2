@@ -59,9 +59,10 @@ class CountersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Counters;
-
+		$collectionPoints=$this->getCollectionPoints();
+		$mediums=$this->getMediums();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Counters']))
 		{
@@ -72,6 +73,8 @@ class CountersController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'collectionPoints'=>$collectionPoints,
+			'mediums'=>$mediums,
 		));
 	}
 
@@ -118,7 +121,9 @@ class CountersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Counters');
+		$data = Yii::app()->db->createCommand('select cp.symbol as collection_point, m.name as medium, c.id, c.symbol, c.installation_date, c.archival from counters c join collection_points cp on c.collection_point_id=cp.id join mediums m on c.medium_id=m.id where c.collection_point_id in (select cp.id from collection_points cp where cp.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').'))')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		//$dataProvider=new CActiveDataProvider('Counters');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -163,5 +168,23 @@ class CountersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getCollectionPoints()
+	{
+		$collectionPoints = array();
+		$collectionPointsModel = CollectionPoints::model()->findAllBySql('select cp.id, cp.symbol from collection_points cp where cp.object_id in (select o.id from objects o where o.unit_id='.Yii::app()->user->getState('unit_id').')');
+		foreach($collectionPointsModel as $cp)
+			$collectionPoints[$cp->id] = $cp->symbol;
+		return $collectionPoints;
+	}
+	
+	protected function getMediums()
+	{
+		$mediums = array();
+		$mediumsModel = Mediums::model()->findAll();
+		foreach($mediumsModel as $m)
+			$mediums[$m->id] = $m->name;
+		return $mediums;
 	}
 }

@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Counters', 'url'=>array('index')),
-	array('label'=>'Manage Counters', 'url'=>array('admin')),
+        array('label'=>'LICZNIKI'),
+	array('label'=>'Wyświetl liczniki', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz licznik', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Counters</h1>
+<legend>Utwórz licznik</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'collectionPoints'=>$collectionPoints, 'mediums'=>$mediums)); ?>

@@ -125,4 +125,16 @@ class Counters extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function beforeValidate()
+	{
+		$this->update_date=new CDbExpression("NOW()");
+		$this->update_user=Yii::app()->user->name;
+		if($this->isNewRecord){
+			$this->create_user=Yii::app()->user->name;
+			$this->create_date=new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+		}
+
+		return parent::beforeValidate();	
+	}
 }

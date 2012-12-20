@@ -8,15 +8,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Counters', 'url'=>array('index')),
-	array('label'=>'Create Counters', 'url'=>array('create')),
-	array('label'=>'Update Counters', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Counters', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Counters', 'url'=>array('admin')),
+        array('label'=>'LICZNIKI'),
+	array('label'=>'Wyświetl liczniki', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz licznik', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Counters #<?php echo $model->id; ?></h1>
+<legend>Podgląd: <?php echo $model->symbol; ?></legend>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
