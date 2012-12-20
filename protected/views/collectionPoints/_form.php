@@ -6,61 +6,48 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'collection-points-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'type'=>'horizontal',
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+<fieldset>
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'object_id'); ?>
-		<?php echo $form->textField($model,'object_id'); ?>
-		<?php echo $form->error($model,'object_id'); ?>
+	<?php echo $form->dropDownListRow($model, 'object_id', $objects); ?>
+	<?php echo $form->textFieldRow($model, 'symbol', array('size'=>60, 'maxlength'=>255)); ?>
+	<?php echo $form->textFieldRow($model, 'multiplicand', array('size'=>10, 'maxlength'=>10)); ?>
+	<?php if($model->isNewRecord)
+	{
+	?>
+	<div class="control-group">
+		<label class="control-label" for="CollectionPoints_create_date">Data utworzenia</label>
+		<div class="controls">
+		<?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			'id'=>'CollectionPoints_create_date',
+			'name'=>'CollectionPoints[create_date]',
+			// additional javascript options for the date picker plugin
+			'options'=>array(
+			'showAnim'=>'fold',
+			'dateFormat'=>'yy-mm-dd',
+			'firstDay'=>1,
+			'changeMonth'=>true,
+			'changeYear'=>true,
+			),
+		));	
+		?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'symbol'); ?>
-		<?php echo $form->textField($model,'symbol',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'symbol'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'multiplicand'); ?>
-		<?php echo $form->textField($model,'multiplicand',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'multiplicand'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_date'); ?>
-		<?php echo $form->textField($model,'create_date'); ?>
-		<?php echo $form->error($model,'create_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_user'); ?>
-		<?php echo $form->textField($model,'create_user',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'create_user'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'update_date'); ?>
-		<?php echo $form->textField($model,'update_date'); ?>
-		<?php echo $form->error($model,'update_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'update_user'); ?>
-		<?php echo $form->textField($model,'update_user',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'update_user'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+	<?php
+	}
+	?>
+	<?php //echo $form->textFieldRow($model, 'create_date'); ?>
+	<!-- create_user, update_date, update_user -->
+</fieldset>
+<div class="form-actions">
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
+</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

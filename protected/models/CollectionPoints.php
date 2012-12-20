@@ -110,4 +110,13 @@ class CollectionPoints extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function beforeValidate()
+	{
+		$this->update_date=new CDbExpression("NOW()");
+		$this->update_user=Yii::app()->user->name;
+		if($this->isNewRecord) $this->create_user=Yii::app()->user->name;
+
+		return parent::beforeValidate();	
+	}
 }

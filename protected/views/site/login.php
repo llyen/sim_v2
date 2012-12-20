@@ -23,7 +23,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?>
 <?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?>
 
-<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Zaloguj się')); ?>
+<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Zaloguj się')); ?>
 	
 <?php $this->endWidget(); ?>
 </div><!-- login -->

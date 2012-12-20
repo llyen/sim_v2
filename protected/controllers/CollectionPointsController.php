@@ -59,9 +59,10 @@ class CollectionPointsController extends Controller
 	public function actionCreate()
 	{
 		$model=new CollectionPoints;
-
+		$objects = $this->getObjects();
+		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['CollectionPoints']))
 		{
@@ -72,6 +73,7 @@ class CollectionPointsController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'objects'=>$objects,
 		));
 	}
 
@@ -83,7 +85,7 @@ class CollectionPointsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$objects = $this->getObjects();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -96,6 +98,7 @@ class CollectionPointsController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'objects'=>$objects,
 		));
 	}
 
@@ -118,13 +121,15 @@ class CollectionPointsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider = new CActiveDataProvider('CollectionPoints', array(
+		$data = Yii::app()->db->createCommand('select cp.id, cp.symbol, o.name as object, cp.multiplicand, cp.create_date, cp.create_user, cp.update_date, cp.update_user from collection_points cp join objects o on cp.object_id=o.id where cp.object_id in (select o.id from objects o where o.unit_id ='.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		/*$dataProvider = new CActiveDataProvider('CollectionPoints', array(
 					'criteria' => array(
 						//'with' => 'object',
 						'condition' => 'object_id=:object_id',
-						'params' => array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id),
+						'params' => array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id), // WYSZUKIWANIE WSZYSTKICH PUNKTÓW !!!!!?
 					),
-				));
+				));*/
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -169,5 +174,14 @@ class CollectionPointsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getObjects()
+	{
+		$objects = array();
+		$objectsModel = Units::model()->findByPk(Yii::app()->user->getState('unit_id'))->objects;
+		foreach($objectsModel as $o)
+			$objects[$o->id] = $o->name;
+		return $objects;
 	}
 }

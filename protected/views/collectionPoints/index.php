@@ -6,13 +6,15 @@ $this->breadcrumbs=array(
 	'Collection Points',
 );
 
- $this->menu = array(
-	array('label'=>'PUNKTY POBORU'),
-        array('label'=>'Utwórz punkt poboru', 'url'=>array('create'), 'icon'=>'pencil'),
-    ); ?>
+$this->menu=array(
+        array('label'=>'PUNKTY POBORU'),
+	array('label'=>'Wyświetl punkty poboru', 'icon'=>'book', 'active'=>true, 'url'=>array('index')),
+        array('label'=>'Utwórz punkt poboru', 'icon'=>'pencil', 'url'=>array('create')),
+);
+?>
 
 <div class="window">
-	<div class="title">Zestawienie punktów poboru dla jednostki</div>
+	<legend>Zestawienie punktów poboru dla jednostki</legend>
 	<table>
 		<thead>
 			<th>Symbol</th>

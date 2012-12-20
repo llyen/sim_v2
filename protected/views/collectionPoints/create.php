@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CollectionPoints', 'url'=>array('index')),
-	array('label'=>'Manage CollectionPoints', 'url'=>array('admin')),
+        array('label'=>'PUNKTY POBORU'),
+	array('label'=>'Wyświetl punkty poboru', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz punkt poboru', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
-
-<h1>Create CollectionPoints</h1>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<legend>Utwórz punkt poboru</legend>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'objects'=>$objects)); ?>
