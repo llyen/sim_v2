@@ -16,12 +16,11 @@ $this->menu=array(
 
 <legend>Podgląd: <?php echo $model->symbol; ?></legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'collection_point_id',
-		'medium_id',
+		array('name'=>'collectionPoint.symbol', 'label'=>'Punkt poboru'),
+		array('name'=>'medium.name', 'label'=>'Medium'),
 		'symbol',
 		'unit',
 		'initial_state',

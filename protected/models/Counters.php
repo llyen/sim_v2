@@ -83,17 +83,17 @@ class Counters extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'collection_point_id' => 'Collection Point',
+			'collection_point_id' => 'Punkt poboru',
 			'medium_id' => 'Medium',
 			'symbol' => 'Symbol',
-			'unit' => 'Unit',
-			'initial_state' => 'Initial State',
-			'installation_date' => 'Installation Date',
-			'archival' => 'Archival',
-			'create_date' => 'Create Date',
-			'create_user' => 'Create User',
-			'update_date' => 'Update Date',
-			'update_user' => 'Update User',
+			'unit' => 'Jednostka',
+			'initial_state' => 'Stan początkowy',
+			'installation_date' => 'Data instalacji',
+			'archival' => 'Archiwalny',
+			'create_date' => 'Data utworzenia',
+			'create_user' => 'Utworzony przez',
+			'update_date' => 'Data aktualizacji',
+			'update_user' => 'Aktualizowany przez',
 		);
 	}
 

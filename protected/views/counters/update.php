@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Counters', 'url'=>array('index')),
-	array('label'=>'Create Counters', 'url'=>array('create')),
-	array('label'=>'View Counters', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Counters', 'url'=>array('admin')),
+        array('label'=>'LICZNIKI'),
+	array('label'=>'Wyświetl liczniki', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz licznik', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Counters <?php echo $model->id; ?></h1>
+<legend>Edytuj licznik <?php echo $model->symbol; ?></legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'collectionPoints'=>$collectionPoints, 'mediums'=>$mediums)); ?>

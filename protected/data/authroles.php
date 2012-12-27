@@ -106,6 +106,10 @@ $role->addChild('updateCounterReading');
 $role->addChild('updateInvoice');
 $role->addChild('updateInvoiceData');
 
+//$bizRule='return Yii::app()->user->name==$params["counter"]->create_user;';
+//$task=$auth->createTask('updateOwnCounter','aktualizowanie własnego licznika',$bizRule);
+//$task->addChild('updateCounter');
+
 $role = $auth->createRole('admin');
 $role->addChild('viewer');
 $role->addChild('unit_admin');

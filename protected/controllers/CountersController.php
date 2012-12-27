@@ -47,8 +47,11 @@ class CountersController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = Counters::model()->with('collectionPoint', 'medium')->findByPk($id);
+		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
+		
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,//$this->loadModel($id),
 		));
 	}
 
@@ -86,9 +89,11 @@ class CountersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$collectionPoints=$this->getCollectionPoints();
+		$mediums=$this->getMediums();
+		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Counters']))
 		{
@@ -99,6 +104,8 @@ class CountersController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'collectionPoints'=>$collectionPoints,
+			'mediums'=>$mediums,
 		));
 	}
 
