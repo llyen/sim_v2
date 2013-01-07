@@ -4,7 +4,8 @@
 ?>
 
 <div class="view">
-
+	<td><?php echo CHtml::encode($data['counter_state']); ?></td>
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
@@ -32,7 +33,8 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('create_user')); ?>:</b>
 	<?php echo CHtml::encode($data->create_user); ?>
 	<br />
-
+	*/
+?>
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('update_date')); ?>:</b>
 	<?php echo CHtml::encode($data->update_date); ?>

@@ -115,11 +115,15 @@ class CountersReadingsController extends Controller
 
 	/**
 	 * Lists all models.
+	 * @param integer $cid the ID of the Counter
 	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('CountersReadings');
+	public function actionIndex($cid)
+	{	
+		//$dataProvider=new CActiveDataProvider('CountersReadings');
+		$countersReadings=Counters::model()->findByPk($cid)->countersReadings;
+		$dataProvider=new CArrayDataProvider($countersReadings);
 		$this->render('index',array(
+			'cid'=>$cid,
 			'dataProvider'=>$dataProvider,
 		));
 	}

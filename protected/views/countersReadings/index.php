@@ -7,14 +7,28 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create CountersReadings', 'url'=>array('create')),
-	array('label'=>'Manage CountersReadings', 'url'=>array('admin')),
+        array('label'=>'ODCZYTY LICZNIKA'),
+	array('label'=>'Powrót', 'url'=>array('/counters')),
+	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'active'=>true, 'url'=>"$cid"),
+        array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'url'=>"create/$cid"),
 );
 ?>
 
-<h1>Counters Readings</h1>
+<div class="window">
+	<legend>Zestawienie odczytów licznika <?php echo Counters::model()->findByPk($cid)->symbol; ?></legend>
+	<table>
+		<thead>
+			
+		</thead>
+		<tbody>
+			<?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'itemView'=>'_view',
+				'summaryText'=>'',
+				'emptyText'=>'Brak danych.',
+			)); ?>
+		</tbody>
+	</table>
+</div>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+

@@ -3272,3 +3272,628 @@ Stack trace:
 REQUEST_URI=/sim/collectionpoints/view/2
 HTTP_REFERER=https://localhost/sim/login
 ---
+2013/01/03 08:44:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "counters_readings/view".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('counters_readin...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/counters_readings/view/1
+---
+2013/01/03 08:44:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php:151
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php(51): CountersReadingsController->loadModel('1')
+#1 [internal function]: CountersReadingsController->actionView('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CountersReadingsController), Array)
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CountersReadingsController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/countersreadings/view/1
+---
+2013/01/03 08:44:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 12:29:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "counters_readings".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('counters_readin...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/counters_readings
+---
+2013/01/07 12:54:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings
+---
+2013/01/07 12:54:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 12:56:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings
+---
+2013/01/07 13:01:18 [error] [exception.CException] exception 'CException' with message 'The URL pattern "/countersreadings/<id:\d+>/<action:\w+>/<id:\d+>" for route "countersreadings/<action>" is not a valid regular expression.' in C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php:701
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php(269): CUrlRule->__construct('countersreading...', '/countersreadin...')
+#1 C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php(227): CUrlManager->createUrlRule('countersreading...', '/countersreadin...')
+#2 C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php(207): CUrlManager->processRules()
+#3 C:\xampp\htdocs\frameworks\yii\base\CModule.php(388): CUrlManager->init()
+#4 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(503): CModule->getComponent('urlManager')
+#5 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(141): CApplication->getUrlManager()
+#6 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:02:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:02:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:03:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:03:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:03:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1/
+---
+2013/01/07 13:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1/index
+---
+2013/01/07 13:04:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/
+---
+2013/01/07 13:04:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:05:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:05:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:05:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:05:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:09:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:09:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:10:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:10:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:10:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1/
+---
+2013/01/07 13:14:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1/index/
+---
+2013/01/07 13:16:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/
+---
+2013/01/07 13:16:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1,1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1,1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1,1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1,1
+---
+2013/01/07 13:16:58 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/
+---
+2013/01/07 13:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:17:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/
+---
+2013/01/07 13:17:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings
+---
+2013/01/07 13:17:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/countersreadings/1
+---
+2013/01/07 13:19:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1
+---
+2013/01/07 13:19:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1/
+---
+2013/01/07 13:20:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1
+---
+2013/01/07 13:20:58 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/2
+---
+2013/01/07 13:21:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/2
+---
+2013/01/07 13:21:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1
+---
+2013/01/07 13:21:23 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php:125)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CountersReadingsController->runAction()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CountersReadingsController->filterAccessControl()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CountersReadingsController->runActionWithFilters()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CountersReadingsController->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/countersreadings/2
+in C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php (125)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/01/07 13:24:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1,2
+---
+2013/01/07 13:24:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1
+---
+2013/01/07 14:05:28 [error] [php] Undefined variable: cid (C:\xampp\htdocs\sim\protected\views\countersReadings\index.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CountersReadingsController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CountersReadingsController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php(127): CountersReadingsController->render()
+#3 unknown(0): CountersReadingsController->actionIndex()
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CountersReadingsController->runAction()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CountersReadingsController->filterAccessControl()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CountersReadingsController->runActionWithFilters()
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CountersReadingsController->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/countersreadings/1
+in C:\xampp\htdocs\sim\protected\views\countersReadings\index.php (16)
+in C:\xampp\htdocs\sim\protected\controllers\CountersReadingsController.php (127)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/01/07 14:12:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/index/1
+HTTP_REFERER=https://localhost/sim/countersreadings/1
+---
