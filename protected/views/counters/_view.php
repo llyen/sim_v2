@@ -12,5 +12,6 @@
 	<td>
 	    <a href="<?php echo Yii::app()->createUrl('counters/view', array('id'=>$data['id'])); ?>" title="podgląd"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/list.png" alt="podgląd" /></a>
 	    <a href="<?php echo Yii::app()->createUrl('counters/update', array('id'=>$data['id'])); ?>" title="edycja"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/update.png" alt="edycja" /></a>
+	    <a href="<?php echo Yii::app()->createUrl('countersreadings/'.$data['id']); ?>" title="odczyty licznika"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/table.png" alt="odczyty licznika" /></a>
 	</td>
 </tr>

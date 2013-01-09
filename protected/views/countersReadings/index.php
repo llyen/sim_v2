@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
         array('label'=>'ODCZYTY LICZNIKA'),
-	array('label'=>'Powrót', 'url'=>array('/counters')),
+	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/counters')),
 	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'active'=>true, 'url'=>"$cid"),
         array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'url'=>"create/$cid"),
 );
@@ -18,7 +18,11 @@ $this->menu=array(
 	<legend>Zestawienie odczytów licznika <?php echo Counters::model()->findByPk($cid)->symbol; ?></legend>
 	<table>
 		<thead>
-			
+			<th>Data odczytu</th>
+			<th>Stan licznika</th>
+			<th>Zużycie</th>
+			<th>Data utworzenia</th>
+			<th>Opcje</th>
 		</thead>
 		<tbody>
 			<?php $this->widget('zii.widgets.CListView', array(
