@@ -74,14 +74,14 @@ class CountersReadings extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'counter_id' => 'Counter',
-			'reading_date' => 'Reading Date',
-			'counter_state' => 'Counter State',
-			'use' => 'Use',
-			'create_date' => 'Create Date',
-			'create_user' => 'Create User',
-			'update_date' => 'Update Date',
-			'update_user' => 'Update User',
+			'counter_id' => 'Licznik',
+			'reading_date' => 'Data odczytu',
+			'counter_state' => 'Stan licznika',
+			'use' => 'Zużycie',
+			'create_date' => 'Data utworzenia',
+			'create_user' => 'Utworzony przez',
+			'update_date' => 'Data aktualizacji',
+			'update_user' => 'Aktualizowany przez',
 		);
 	}
 
@@ -109,5 +109,17 @@ class CountersReadings extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function beforeValidate()
+	{
+		$this->update_date=new CDbExpression("NOW()");
+		$this->update_user=Yii::app()->user->name;
+		if($this->isNewRecord){
+			$this->create_user=Yii::app()->user->name;
+			$this->create_date=new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+		}
+
+		return parent::beforeValidate();	
 	}
 }

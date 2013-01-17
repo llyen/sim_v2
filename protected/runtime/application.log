@@ -3999,3 +3999,38 @@ REQUEST_URI=/sim/counters/create
 in C:\xampp\htdocs\sim\protected\extensions\bootstrap\components\Bootstrap.php (458)
 in C:\xampp\htdocs\sim\protected\extensions\bootstrap\components\Bootstrap.php (163)
 in C:\xampp\htdocs\sim\protected\extensions\bootstrap\components\Bootstrap.php (124)
+2013/01/17 20:27:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/create/2
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/01/17 20:27:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/create/2
+---

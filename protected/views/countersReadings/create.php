@@ -8,11 +8,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CountersReadings', 'url'=>array('index')),
-	array('label'=>'Manage CountersReadings', 'url'=>array('admin')),
+        array('label'=>'ODCZYTY LICZNIKA'),
+	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/counters')),
+	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'url'=>array("countersreadings/$cid")),
+        array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'active'=>true, 'url'=>"$cid"),
 );
 ?>
 
-<h1>Create CountersReadings</h1>
+<legend>Utwórz odczyt licznika</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'cid'=>$cid)); ?>

@@ -56,12 +56,12 @@ class CountersReadingsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new CountersReadings;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['CountersReadings']))
 		{
@@ -72,6 +72,7 @@ class CountersReadingsController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'cid'=>$id,
 		));
 	}
 
@@ -85,7 +86,7 @@ class CountersReadingsController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['CountersReadings']))
 		{
