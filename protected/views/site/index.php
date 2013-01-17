@@ -4,17 +4,22 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<?php $this->beginWidget('bootstrap.widgets.TbHeroUnit', array(
+'heading'=>(Yii::app()->user->isGuest) ? Yii::app()->name : 'Witaj, '.Yii::app()->user->name,
+)); ?>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<?php if(Yii::app()->user->isGuest){ ?>
+<p>Dostęp do zasobów aplikacji wymaga uwierzytelnienia.</p>
+<p>
+<?php $this->widget('bootstrap.widgets.TbButton', array(
+'type'=>'primary',
+'size'=>'large',
+'label'=>'Zaloguj się',
+'url'=>array('site/login'),
+)); ?>
+</p>
+<?php }else{ ?>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam enim vitae lorem convallis feugiat. Sed sed turpis massa, vel hendrerit ipsum. Vivamus at nisi turpis, ut vehicula nunc. Vestibulum ornare, libero sed consequat sollicitudin, leo orci aliquet odio, pellentesque fermentum augue mauris id turpis.</p>
+<?php } ?>
+<?php $this->endWidget(); ?>
