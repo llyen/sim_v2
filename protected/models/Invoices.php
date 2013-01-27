@@ -82,16 +82,16 @@ class Invoices extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'tariff_id' => 'Tariff',
-			'object_id' => 'Object',
-			'supplier_id' => 'Supplier',
-			'period_since' => 'Period Since',
-			'period_to' => 'Period To',
-			'issue_date' => 'Issue Date',
-			'create_date' => 'Create Date',
-			'create_user' => 'Create User',
-			'update_date' => 'Update Date',
-			'update_user' => 'Update User',
+			'tariff_id' => 'Taryfa',
+			'object_id' => 'Obiekt',
+			'supplier_id' => 'Dostawca',
+			'period_since' => 'Okres od',
+			'period_to' => 'Okres do',
+			'issue_date' => 'Data płatności',
+			'create_date' => 'Data utworzenia',
+			'create_user' => 'Utworzona przez',
+			'update_date' => 'Data aktualizacji',
+			'update_user' => 'Aktualizowana przez',
 		);
 	}
 
