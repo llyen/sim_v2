@@ -45,10 +45,11 @@ class CountersReadingsController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $cid)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'cid'=>$cid,
 		));
 	}
 
@@ -67,7 +68,7 @@ class CountersReadingsController extends Controller
 		{
 			$model->attributes=$_POST['CountersReadings'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$id));
 		}
 
 		$this->render('create',array(
@@ -81,7 +82,7 @@ class CountersReadingsController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($id, $cid)
 	{
 		$model=$this->loadModel($id);
 
@@ -92,11 +93,12 @@ class CountersReadingsController extends Controller
 		{
 			$model->attributes=$_POST['CountersReadings'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$cid));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'cid'=>$cid,
 		));
 	}
 
