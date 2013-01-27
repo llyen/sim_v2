@@ -12,7 +12,7 @@ $this->menu=array(
         array('label'=>'ODCZYTY LICZNIKA'),
 	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/counters')),
 	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'url'=>array("countersreadings/$cid")),
-        array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'url'=>"$cid"),
+        array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'url'=>array("countersreadings/create/$cid")),
 );
 ?>
 
