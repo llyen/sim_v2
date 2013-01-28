@@ -3,53 +3,15 @@
 /* @var $data Invoices */
 ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('tariff_id')); ?>:</b>
-	<?php echo CHtml::encode($data->tariff_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('object_id')); ?>:</b>
-	<?php echo CHtml::encode($data->object_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('supplier_id')); ?>:</b>
-	<?php echo CHtml::encode($data->supplier_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('period_since')); ?>:</b>
-	<?php echo CHtml::encode($data->period_since); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('period_to')); ?>:</b>
-	<?php echo CHtml::encode($data->period_to); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('issue_date')); ?>:</b>
-	<?php echo CHtml::encode($data->issue_date); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_date')); ?>:</b>
-	<?php echo CHtml::encode($data->create_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_user')); ?>:</b>
-	<?php echo CHtml::encode($data->create_user); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_date')); ?>:</b>
-	<?php echo CHtml::encode($data->update_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_user')); ?>:</b>
-	<?php echo CHtml::encode($data->update_user); ?>
-	<br />
-
-	*/ ?>
-
-</div>
+<tr>
+	<td><?php echo CHtml::encode($data['object']); ?></td>
+	<td><?php echo CHtml::encode($data['supplier']); ?></td>
+	<td><?php echo CHtml::encode($data['period_since']); ?></td>
+	<td><?php echo CHtml::encode($data['period_to']); ?></td>
+	<td><?php echo CHtml::encode($data['issue_date']); ?></td>
+	<td>
+		<a href="<?php echo Yii::app()->createUrl('invoices/view', array('id'=>$data['id'])); ?>" title="podgląd"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/list.png" alt="podgląd" /></a>
+	    <a href="<?php echo Yii::app()->createUrl('invoices/update', array('id'=>$data['id'])); ?>" title="edycja"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/update.png" alt="edycja" /></a>
+	    <a href="<?php echo Yii::app()->createUrl('invoicesdata/'.$data['id']); ?>" title="pozycje na fakturze"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/table.png" alt="pozycje na fakturze" /></a>
+	</td>
+</tr>

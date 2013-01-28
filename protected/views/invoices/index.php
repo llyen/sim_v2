@@ -15,10 +15,24 @@ $this->menu=array(
 
 <div class="window">
 	<legend>Zestawienie faktur</legend>
-	<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+	<table>
+		<thead>
+			<th>Obiekt</th>
+			<th>Dostawca</th>
+			<th>Okres od</th>
+			<th>Okres do</th>
+			<th>Data płatności</th>
+			<th>Operacje</th>
+		</thead>
+		<tbody>
+			<?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'itemView'=>'_view',
+				'summaryText'=>'',
+				'emptyText'=>'Brak danych.',
+			)); ?>
+		</tbody>
+	</table>
 </div>
 
 

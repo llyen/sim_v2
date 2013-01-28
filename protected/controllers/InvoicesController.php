@@ -118,7 +118,12 @@ class InvoicesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Invoices');
+		//$invoices = Units::model()->findByPk(Yii::app()->user->getState('unit_id'));//->objects;//->invoices;
+		
+		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		//$dataProvider = new CActiveDataProvider($data);
+		//$dataProvider=new CActiveDataProvider('Invoices');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
