@@ -59,9 +59,13 @@ class InvoicesController extends Controller
 	public function actionCreate()
 	{
 		$model=new Invoices;
-
+		
+		$objects = $this->getObjects();
+		$suppliers = $this->getSuppliers();
+		$tariffs = $this->getTariffs();
+		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Invoices']))
 		{
@@ -72,6 +76,9 @@ class InvoicesController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'objects'=>$objects,
+			'suppliers'=>$suppliers,
+			'tariffs'=>$tariffs,
 		));
 	}
 
@@ -118,12 +125,9 @@ class InvoicesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		//$invoices = Units::model()->findByPk(Yii::app()->user->getState('unit_id'));//->objects;//->invoices;
-		
 		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
-		//$dataProvider = new CActiveDataProvider($data);
-		//$dataProvider=new CActiveDataProvider('Invoices');
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -168,5 +172,32 @@ class InvoicesController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getObjects()
+	{
+		$objects = array();
+		$objectsModel = Units::model()->findByPk(Yii::app()->user->getState('unit_id'))->objects;
+		foreach($objectsModel as $o)
+			$objects[$o->id] = $o->name;
+		return $objects;
+	}
+	
+	protected function getSuppliers()
+	{
+		$suppliers = array();
+		$suppliersModel = Suppliers::model()->findAll();
+		foreach($suppliersModel as $s)
+			$suppliers[$s->id] = $s->name;
+		return $suppliers;
+	}
+	
+	protected function getTariffs()
+	{
+		$tariffs = array();
+		$tariffsModel = Tariffs::model()->findAll();
+		foreach($tariffsModel as $t)
+			$tariffs[$t->id] = $t->name;
+		return $tariffs;
 	}
 }

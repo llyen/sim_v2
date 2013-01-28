@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Invoices', 'url'=>array('index')),
-	array('label'=>'Manage Invoices', 'url'=>array('admin')),
+        array('label'=>'FAKTURY'),
+	array('label'=>'Wyświetl faktury', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz fakturę', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Invoices</h1>
+<legend>Utwórz fakturę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'objects'=>$objects, 'suppliers'=>$suppliers, 'tariffs'=>$tariffs)); ?>
