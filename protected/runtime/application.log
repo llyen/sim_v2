@@ -4227,3 +4227,59 @@ REQUEST_URI=/sim/invoices
 in C:\xampp\htdocs\sim\protected\views\invoices\_view.php (13)
 in C:\xampp\htdocs\sim\protected\views\invoices\index.php (33)
 in C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php (129)
+2013/02/03 16:52:31 [error] [exception.CException] exception 'CException' with message 'Property "TbButton.title" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWidgetFactory.php(162): CComponent->__set('title', 'Zg??oszenie b??...')
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\sim\protected\views\site\index.php(32): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(32): CController->render('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/sim/
+HTTP_REFERER=https://localhost/sim/collectionpoints
+---
+2013/02/03 17:02:01 [error] [exception.CException] exception 'CException' with message 'The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbGridView.php:124
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\zii\widgets\grid\CGridView.php(331): TbGridView->createDataColumn('punkt poboru')
+#1 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbGridView.php(109): CGridView->initColumns()
+#2 C:\xampp\htdocs\frameworks\yii\zii\widgets\grid\CGridView.php(307): TbGridView->initColumns()
+#3 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbGridView.php(54): CGridView->init()
+#4 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbExtendedGridView.php(220): TbGridView->init()
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(148): TbExtendedGridView->init()
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 C:\xampp\htdocs\sim\protected\views\counters\index.php(47): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\sim\protected\controllers\CountersController.php(136): CController->render('index', Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CountersController->actionIndex()
+#14 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#21 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#23 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('counters')
+#24 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sim/counters
+HTTP_REFERER=https://localhost/sim/collectionpoints
+---

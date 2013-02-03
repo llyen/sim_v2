@@ -234,3 +234,7 @@ other
 .wrapper { width: 950px; padding-top: /*40px*/ 70px; margin: 0 auto; }
 .span4 { margin: 0 305px; }
 .list-view { padding-top: 0px; }
+.window table { width: 100%; }
+.window table td, .window table th { padding: 12px; }
+.window table tbody tr:nth-child(even){  }
+.window table tbody tr:nth-child(odd){ background-color: #fafafa; border-bottom: 1px solid #efefef; border-top: 1px solid #efefef; }

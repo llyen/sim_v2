@@ -20,6 +20,15 @@ $this->pageTitle=Yii::app()->name;
 )); ?>
 </p>
 <?php }else{ ?>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam enim vitae lorem convallis feugiat. Sed sed turpis massa, vel hendrerit ipsum. Vivamus at nisi turpis, ut vehicula nunc. Vestibulum ornare, libero sed consequat sollicitudin, leo orci aliquet odio, pellentesque fermentum augue mauris id turpis.</p>
-<?php } ?>
+<p>Prezentujemy wersję rozwojową aplikacji System Informacji o Mediach. Prosimy o zgłaszanie wszelkich zauważonych błędów bezpośrednio do administratora systemu.</p>
+<?php
+
+$this->widget('bootstrap.widgets.TbButton', array(
+'type'=>'primary',
+'size'=>'large',
+'label'=>'Zgłoś problem',
+'url'=>'mailto:jakub.wawrzyniak@urzad.srem.pl?subject='.CHtml::encode('Zgłoszenie błędu - system informacji o mediach'),
+));
+
+} ?>
 <?php $this->endWidget(); ?>
