@@ -8,22 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List InvoicesData', 'url'=>array('index')),
-	array('label'=>'Create InvoicesData', 'url'=>array('create')),
-	array('label'=>'Update InvoicesData', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete InvoicesData', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage InvoicesData', 'url'=>array('admin')),
+        array('label'=>'POZYCJE NA FAKTURZE'),
+	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/invoices')),
+	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'url'=>array("invoicesdata/$iid")),
+        array('label'=>'Dodaj pozycję', 'icon'=>'pencil', 'url'=>array("invoicesdata/create/$iid")),
 );
 ?>
 
-<h1>View InvoicesData #<?php echo $model->id; ?></h1>
+<legend>Szczegóły</legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'invoice_id',
-		'component_id',
+		array('name'=>'invoice.issue_date', 'label'=>'Faktura z dnia'),
+		array('name'=>'component.name', 'label'=>'Składnik'),
 		'value',
 		'create_date',
 		'create_user',

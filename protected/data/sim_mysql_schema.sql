@@ -118,7 +118,7 @@ invoice_id int NOT NULL,
 component_id int NOT NULL,
 value decimal(10,4),
 PRIMARY KEY (id),
-FOREIGN KEY (invoice_id) REFERENCES invoices(id) ON DELETE NO ACTION,
+FOREIGN KEY (invoice_id) REFERENCES invoices(id) ON DELETE CASCADE,
 FOREIGN KEY (component_id) REFERENCES tariffs_components(id) ON DELETE NO ACTION
 # reszta danych
 );

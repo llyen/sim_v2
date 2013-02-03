@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List InvoicesData', 'url'=>array('index')),
-	array('label'=>'Create InvoicesData', 'url'=>array('create')),
-	array('label'=>'View InvoicesData', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage InvoicesData', 'url'=>array('admin')),
+        array('label'=>'POZYCJE NA FAKTURZE'),
+	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/invoices')),
+	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'url'=>array("invoicesdata/$iid")),
+        array('label'=>'Dodaj pozycję', 'icon'=>'pencil', 'url'=>array("invoicesdata/create/$iid")),
 );
 ?>
 
-<h1>Update InvoicesData <?php echo $model->id; ?></h1>
+<legend>Edytuj pozycję na fakturze</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'iid'=>$iid, 'tariffsComponents'=>$tariffsComponents)); ?>

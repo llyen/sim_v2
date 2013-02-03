@@ -4447,3 +4447,947 @@ REQUEST_URI=/sim/invoicesdata/2
 in C:\xampp\htdocs\sim\protected\views\invoicesData\_view.php (12)
 in C:\xampp\htdocs\sim\protected\views\invoicesData\index.php (33)
 in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (129)
+2013/02/03 19:11:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:15:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/4
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:17:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2
+---
+2013/02/03 19:17:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/4
+---
+2013/02/03 19:18:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2
+---
+2013/02/03 19:19:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/
+---
+2013/02/03 19:19:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:22:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:22:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:24:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:25:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/16
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:27:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('countersreading...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/countersreadings/delete/2/7
+HTTP_REFERER=https://localhost/sim/countersreadings/2
+---
+2013/02/03 19:32:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:34:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:36:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:37:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:39:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:39:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete
+---
+2013/02/03 19:39:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/1
+---
+2013/02/03 19:39:44 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete
+---
+2013/02/03 19:40:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:41:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:41:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:43:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:45:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:46:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:46:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:47:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:47:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:52:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:53:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:53:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:54:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:55:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 19:55:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/cr...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/create/2
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 21:10:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "collectionpoints".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('collectionpoint...')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('collectionpoint...')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/co...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/invoicesdata/collectionpoints?0=index
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 21:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "collectionpoints".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('collectionpoint...')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('collectionpoint...')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/co...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/invoicesdata/collectionpoints?0=index
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 21:12:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/in...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/index
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 21:14:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 21:14:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/de...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesdata/delete/2/1
+HTTP_REFERER=https://localhost/sim/invoicesdata/2
+---
+2013/02/03 22:48:27 [error] [php] Undefined variable: iid (C:\xampp\htdocs\sim\protected\views\invoicesData\create.php:13)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(76): InvoicesDataController->render()
+#3 unknown(0): InvoicesDataController->actionCreate()
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/create/3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\create.php (13)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (76)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/02/03 22:59:34 [error] [php] include(Invoice.php): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\YiiBase.php:423)
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(179): spl_autoload_call()
+#1 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(63): InvoicesDataController->getInvoices()
+#2 unknown(0): InvoicesDataController->actionCreate()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#15 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/create/3
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (179)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (63)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/02/03 23:00:02 [error] [php] Undefined variable: objects (C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\views\invoicesData\create.php(20): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): InvoicesDataController->renderInternal()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#6 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(81): InvoicesDataController->render()
+#7 unknown(0): InvoicesDataController->actionCreate()
+#8 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/create/3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php (16)
+in C:\xampp\htdocs\sim\protected\views\invoicesData\create.php (20)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (81)
+2013/02/03 23:05:22 [error] [php] Undefined variable: invoices (C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\views\invoicesData\update.php(21): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): InvoicesDataController->renderInternal()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#6 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(105): InvoicesDataController->render()
+#7 unknown(0): InvoicesDataController->actionUpdate()
+#8 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/update/9?iid=3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php (16)
+in C:\xampp\htdocs\sim\protected\views\invoicesData\update.php (21)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (105)
+2013/02/03 23:11:16 [error] [php] Undefined variable: iid (C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\views\invoicesData\update.php(21): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): InvoicesDataController->renderInternal()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#6 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(105): InvoicesDataController->render()
+#7 unknown(0): InvoicesDataController->actionUpdate()
+#8 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/update/10?iid=3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\_form.php (16)
+in C:\xampp\htdocs\sim\protected\views\invoicesData\update.php (21)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (105)
+2013/02/03 23:13:39 [error] [php] Undefined variable: tariffsComponents (C:\xampp\htdocs\sim\protected\views\invoicesData\update.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(106): InvoicesDataController->render()
+#3 unknown(0): InvoicesDataController->actionUpdate()
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/update/10?iid=3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\update.php (21)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (106)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/02/03 23:15:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<controller>/view".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('<controller>/vi...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/invoicesdata/view/3/10
+---
+2013/02/03 23:18:17 [error] [php] Undefined variable: iid (C:\xampp\htdocs\sim\protected\views\invoicesData\view.php:13)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): InvoicesDataController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): InvoicesDataController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(52): InvoicesDataController->render()
+#3 unknown(0): InvoicesDataController->actionView()
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesDataController->runAction()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesDataController->filterAccessControl()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesDataController->runActionWithFilters()
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesDataController->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoicesdata/view/10?iid=3
+in C:\xampp\htdocs\sim\protected\views\invoicesData\view.php (13)
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php (52)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/02/03 23:18:58 [error] [exception.CException] exception 'CException' with message 'Property "InvoicesData.counter" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(144): CComponent->__get('counter')
+#1 C:\xampp\htdocs\frameworks\yii\web\helpers\CHtml.php(1809): CActiveRecord->__get('counter')
+#2 C:\xampp\htdocs\frameworks\yii\zii\widgets\CDetailView.php(212): CHtml::value(Object(InvoicesData), 'counter.symbol')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): CDetailView->run()
+#4 C:\xampp\htdocs\sim\protected\views\invoicesData\view.php(32): CBaseController->widget('bootstrap.widge...', Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 C:\xampp\htdocs\sim\protected\controllers\InvoicesDataController.php(53): CController->render('view', Array)
+#10 [internal function]: InvoicesDataController->actionView('10', '3')
+#11 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(InvoicesDataController), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(InvoicesDataController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#22 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesdata/vi...')
+#23 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/sim/invoicesdata/view/10?iid=3
+HTTP_REFERER=https://localhost/sim/invoicesdata/3
+---
+2013/02/03 23:19:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`invoices_data`, CONSTRAINT `invoices_data_ibfk_1` FOREIGN KEY (`invoice_id`) REFERENCES `invoices` (`id`) ON DELETE NO ACTION). The SQL statement executed was: DELETE FROM `invoices` WHERE `invoices`.`id`=3.
+in C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php (122)
+in C:\xampp\htdocs\sim\index.php (13)
+2013/02/03 23:19:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`invoices_data`, CONSTRAINT `invoices_data_ibfk_1` FOREIGN KEY (`invoice_id`) REFERENCES `invoices` (`id`) ON DELETE NO ACTION). The SQL statement executed was: DELETE FROM `invoices` WHERE `invoices`.`id`=3' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1739): CDbCommand->execute()
+#1 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1162): CActiveRecord->deleteByPk('3')
+#2 C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php(122): CActiveRecord->delete()
+#3 [internal function]: InvoicesController->actionDelete('3')
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(InvoicesController), Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(InvoicesController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoices/delete')
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/sim/invoices/delete/3
+HTTP_REFERER=https://localhost/sim/invoices
+---

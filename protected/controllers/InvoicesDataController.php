@@ -15,7 +15,7 @@ class InvoicesDataController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			//'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -28,11 +28,11 @@ class InvoicesDataController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index', 'view', 'create', 'update'),
+				'actions'=>array('index', 'view', 'create', 'update', 'delete'),
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -45,10 +45,11 @@ class InvoicesDataController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $iid)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'iid'=>$iid,
 		));
 	}
 
@@ -56,10 +57,13 @@ class InvoicesDataController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
+		
 		$model=new InvoicesData;
-
+		//$invoices = $this->getInvoices();
+		$tariffsComponents = $this->getTariffsComponents();
+		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -72,6 +76,9 @@ class InvoicesDataController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'iid'=>$id,
+			//'invoices'=>$invoices,
+			'tariffsComponents'=>$tariffsComponents,
 		));
 	}
 
@@ -80,10 +87,10 @@ class InvoicesDataController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($id, $iid)
 	{
 		$model=$this->loadModel($id);
-
+		$tariffsComponents = $this->getTariffsComponents();
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -96,6 +103,8 @@ class InvoicesDataController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'iid'=>$iid,
+			'tariffsComponents'=>$tariffsComponents,
 		));
 	}
 
@@ -104,13 +113,13 @@ class InvoicesDataController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete($id, $iid)
 	{
 		$this->loadModel($id)->delete();
-
+		//$this->redirect(array('invoicesdata/index', 'iid'=>$iid));
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('invoicesdata/index', 'iid' => $iid));
 	}
 
 	/**
@@ -118,9 +127,6 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionIndex($iid)
 	{
-		//$dataProvider=new CActiveDataProvider('InvoicesData');
-		//$invoicesDatas = Invoices::model()->findByPk($iid)->invoicesDatas;
-		//$dataProvider = new CArrayDataProvider($invoicesDatas);
 		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, tc.name as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id join tariffs_components tc on tc.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
@@ -168,5 +174,23 @@ class InvoicesDataController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	/*protected function getInvoices()
+	{
+		$invoices = array();
+		$invoicesModel = Invoices::model()->findAllBySql('select i.id, i.issue_date from invoices i where i.object_id in (select o.id from objects o where o.unit_id='.Yii::app()->user->getState('unit_id').')');
+		foreach($invoicesModel as $i)
+			$invoices[$i->id] = $i->issue_date;
+		return $invoices;
+	}*/
+	
+	protected function getTariffsComponents()
+	{
+		$tariffsComponents = array();
+		$tariffsComponentsModel = TariffsComponents::model()->findAll();
+		foreach($tariffsComponentsModel as $tc)
+			$tariffsComponents[$tc->id] = $tc->name;
+		return $tariffsComponents;
 	}
 }

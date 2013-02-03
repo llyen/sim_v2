@@ -75,13 +75,13 @@ class InvoicesData extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'invoice_id' => 'Invoice',
-			'component_id' => 'Component',
-			'value' => 'Value',
-			'create_date' => 'Create Date',
-			'create_user' => 'Create User',
-			'update_date' => 'Update Date',
-			'update_user' => 'Update User',
+			'invoice_id' => 'Faktura',
+			'component_id' => 'Składnik',
+			'value' => 'Wartość',
+			'create_date' => 'Data utworzenia',
+			'create_user' => 'Utworzona przez',
+			'update_date' => 'Data aktualizacji',
+			'update_user' => 'Aktualizowana przez',
 		);
 	}
 
@@ -108,5 +108,17 @@ class InvoicesData extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function beforeValidate()
+	{
+		$this->update_date=new CDbExpression("NOW()");
+		$this->update_user=Yii::app()->user->name;
+		if($this->isNewRecord){
+			$this->create_user=Yii::app()->user->name;
+			$this->create_date=new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+		}
+
+		return parent::beforeValidate();	
 	}
 }
