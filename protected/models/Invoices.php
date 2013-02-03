@@ -87,7 +87,7 @@ class Invoices extends CActiveRecord
 			'supplier_id' => 'Dostawca',
 			'period_since' => 'Okres od',
 			'period_to' => 'Okres do',
-			'issue_date' => 'Data płatności',
+			'issue_date' => 'Data wystawienia',
 			'create_date' => 'Data utworzenia',
 			'create_user' => 'Utworzona przez',
 			'update_date' => 'Data aktualizacji',

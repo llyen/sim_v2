@@ -21,7 +21,7 @@ $this->menu=array(
 			<th>Dostawca</th>
 			<th>Okres od</th>
 			<th>Okres do</th>
-			<th>Data płatności</th>
+			<th>Data wystawienia</th>
 			<th>Operacje</th>
 		</thead>
 		<tbody>

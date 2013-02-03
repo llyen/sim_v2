@@ -7,14 +7,30 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create InvoicesData', 'url'=>array('create')),
-	array('label'=>'Manage InvoicesData', 'url'=>array('admin')),
+        array('label'=>'POZYCJE NA FAKTURZE'),
+	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/invoices')),
+	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'active'=>true, 'url'=>"$iid"),
+        array('label'=>'Dodaj pozycję', 'icon'=>'pencil', 'url'=>"create/$iid"),
 );
 ?>
 
-<h1>Invoices Datas</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="window">
+	<legend>Zestawienie pozycji na fakturze z dnia <?php echo Invoices::model()->findByPk($iid)->issue_date; ?></legend>
+	<table>
+		<thead>
+			<th>Taryfa</th>
+			<th>Składnik</th>
+			<th>Wartość</th>
+			<th>Data utworzenia</th>
+			<th>Opcje</th>
+		</thead>
+		<tbody>
+			<?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'itemView'=>'_view',
+				'summaryText'=>'',
+				'emptyText'=>'Brak danych.',
+			)); ?>
+		</tbody>
+	</table>
+</div>

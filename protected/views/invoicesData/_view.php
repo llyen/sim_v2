@@ -3,41 +3,13 @@
 /* @var $data InvoicesData */
 ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('invoice_id')); ?>:</b>
-	<?php echo CHtml::encode($data->invoice_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('component_id')); ?>:</b>
-	<?php echo CHtml::encode($data->component_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('value')); ?>:</b>
-	<?php echo CHtml::encode($data->value); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_date')); ?>:</b>
-	<?php echo CHtml::encode($data->create_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_user')); ?>:</b>
-	<?php echo CHtml::encode($data->create_user); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_date')); ?>:</b>
-	<?php echo CHtml::encode($data->update_date); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_user')); ?>:</b>
-	<?php echo CHtml::encode($data->update_user); ?>
-	<br />
-
-	*/ ?>
-
-</div>
+<tr>
+	<td><?php echo CHtml::encode($data['tariff']); ?></td>
+	<td><?php echo CHtml::encode($data['component']); ?></td>
+	<td><?php echo CHtml::encode($data['value']); ?></td>
+	<td><?php echo CHtml::encode($data['create_date']); ?></td>
+	<td>
+	    <a href="<?php echo Yii::app()->createUrl('invoicesdata/view', array('iid'=>$data['invoice_id'],'id'=>$data['id'])); ?>" title="podgląd"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/list.png" alt="podgląd" /></a>
+	    <a href="<?php echo Yii::app()->createUrl('invoicesdata/update', array('iid'=>$data['invoice_id'],'id'=>$data['id'])); ?>" title="edycja"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/update.png" alt="edycja" /></a>
+	</td>
+</tr>

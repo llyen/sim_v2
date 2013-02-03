@@ -90,9 +90,12 @@ class InvoicesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$objects = $this->getObjects();
+		$suppliers = $this->getSuppliers();
+		$tariffs = $this->getTariffs();
+		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Invoices']))
 		{
@@ -103,6 +106,9 @@ class InvoicesController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'objects'=>$objects,
+			'suppliers'=>$suppliers,
+			'tariffs'=>$tariffs,
 		));
 	}
 

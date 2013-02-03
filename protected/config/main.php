@@ -55,7 +55,9 @@ return array(
                                 '/logout'=>'site/logout',
                                 //'<controller:\w+>/<id:\d+>'=>'<controller>/index',
                                 'countersreadings/<cid:\d+>'=>'countersreadings/index',
+                                'invoicesdata/<iid:\d+>'=>'invoicesdata/index',
                                 '<controller:\w+>/<action:\w+>/<cid:\d+>/<id:\d+>'=>'<controller>/<action>',
+                                '<controller:\w+>/<action:\w+>/<iid:\d+>/<id:\d+>'=>'<controller>/<action>',
                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //default route
 			),

@@ -8,23 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Invoices', 'url'=>array('index')),
-	array('label'=>'Create Invoices', 'url'=>array('create')),
-	array('label'=>'Update Invoices', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Invoices', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Invoices', 'url'=>array('admin')),
+        array('label'=>'FAKTURY'),
+	array('label'=>'Wyświetl faktury', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz fakturę', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Invoices #<?php echo $model->id; ?></h1>
+<legend>Szczegóły</legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'tariff_id',
-		'object_id',
-		'supplier_id',
+		array('name'=>'tariff.name', 'label'=>'Taryfa'),
+		array('name'=>'object.name', 'label'=>'Obiekt'),
+		array('name'=>'supplier.name', 'label'=>'Dostawca'),
 		'period_since',
 		'period_to',
 		'issue_date',

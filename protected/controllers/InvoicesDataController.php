@@ -61,7 +61,7 @@ class InvoicesDataController extends Controller
 		$model=new InvoicesData;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['InvoicesData']))
 		{
@@ -85,7 +85,7 @@ class InvoicesDataController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['InvoicesData']))
 		{
@@ -116,10 +116,15 @@ class InvoicesDataController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($iid)
 	{
-		$dataProvider=new CActiveDataProvider('InvoicesData');
+		//$dataProvider=new CActiveDataProvider('InvoicesData');
+		//$invoicesDatas = Invoices::model()->findByPk($iid)->invoicesDatas;
+		//$dataProvider = new CArrayDataProvider($invoicesDatas);
+		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, tc.name as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id join tariffs_components tc on tc.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
+			'iid'=>$iid,
 			'dataProvider'=>$dataProvider,
 		));
 	}

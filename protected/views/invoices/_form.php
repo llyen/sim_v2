@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="Invoices_issue_date">Data płatności</label>
+		<label class="control-label" for="Invoices_issue_date">Data wystawienia</label>
 		<div class="controls">
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
