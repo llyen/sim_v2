@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
         array('label'=>'POZYCJE NA FAKTURZE'),
 	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/invoices')),
-	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'url'=>array("invoicesdata/$iid")),
+	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'url'=>array("invoicesData/$iid")),
         array('label'=>'Dodaj pozycję', 'icon'=>'pencil', 'active'=>'true', 'url'=>"$iid"),
 );
 ?>
