@@ -24,7 +24,7 @@
             'class'=>'bootstrap.widgets.TbMenu',
 	    'type'=>'pills',
             'items'=>array(
-                array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionpoints')),
+                array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionPoints')),
 			array('label'=>'LICZNIKI', 'url'=>array('/counters')),
 			array('label'=>'FAKTURY', 'url'=>array('/invoices')),
 			array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
