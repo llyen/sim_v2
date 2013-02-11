@@ -5515,3 +5515,29 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/sim/auth
 ---
+2013/02/11 18:12:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "units".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('units')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/units
+HTTP_REFERER=https://localhost/sim/
+---
+2013/02/11 19:33:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('units/admin')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/units/admin
+HTTP_REFERER=https://localhost/sim/units
+---

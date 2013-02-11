@@ -69,8 +69,8 @@ class Units extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'address' => 'Address',
+			'name' => 'Nazwa',
+			'address' => 'Adres',
 		);
 	}
 
