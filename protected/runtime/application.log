@@ -5391,3 +5391,48 @@ Stack trace:
 REQUEST_URI=/sim/invoices/delete/3
 HTTP_REFERER=https://localhost/sim/invoices
 ---
+2013/02/11 08:09:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'sreman10'@'localhost' (using password: YES)' in C:\xampp\htdocs\frameworks\yii\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\frameworks\yii\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\frameworks\yii\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\frameworks\yii\web\auth\CDbAuthManager.php(590): CModule->getComponent('db')
+#4 C:\xampp\htdocs\frameworks\yii\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\xampp\htdocs\frameworks\yii\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(186): CModule->getComponent('authManager')
+#7 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(798): CWebApplication->getAuthManager()
+#8 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(330): CWebUser->checkAccess('unit_admin')
+#9 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(268): CAccessRule->isRoleMatched(Object(CWebUser))
+#10 C:\xampp\htdocs\frameworks\yii\web\auth\CAccessControlFilter.php(126): CAccessRule->isUserAllowed(Object(CWebUser), Object(InvoicesController), Object(CInlineAction), '::1', 'GET')
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoices')
+#19 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/sim/invoices
+HTTP_REFERER=http://localhost/sim/
+---
+2013/02/11 08:10:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoicesData/vi...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/invoicesData/view/1
+HTTP_REFERER=https://localhost/sim/invoicesData/create/1
+---

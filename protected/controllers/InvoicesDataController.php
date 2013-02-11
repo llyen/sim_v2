@@ -71,7 +71,7 @@ class InvoicesDataController extends Controller
 		{
 			$model->attributes=$_POST['InvoicesData'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id, 'iid'=>$id));
 		}
 
 		$this->render('create',array(
@@ -98,7 +98,7 @@ class InvoicesDataController extends Controller
 		{
 			$model->attributes=$_POST['InvoicesData'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id, 'iid'=>$iid));
 		}
 
 		$this->render('update',array(
@@ -127,7 +127,7 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionIndex($iid)
 	{
-		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, tc.name as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id join tariffs_components tc on tc.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, (select name from tariffs_components tc where tc.id = ids.component_id) as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();//$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, tc.name as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id join tariffs_components tc on tc.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
 			'iid'=>$iid,

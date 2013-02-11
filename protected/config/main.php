@@ -27,9 +27,9 @@ return array(
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'admin',
+			'password'=>'Sim2013!',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			//'ipFilters'=>array('127.0.0.1','::1'),
                         // to enable bootstrap uncomment below
                         'generatorPaths'=>array('bootstrap.gii'),
 		),
@@ -54,10 +54,10 @@ return array(
                                 '/login'=>'site/login',
                                 '/logout'=>'site/logout',
                                 //'<controller:\w+>/<id:\d+>'=>'<controller>/index',
-                                'countersreadings/<cid:\d+>'=>'countersreadings/index',
-                                'invoicesdata/<iid:\d+>'=>'invoicesdata/index',
-                                'countersreadings/<action:\w+>/<cid:\d+>/<id:\d+>'=>'<controller>/<action>',
-                                'invoicesdata/<action:\w+>/<iid:\d+>/<id:\d+>'=>'<controller>/<action>',
+                                'countersReadings/<cid:\d+>'=>'countersReadings/index',
+                                'invoicesData/<iid:\d+>'=>'invoicesData/index',
+                                'countersReadings/<action:\w+>/<cid:\d+>/<id:\d+>'=>'<controller>/<action>',
+                                'invoicesData/<action:\w+>/<iid:\d+>/<id:\d+>'=>'<controller>/<action>',
                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //default route
 			),
