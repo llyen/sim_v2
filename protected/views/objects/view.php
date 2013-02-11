@@ -8,22 +8,28 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Objects', 'url'=>array('index')),
-	array('label'=>'Create Objects', 'url'=>array('create')),
-	array('label'=>'Update Objects', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Objects', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Objects', 'url'=>array('admin')),
+        array('label'=>'OBIEKTY'),
+	array('label'=>'Wyświetl obiekty', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz obiekt', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Objects #<?php echo $model->id; ?></h1>
+<legend>Szczegóły</legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'unit_id',
+		array('name'=>'unit.name', 'label'=>'Jednostka'),
 		'name',
 		'address',
+		'plot_number',
+		array(
+		      'name'=>'energy_certificate',
+		      'type'=>'raw',
+		      'value'=>'<a href="'.Yii::app()->request->baseUrl.'/files/'.$model->energy_certificate.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>',
+		),
+		'area',
+		'cubage',
+		'additional_information',
 	),
 )); ?>

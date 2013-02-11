@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Objects', 'url'=>array('index')),
-	array('label'=>'Manage Objects', 'url'=>array('admin')),
+        array('label'=>'OBIEKTY'),
+	array('label'=>'Wyświetl obiekty', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz obiekt', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Objects</h1>
+<legend>Utwórz obiekt</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'units'=>$units)); ?>

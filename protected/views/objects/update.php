@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Objects', 'url'=>array('index')),
-	array('label'=>'Create Objects', 'url'=>array('create')),
-	array('label'=>'View Objects', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Objects', 'url'=>array('admin')),
+        array('label'=>'OBIEKTY'),
+	array('label'=>'Wyświetl obiekty', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz obiekt', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Objects <?php echo $model->id; ?></h1>
+<legend>Edytuj obiekt <?php echo $model->name; ?></legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'units'=>$units)); ?>

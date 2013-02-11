@@ -71,19 +71,24 @@ class ObjectsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Objects;
-
+		$units=$this->getUnits();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Objects']))
 		{
 			$model->attributes=$_POST['Objects'];
+			$model->energy_certificate=CUploadedFile::getInstance($model, 'energy_certificate');
 			if($model->save())
+			{
+				$model->energy_certificate->saveAs(Yii::app()->basePath.'/../files/'.$model->energy_certificate);
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'units'=>$units,
 		));
 	}
 
@@ -95,19 +100,24 @@ class ObjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$units=$this->getUnits();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Objects']))
 		{
 			$model->attributes=$_POST['Objects'];
+			$model->energy_certificate=CUploadedFile::getInstance($model, 'energy_certificate');
 			if($model->save())
+			{
+				$model->energy_certificate->saveAs(Yii::app()->basePath.'/../files/'.$model->energy_certificate);
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'units'=>$units,
 		));
 	}
 
@@ -130,7 +140,8 @@ class ObjectsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Objects');
+		$data = Yii::app()->db->createCommand('select o.id, o.name, o.address, u.name as unit from objects o join units u on o.unit_id=u.id order by u.name, o.name')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -175,5 +186,14 @@ class ObjectsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getUnits()
+	{
+		$units = array();
+		$unitsModel = Units::model()->findAll();
+		foreach($unitsModel as $u)
+			$units[$u->id] = $u->name;
+		return $units;
 	}
 }

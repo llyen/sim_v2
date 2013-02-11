@@ -8,6 +8,11 @@
  * @property integer $unit_id
  * @property string $name
  * @property string $address
+ * @property string $plot_number
+ * @property string $energy_certificate
+ * @property string $area
+ * @property string $cubage
+ * @property string $additional_information
  *
  * The followings are the available model relations:
  * @property CollectionPoints[] $collectionPoints
@@ -45,10 +50,13 @@ class Objects extends CActiveRecord
 			array('name, address', 'required'),
 			array('unit_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>100),
-			array('address', 'length', 'max'=>255),
+			array('area, cubage', 'length', 'max'=>10),
+			array('address, plot_number, energy_certificate', 'length', 'max'=>255),
+			array('energy_certificate', 'file', 'types'=>'pdf, doc', 'allowEmpty'=>true),
+			array('additional_information', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, unit_id, name, address', 'safe', 'on'=>'search'),
+			array('id, unit_id, name, address, plot_number, energy_certificate, area, cubage, additional_information', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,9 +81,14 @@ class Objects extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'unit_id' => 'Unit',
-			'name' => 'Name',
-			'address' => 'Address',
+			'unit_id' => 'Jednostka',
+			'name' => 'Nazwa',
+			'address' => 'Adres',
+			'plot_number' => 'Numer działki',
+			'energy_certificate' => 'Świadectwo energetyczne',
+			'area' => 'Powierzchnia',
+			'cubage' => 'Kubatura',
+			'additional_information' => 'Dodatkowe informacje',
 		);
 	}
 
@@ -94,6 +107,11 @@ class Objects extends CActiveRecord
 		$criteria->compare('unit_id',$this->unit_id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('address',$this->address,true);
+		$criteria->compare('plot_number',$this->plot_number,true);
+		$criteria->compare('energy_certificate',$this->energy_certificate,true);
+		$criteria->compare('area',$this->area,true);
+		$criteria->compare('cubage',$this->cubage,true);
+		$criteria->compare('additional_information',$this->additional_information,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

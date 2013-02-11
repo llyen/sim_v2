@@ -20,10 +20,13 @@ $this->menu=array(
 			<th>Adres</th>
 			<th>Opcje</th>
 		</thead>
+		<tbody>
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 	'summaryText'=>'',
 	'emptyText'=>'Brak danych.',
 )); ?>
+		</tbody>
+	</table>
 </div>
