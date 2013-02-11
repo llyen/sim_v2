@@ -3,7 +3,7 @@
 class WebUser extends CWebUser
 {
 
-   private $_model;
+   /*private $_model;
 
    public function getModel()
    {
@@ -19,5 +19,13 @@ class WebUser extends CWebUser
    {
         $this->_model = Users::model()->findByAttributes(array('username' => Yii::app()->user->name));
         parent::login($identity, $duration);
+   }*/
+   
+   public function getRole()
+   {
+      $roles = Yii::app()->authManager->getRoles(Yii::app()->user->id);
+      $keys = array_keys($roles);
+      return array_shift($keys);
    }
+   
 }
