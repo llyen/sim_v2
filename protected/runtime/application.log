@@ -5507,3 +5507,11 @@ REQUEST_URI=/sim/
 in C:\xampp\htdocs\sim\protected\components\WebUser.php (27)
 in C:\xampp\htdocs\sim\protected\views\layouts\main.php (36)
 in C:\xampp\htdocs\sim\protected\controllers\SiteController.php (32)
+2013/02/11 17:53:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "auth".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('auth')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/auth
+---

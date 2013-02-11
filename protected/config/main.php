@@ -33,6 +33,7 @@ return array(
                         // to enable bootstrap uncomment below
                         'generatorPaths'=>array('bootstrap.gii'),
 		),
+                
 		
 	),
 

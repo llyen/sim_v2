@@ -16,7 +16,7 @@
 
         <?php
 	
-	if(Yii::app()->user->getRole() == 'admin')
+	if(!Yii::app()->user->isGuest && Yii::app()->user->getRole() == 'admin')
 	{
 		$this->widget('bootstrap.widgets.TbNavbar', array(
 		'brand'=>CHtml::encode(Yii::app()->name),
@@ -27,11 +27,30 @@
 			'class'=>'bootstrap.widgets.TbMenu',
 			'type'=>'pills',
 			'items'=>array(
-				array('label'=>'JEDNOSTKI', 'url'=>array('#')),
-				array('label'=>'DOSTAWCY', 'url'=>array('#')),
-				array('label'=>'TARYFY', 'url'=>array('#')),
-				array('label'=>'MEDIUM', 'url'=>array('#')),
-				array('label'=>'RAPORTY', 'url'=>array('#')),
+				array('label'=>'KONFIGURACJA', 'url'=>'#', 'items'=>
+				      array(
+					array('label'=>'OGÓLNE'),
+					array('label'=>'JEDNOSTKI', 'url'=>array('/units')),
+					array('label'=>'OBIEKTY', 'url'=>array('/objects')),
+					'---',
+					array('label'=>'UPRAWNIENIA'),
+					array('label'=>'UŻYTKOWNICY', 'url'=>array('/users')),
+					),
+				),
+				array('label'=>'SŁOWNIKI', 'url'=>'#', 'items'=>
+				      array(
+					array('label'=>'OGÓLNE'),
+					array('label'=>'MEDIUM', 'url'=>array('/mediums')),
+					array('label'=>'DOSTAWCY', 'url'=>array('/suppliers')),
+					'---',
+					array('label'=>'FAKTURY'),
+					array('label'=>'TYPY TARYF', 'url'=>array('/tariffsTypes')),
+					array('label'=>'TARYFY', 'url'=>array('/tariffs')),
+					array('label'=>'TYPY SKŁADNIKÓW TARYF', 'url'=>array('/tariffsComponentsTypes')),
+					array('label'=>'SKŁADNIKI TARYF', 'url'=>array('/tariffsComponents')),
+				      ),
+				),
+				array('label'=>'RAPORTY', 'url'=>array('/reports')),
 				//array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'WYLOGUJ ('.Yii::app()->user->name.')', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
