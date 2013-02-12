@@ -43,8 +43,10 @@ class TariffsComponentsController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 
@@ -55,9 +57,11 @@ class TariffsComponentsController extends Controller
 	public function actionCreate()
 	{
 		$model=new TariffsComponents;
-
+		$tariffs=$this->getTariffs();
+		$types=$this->getTypes();
+		$mediums=$this->getMediums();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['TariffsComponents']))
 		{
@@ -68,6 +72,9 @@ class TariffsComponentsController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'tariffs'=>$tariffs,
+			'types'=>$types,
+			'mediums'=>$mediums,
 		));
 	}
 
@@ -79,9 +86,11 @@ class TariffsComponentsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$tariffs=$this->getTariffs();
+		$types=$this->getTypes();
+		$mediums=$this->getMediums();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['TariffsComponents']))
 		{
@@ -92,6 +101,9 @@ class TariffsComponentsController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'tariffs'=>$tariffs,
+			'types'=>$types,
+			'mediums'=>$mediums,
 		));
 	}
 
@@ -160,5 +172,32 @@ class TariffsComponentsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getTariffs()
+	{
+		$tariffs = array();
+		$tariffsModel = Tariffs::model()->findAll();
+		foreach($tariffsModel as $t)
+			$tariffs[$t->id] = $t->name;
+		return $tariffs;
+	}
+	
+	protected function getTypes()
+	{
+		$types = array();
+		$typesModel = TariffsComponentsTypes::model()->findAll();
+		foreach($typesModel as $t)
+			$types[$t->id] = $t->type;
+		return $types;
+	}
+	
+	protected function getMediums()
+	{
+		$mediums = array();
+		$mediumsModel = Mediums::model()->findAll();
+		foreach($mediumsModel as $m)
+			$mediums[$m->id] = $m->name;
+		return $mediums;
 	}
 }

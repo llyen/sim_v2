@@ -6,79 +6,46 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'tariffs-components-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'type'=>'horizontal',
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+<fieldset>
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'tariff_id'); ?>
-		<?php echo $form->textField($model,'tariff_id'); ?>
-		<?php echo $form->error($model,'tariff_id'); ?>
+	<?php echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
+	<?php echo $form->dropDownListRow($model, 'type_id', $types); ?>
+	<?php echo $form->dropDownListRow($model, 'medium_id', $mediums); ?>
+	<?php echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+	<?php echo $form->textFieldRow($model,'unit',array('size'=>10,'maxlength'=>10)); ?>
+	<div class="control-group">
+		<label class="control-label" for="TariffsComponents_mandatory_date">Data obowiązywania</label>
+		<div class="controls">
+		<?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			'id'=>'TariffsComponents_mandatory_date',
+			'name'=>'TariffsComponents[mandatory_date]',
+			// additional javascript options for the date picker plugin
+			'options'=>array(
+			'showAnim'=>'fold',
+			'dateFormat'=>'yy-mm-dd',
+			'firstDay'=>1,
+			'changeMonth'=>true,
+			'changeYear'=>true,
+			),
+		));	
+		?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'type_id'); ?>
-		<?php echo $form->textField($model,'type_id'); ?>
-		<?php echo $form->error($model,'type_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'medium_id'); ?>
-		<?php echo $form->textField($model,'medium_id'); ?>
-		<?php echo $form->error($model,'medium_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'unit'); ?>
-		<?php echo $form->textField($model,'unit',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'unit'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mandatory_date'); ?>
-		<?php echo $form->textField($model,'mandatory_date'); ?>
-		<?php echo $form->error($model,'mandatory_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'price_per_unit'); ?>
-		<?php echo $form->textField($model,'price_per_unit',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'price_per_unit'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'vat'); ?>
-		<?php echo $form->textField($model,'vat'); ?>
-		<?php echo $form->error($model,'vat'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'multiplier'); ?>
-		<?php echo $form->textField($model,'multiplier',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'multiplier'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'archival'); ?>
-		<?php echo $form->textField($model,'archival'); ?>
-		<?php echo $form->error($model,'archival'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+	<?php echo $form->textFieldRow($model,'price_per_unit',array('size'=>10,'maxlength'=>10)); ?>
+	<?php echo $form->textFieldRow($model,'vat'); ?>
+	<?php echo $form->textFieldRow($model,'multiplier',array('size'=>10,'maxlength'=>10)); ?>
+	<?php echo $form->dropDownListRow($model,'archival', array(false=>'nie', true=>'tak')); ?>
+</fieldset>
+<div class="form-actions">
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
+</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

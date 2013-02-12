@@ -5993,3 +5993,28 @@ Stack trace:
 REQUEST_URI=/sim/tariffs/view/1
 HTTP_REFERER=https://localhost/sim/tariffs
 ---
+2013/02/12 19:49:57 [error] [php] Undefined variable: tariffs (C:\xampp\htdocs\sim\protected\views\tariffsComponents\_form.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): TariffsComponentsController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\views\tariffsComponents\update.php(21): TariffsComponentsController->renderPartial()
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): TariffsComponentsController->renderInternal()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): TariffsComponentsController->renderFile()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): TariffsComponentsController->renderPartial()
+#6 C:\xampp\htdocs\sim\protected\controllers\TariffsComponentsController.php(105): TariffsComponentsController->render()
+#7 unknown(0): TariffsComponentsController->actionUpdate()
+#8 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): TariffsComponentsController->runAction()
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): TariffsComponentsController->filterAccessControl()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): TariffsComponentsController->runActionWithFilters()
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): TariffsComponentsController->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/tariffsComponents/update/1
