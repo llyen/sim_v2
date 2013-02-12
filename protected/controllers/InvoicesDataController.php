@@ -62,7 +62,7 @@ class InvoicesDataController extends Controller
 		
 		$model=new InvoicesData;
 		//$invoices = $this->getInvoices();
-		$tariffsComponents = $this->getTariffsComponents();
+		$tariffsComponents = $this->getTariffsComponents($id);
 		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -90,7 +90,7 @@ class InvoicesDataController extends Controller
 	public function actionUpdate($id, $iid)
 	{
 		$model=$this->loadModel($id);
-		$tariffsComponents = $this->getTariffsComponents();
+		$tariffsComponents = $this->getTariffsComponents($iid);
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -127,7 +127,7 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionIndex($iid)
 	{
-		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, (select name from tariffs_components tc where tc.id = ids.component_id) as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();//$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, tc.name as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id join tariffs_components tc on tc.tariff_id = t.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, (select name from tariffs_components tc where tc.id = ids.component_id) as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id where ids.invoice_id = '.$iid.' and i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
 			'iid'=>$iid,
@@ -185,10 +185,11 @@ class InvoicesDataController extends Controller
 		return $invoices;
 	}*/
 	
-	protected function getTariffsComponents()
+	protected function getTariffsComponents($invoiceId)
 	{
+		$invoice = Invoices::model()->findByPk($invoiceId);
 		$tariffsComponents = array();
-		$tariffsComponentsModel = TariffsComponents::model()->findAll(); // findBySql -> only components for known tariff id
+		$tariffsComponentsModel = TariffsComponents::model()->findAllBySql('select tc.id, tc.name from tariffs_components tc where tc.tariff_id='.$invoice->tariff_id);//TariffsComponents::model()->findAll(); // findBySql -> only components for known tariff id
 		foreach($tariffsComponentsModel as $tc)
 			$tariffsComponents[$tc->id] = $tc->name;
 		return $tariffsComponents;
