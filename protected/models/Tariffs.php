@@ -76,10 +76,10 @@ class Tariffs extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'type_id' => 'Type',
-			'supplier_id' => 'Supplier',
-			'name' => 'Name',
-			'mandatory_date' => 'Mandatory Date',
+			'type_id' => 'Typ',
+			'supplier_id' => 'Dostawca',
+			'name' => 'Nazwa',
+			'mandatory_date' => 'Data obowiązywania',
 		);
 	}
 

@@ -5817,3 +5817,117 @@ Stack trace:
 #20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
 #21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/suppliers/update/1
+2013/02/12 08:31:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tariffTypes/update".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffTypes/upd...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/tariffTypes/update/1
+HTTP_REFERER=https://localhost/sim/tariffsTypes/index
+---
+2013/02/12 08:33:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/reports
+HTTP_REFERER=https://localhost/sim/
+---
+2013/02/12 08:49:52 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (C:\xampp\htdocs\frameworks\yii\web\helpers\CHtml.php:85)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(131): require()
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): TariffsController->renderInternal()
+#2 C:\xampp\htdocs\frameworks\yii\zii\widgets\CListView.php(260): TariffsController->renderFile()
+#3 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(161): CListView->renderItems()
+#4 unknown(0): CListView->renderSection()
+#5 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(144): preg_replace_callback()
+#6 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(129): CListView->renderContent()
+#7 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): CListView->run()
+#8 C:\xampp\htdocs\sim\protected\views\tariffs\index.php(32): TariffsController->widget()
+#9 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#10 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): TariffsController->renderInternal()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): TariffsController->renderFile()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): TariffsController->renderPartial()
+#13 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(128): TariffsController->render()
+#14 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): TariffsController->actionIndex()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): TariffsController->runAction()
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#18 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): TariffsController->filterAccessControl()
+#20 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#22 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): TariffsController->runActionWithFilters()
+#23 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): TariffsController->run()
+#24 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#25 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/tariffs
+2013/02/12 09:12:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.type' in 'field list'. The SQL statement executed was: select t.id, t.name, t.type, t.mandatory_date, s.name as supplier from tariffs t join suppliers s on t.supplier_id=s.id.
+2013/02/12 09:12:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.type' in 'field list'' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(117): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): TariffsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffs')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/tariffs
+HTTP_REFERER=https://localhost/sim/tariffsComponents
+---
+2013/02/12 09:12:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tt.type' in 'field list'. The SQL statement executed was: select t.id, t.name, tt.type, t.mandatory_date, s.name as supplier from tariffs t join suppliers s on t.supplier_id=s.id join tariffs_types on t.tariff_type=tt.id.
+2013/02/12 09:12:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tt.type' in 'field list'' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(117): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): TariffsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffs')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/tariffs
+HTTP_REFERER=https://localhost/sim/tariffsComponents
+---
+2013/02/12 09:13:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tt.type' in 'field list'. The SQL statement executed was: select t.id, t.name, tt.type, t.mandatory_date, s.name as supplier from tariffs t join suppliers s on t.supplier_id=s.id join tariffs_types on t.type_id=tt.id.
+2013/02/12 09:13:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tt.type' in 'field list'' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(117): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): TariffsController->actionIndex()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffs')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/tariffs
+HTTP_REFERER=https://localhost/sim/tariffsComponents
+---

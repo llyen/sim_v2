@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Tariffs', 'url'=>array('index')),
-	array('label'=>'Create Tariffs', 'url'=>array('create')),
-	array('label'=>'View Tariffs', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Tariffs', 'url'=>array('admin')),
+        array('label'=>'TARYFY'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz taryfę', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Tariffs <?php echo $model->id; ?></h1>
+<legend>Edytuj taryfę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'suppliers'=>$suppliers, 'types'=>$types)); ?>

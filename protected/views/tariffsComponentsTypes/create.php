@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TariffsComponentsTypes', 'url'=>array('index')),
-	array('label'=>'Manage TariffsComponentsTypes', 'url'=>array('admin')),
+        array('label'=>'TYPY SKŁADNIKÓW TARYF'),
+	array('label'=>'Wyświetl listę typów', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz typ składnika', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create TariffsComponentsTypes</h1>
+<legend>Utwórz typ składnika</legend>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

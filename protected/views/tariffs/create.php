@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Tariffs', 'url'=>array('index')),
-	array('label'=>'Manage Tariffs', 'url'=>array('admin')),
+        array('label'=>'TARYFY'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz taryfę', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Tariffs</h1>
+<legend>Utwórz taryfę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'suppliers'=>$suppliers, 'types'=>$types)); ?>

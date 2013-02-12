@@ -20,7 +20,7 @@
 	{
 		$this->widget('bootstrap.widgets.TbNavbar', array(
 		'brand'=>CHtml::encode(Yii::app()->name),
-		'brandUrl'=>Yii::app()->baseUrl,
+		'brandUrl'=>Yii::app()->request->baseUrl,
 		'collapse'=>true, // requires bootstrap-responsive.css
 		'items'=>array(
 		array(
@@ -61,7 +61,7 @@
 	{
 		$this->widget('bootstrap.widgets.TbNavbar', array(
 		'brand'=>CHtml::encode(Yii::app()->name),
-		'brandUrl'=>Yii::app()->baseUrl,
+		'brandUrl'=>Yii::app()->request->baseUrl,
 		'collapse'=>true, // requires bootstrap-responsive.css
 		'items'=>array(
 		array(

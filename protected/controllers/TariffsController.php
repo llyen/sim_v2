@@ -27,17 +27,9 @@ class TariffsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+			array('allow',
+				'actions'=>array('index','view','create','update','delete'),
 				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,9 +55,10 @@ class TariffsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Tariffs;
-
+		$suppliers=$this->getSuppliers();
+		$types=$this->getTypes();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Tariffs']))
 		{
@@ -76,6 +69,8 @@ class TariffsController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'suppliers'=>$suppliers,
+			'types'=>$types,
 		));
 	}
 
@@ -87,9 +82,10 @@ class TariffsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$suppliers=$this->getSuppliers();
+		$types=$this->getTypes();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Tariffs']))
 		{
@@ -100,6 +96,8 @@ class TariffsController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'suppliers'=>$suppliers,
+			'types'=>$types,
 		));
 	}
 
@@ -122,7 +120,8 @@ class TariffsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Tariffs');
+		$tariffs=Yii::app()->db->createCommand('select t.id, t.name, tt.type, t.mandatory_date, s.name as supplier from tariffs t join suppliers s on t.supplier_id=s.id join tariffs_types tt on t.type_id=tt.id')->queryAll();
+		$dataProvider=new CArrayDataProvider($tariffs);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -167,5 +166,23 @@ class TariffsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getSuppliers()
+	{
+		$suppliers = array();
+		$suppliersModel = Suppliers::model()->findAll();
+		foreach($suppliersModel as $s)
+			$suppliers[$s->id] = $s->name;
+		return $suppliers;
+	}
+	
+	protected function getTypes()
+	{
+		$types = array();
+		$typesModel = TariffsTypes::model()->findAll();
+		foreach($typesModel as $t)
+			$types[$t->id] = $t->type;
+		return $types;
 	}
 }

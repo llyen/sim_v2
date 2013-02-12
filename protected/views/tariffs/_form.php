@@ -6,42 +6,41 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'tariffs-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'type'=>'horizontal',
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+<fieldset>
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'type_id'); ?>
-		<?php echo $form->textField($model,'type_id'); ?>
-		<?php echo $form->error($model,'type_id'); ?>
+	<?php echo $form->dropDownListRow($model, 'type_id', $types); ?>
+	<?php echo $form->dropDownListRow($model, 'supplier_id', $suppliers); ?>
+	<?php echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+	<div class="control-group">
+		<label class="control-label" for="Tariffs_mandatory_date">Data obowiązywania</label>
+		<div class="controls">
+		<?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			'id'=>'Tariffs_mandatory_date',
+			'name'=>'Tariffs[mandatory_date]',
+			// additional javascript options for the date picker plugin
+			'options'=>array(
+			'showAnim'=>'fold',
+			'dateFormat'=>'yy-mm-dd',
+			'firstDay'=>1,
+			'changeMonth'=>true,
+			'changeYear'=>true,
+			),
+		));	
+		?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'supplier_id'); ?>
-		<?php echo $form->textField($model,'supplier_id'); ?>
-		<?php echo $form->error($model,'supplier_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mandatory_date'); ?>
-		<?php echo $form->textField($model,'mandatory_date'); ?>
-		<?php echo $form->error($model,'mandatory_date'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+</fieldset>
+<div class="form-actions">
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
+</div>
 
 <?php $this->endWidget(); ?>
 

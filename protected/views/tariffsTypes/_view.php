@@ -3,15 +3,10 @@
 /* @var $data TariffsTypes */
 ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
-	<?php echo CHtml::encode($data->type); ?>
-	<br />
-
-
-</div>
+<tr>
+	<td><?php echo CHtml::encode($data->type); ?></td>
+	<td>
+		<a href="<?php echo Yii::app()->createUrl('tariffsTypes/view', array('id'=>$data['id'])); ?>" title="podgląd"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/list.png" alt="podgląd" /></a>
+		<a href="<?php echo Yii::app()->createUrl('tariffsTypes/update', array('id'=>$data['id'])); ?>" title="edycja"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/update.png" alt="edycja" /></a>
+	</td>
+</tr>

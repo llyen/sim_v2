@@ -65,7 +65,7 @@ class TariffsComponentsTypes extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'type' => 'Type',
+			'type' => 'Typ',
 		);
 	}
 
