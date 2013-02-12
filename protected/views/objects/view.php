@@ -26,7 +26,7 @@ $this->menu=array(
 		array(
 		      'name'=>'energy_certificate',
 		      'type'=>'raw',
-		      'value'=>'<a href="'.Yii::app()->request->baseUrl.'/files/'.$model->energy_certificate.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>',
+		      'value'=>(is_null($model->energy_certificate)) ? 'Brak powiązanego pliku.' : '<a href="'.Yii::app()->request->baseUrl.'/files/'.$model->energy_certificate.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>',
 		),
 		'area',
 		'cubage',

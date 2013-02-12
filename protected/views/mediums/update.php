@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Mediums', 'url'=>array('index')),
-	array('label'=>'Create Mediums', 'url'=>array('create')),
-	array('label'=>'View Mediums', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Mediums', 'url'=>array('admin')),
+        array('label'=>'MEDIUM'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz medium', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Mediums <?php echo $model->id; ?></h1>
+<legend>Edytuj medium</legend>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Mediums', 'url'=>array('index')),
-	array('label'=>'Manage Mediums', 'url'=>array('admin')),
+        array('label'=>'MEDIUM'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz medium', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Mediums</h1>
+<legend>Utwórz medium</legend>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
