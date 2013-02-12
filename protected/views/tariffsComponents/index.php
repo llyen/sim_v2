@@ -7,14 +7,29 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create TariffsComponents', 'url'=>array('create')),
-	array('label'=>'Manage TariffsComponents', 'url'=>array('admin')),
+        array('label'=>'SKŁADNIKI TARYF'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'active'=>true, 'url'=>array('index')),
+        array('label'=>'Utwórz składnik', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Tariffs Components</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="window">
+	<legend>Składniki taryf</legend>
+	<table>
+		<thead>
+			<th>Taryfa</th>
+			<th>Nazwa</th>
+			<th>Medium</th>
+			<th>Data obowiązywania</th>
+			<th>Operacje</th>
+		</thead>
+		<tbody>		
+			<?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'itemView'=>'_view',
+				'summaryText'=>'',
+				'emptyText'=>'Brak danych.',
+			)); ?>		
+		</tbody>
+	</table>
+</div>

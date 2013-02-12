@@ -8,22 +8,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Tariffs', 'url'=>array('index')),
-	array('label'=>'Create Tariffs', 'url'=>array('create')),
-	array('label'=>'Update Tariffs', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Tariffs', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Tariffs', 'url'=>array('admin')),
+        array('label'=>'TARYFY'),
+	array('label'=>'Wyświetl listę', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz taryfę', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Tariffs #<?php echo $model->id; ?></h1>
+<legend>Szczegóły</legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'type_id',
-		'supplier_id',
+		array('name'=>'type.type', 'label'=>'Typ'),
+		array('name'=>'supplier.name', 'label'=>'Dostawca'),
 		'name',
 		'mandatory_date',
 	),

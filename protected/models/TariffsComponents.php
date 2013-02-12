@@ -83,16 +83,16 @@ class TariffsComponents extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'tariff_id' => 'Tariff',
-			'type_id' => 'Type',
+			'tariff_id' => 'Taryfa',
+			'type_id' => 'Typ',
 			'medium_id' => 'Medium',
-			'name' => 'Name',
-			'unit' => 'Unit',
-			'mandatory_date' => 'Mandatory Date',
-			'price_per_unit' => 'Price Per Unit',
+			'name' => 'Nazwa',
+			'unit' => 'Jednostka',
+			'mandatory_date' => 'Data obowiązywania',
+			'price_per_unit' => 'Cena za jednostkę',
 			'vat' => 'Vat',
-			'multiplier' => 'Multiplier',
-			'archival' => 'Archival',
+			'multiplier' => 'Mnożnik',
+			'archival' => 'Czy archiwalny',
 		);
 	}
 

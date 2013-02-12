@@ -5931,3 +5931,65 @@ Stack trace:
 REQUEST_URI=/sim/tariffs
 HTTP_REFERER=https://localhost/sim/tariffsComponents
 ---
+2013/02/12 12:53:16 [error] [exception.CException] exception 'CException' with message 'Property "Tariffs.tariffType" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(144): CComponent->__get('tariffType')
+#1 C:\xampp\htdocs\frameworks\yii\web\helpers\CHtml.php(1809): CActiveRecord->__get('tariffType')
+#2 C:\xampp\htdocs\frameworks\yii\zii\widgets\CDetailView.php(212): CHtml::value(Object(Tariffs), 'tariffType.name')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): CDetailView->run()
+#4 C:\xampp\htdocs\sim\protected\views\tariffs\view.php(27): CBaseController->widget('bootstrap.widge...', Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(48): CController->render('view', Array)
+#10 [internal function]: TariffsController->actionView('1')
+#11 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TariffsController), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TariffsController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#22 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffs/view')
+#23 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/sim/tariffs/view/1
+HTTP_REFERER=https://localhost/sim/tariffs
+---
+2013/02/12 12:53:56 [error] [exception.CException] exception 'CException' with message 'Property "TariffsTypes.name" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(144): CComponent->__get('name')
+#1 C:\xampp\htdocs\frameworks\yii\web\helpers\CHtml.php(1809): CActiveRecord->__get('name')
+#2 C:\xampp\htdocs\frameworks\yii\zii\widgets\CDetailView.php(212): CHtml::value(Object(Tariffs), 'type.name')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): CDetailView->run()
+#4 C:\xampp\htdocs\sim\protected\views\tariffs\view.php(27): CBaseController->widget('bootstrap.widge...', Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 C:\xampp\htdocs\sim\protected\controllers\TariffsController.php(48): CController->render('view', Array)
+#10 [internal function]: TariffsController->actionView('1')
+#11 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TariffsController), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TariffsController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#22 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('tariffs/view')
+#23 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/sim/tariffs/view/1
+HTTP_REFERER=https://localhost/sim/tariffs
+---

@@ -188,7 +188,7 @@ class InvoicesDataController extends Controller
 	protected function getTariffsComponents()
 	{
 		$tariffsComponents = array();
-		$tariffsComponentsModel = TariffsComponents::model()->findAll();
+		$tariffsComponentsModel = TariffsComponents::model()->findAll(); // findBySql -> only components for known tariff id
 		foreach($tariffsComponentsModel as $tc)
 			$tariffsComponents[$tc->id] = $tc->name;
 		return $tariffsComponents;
