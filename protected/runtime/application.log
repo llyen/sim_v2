@@ -5762,3 +5762,58 @@ Stack trace:
 REQUEST_URI=/sim/objects/view/1
 HTTP_REFERER=https://localhost/sim/objects/index
 ---
+2013/02/12 08:02:29 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "dropDownFieldRow".' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\views\suppliers\_form.php(17): CComponent->__call('dropDownFieldRo...', Array)
+#1 C:\xampp\htdocs\sim\protected\views\suppliers\_form.php(17): TbActiveForm->dropDownFieldRow(Object(Suppliers), 'medium_id', Array)
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\sim\protected\views\suppliers\create.php(19): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\sim\protected\controllers\SuppliersController.php(72): CController->render('create', Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SuppliersController->actionCreate()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('create')
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('suppliers/creat...')
+#22 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sim/suppliers/create
+HTTP_REFERER=https://localhost/sim/suppliers
+---
+2013/02/12 08:03:40 [error] [php] Undefined variable: mediums (C:\xampp\htdocs\sim\protected\views\suppliers\_form.php:17)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): SuppliersController->renderFile()
+#1 C:\xampp\htdocs\sim\protected\views\suppliers\update.php(21): SuppliersController->renderPartial()
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): SuppliersController->renderInternal()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): SuppliersController->renderFile()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): SuppliersController->renderPartial()
+#6 C:\xampp\htdocs\sim\protected\controllers\SuppliersController.php(97): SuppliersController->render()
+#7 unknown(0): SuppliersController->actionUpdate()
+#8 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SuppliersController->runAction()
+#12 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): SuppliersController->filterAccessControl()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SuppliersController->runActionWithFilters()
+#18 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SuppliersController->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/suppliers/update/1

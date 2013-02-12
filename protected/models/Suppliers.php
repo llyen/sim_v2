@@ -73,8 +73,8 @@ class Suppliers extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'medium_id' => 'Medium',
-			'name' => 'Name',
-			'address' => 'Address',
+			'name' => 'Nazwa',
+			'address' => 'Adres',
 		);
 	}
 

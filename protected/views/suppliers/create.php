@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Suppliers', 'url'=>array('index')),
-	array('label'=>'Manage Suppliers', 'url'=>array('admin')),
+        array('label'=>'DOSTAWCY'),
+	array('label'=>'Wyświetl listę dostawców', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz dostawcę', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Suppliers</h1>
+<legend>Utwórz dostawcę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'mediums'=>$mediums)); ?>

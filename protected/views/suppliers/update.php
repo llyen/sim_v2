@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Suppliers', 'url'=>array('index')),
-	array('label'=>'Create Suppliers', 'url'=>array('create')),
-	array('label'=>'View Suppliers', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Suppliers', 'url'=>array('admin')),
+        array('label'=>'DOSTAWCY'),
+	array('label'=>'Wyświetl listę dostawców', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Utwórz dostawcę', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Suppliers <?php echo $model->id; ?></h1>
+<legend>Edytuj dostawcę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'mediums'=>$mediums)); ?>

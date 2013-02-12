@@ -27,17 +27,9 @@ class SuppliersController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+			array('allow',
+				'actions'=>array('index','view','create','update','delete'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,9 +55,9 @@ class SuppliersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Suppliers;
-
+		$mediums=$this->getMediums();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Suppliers']))
 		{
@@ -76,6 +68,7 @@ class SuppliersController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'mediums'=>$mediums,
 		));
 	}
 
@@ -87,9 +80,9 @@ class SuppliersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$mediums=$this->getMediums();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Suppliers']))
 		{
@@ -100,6 +93,7 @@ class SuppliersController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'mediums'=>$mediums,
 		));
 	}
 
@@ -122,7 +116,8 @@ class SuppliersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Suppliers');
+		$suppliers=Yii::app()->db->createCommand('select s.id, s.name, m.name as medium, s.address from suppliers s join mediums m on s.medium_id=m.id order by medium asc')->queryAll();
+		$dataProvider=new CArrayDataProvider($suppliers);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -167,5 +162,14 @@ class SuppliersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getMediums()
+	{
+		$mediums = array();
+		$mediumsModel = Mediums::model()->findAll();
+		foreach($mediumsModel as $m)
+			$mediums[$m->id] = $m->name;
+		return $mediums;
 	}
 }
