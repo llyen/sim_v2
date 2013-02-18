@@ -105,4 +105,10 @@ class Users extends CActiveRecord
 		$this->password = $pass;
 		return true;
         }
+	
+	public function beforeValidate()
+	{
+		$this->unit_id = ($this->unit_id==0) ? '' : $this->unit_id;
+		return parent::beforeValidate();	
+	}
 }

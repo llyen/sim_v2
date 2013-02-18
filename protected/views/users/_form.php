@@ -6,36 +6,22 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'users-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'type'=>'horizontal',
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+<fieldset>
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'unit_id'); ?>
-		<?php echo $form->textField($model,'unit_id'); ?>
-		<?php echo $form->error($model,'unit_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+	<?php echo $form->dropDownListRow($model, 'unit_id', $units); ?>
+	<?php echo $form->textFieldRow($model, 'username', array('size'=>60, 'maxlength'=>100)); ?>
+	<?php echo $form->passwordFieldRow($model, 'password', array('size'=>60, 'maxlength'=>100)); ?>
+</fieldset>
+<div class="form-actions">
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>
+    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
+</div>
 
 <?php $this->endWidget(); ?>
 

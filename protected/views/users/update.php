@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Users', 'url'=>array('index')),
-	array('label'=>'Create Users', 'url'=>array('create')),
-	array('label'=>'View Users', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+        array('label'=>'UŻYTKOWNICY'),
+	array('label'=>'Wyświetl listę użytkowników', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Dodaj użytkownika', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Users <?php echo $model->id; ?></h1>
+<legend>Edytuj użytkownika</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'units'=>$units)); ?>

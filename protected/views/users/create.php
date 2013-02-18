@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Users', 'url'=>array('index')),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+        array('label'=>'UŻYTKOWNICY'),
+	array('label'=>'Wyświetl listę użytkowników', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Dodaj użytkownika', 'icon'=>'pencil', 'active'=>true, 'url'=>array('create')),
 );
 ?>
 
-<h1>Create Users</h1>
+<legend>Dodaj użytkownika</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'units'=>$units)); ?>

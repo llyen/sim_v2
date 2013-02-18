@@ -7,14 +7,27 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Users', 'url'=>array('create')),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+        array('label'=>'UŻYTKOWNICY'),
+	array('label'=>'Wyświetl listę użytkowników', 'icon'=>'book', 'active'=>true, 'url'=>array('index')),
+        array('label'=>'Dodaj użytkownika', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>Users</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="window">
+	<legend>Użytkownicy</legend>
+	<table>
+		<thead>
+			<th>Jednostka</th>
+			<th>Użytkownik</th>
+			<th>Opcje</th>
+		</thead>
+		<tbody>			
+		<?php $this->widget('zii.widgets.CListView', array(
+			'dataProvider'=>$dataProvider,
+			'itemView'=>'_view',
+			'summaryText'=>'',
+			'emptyText'=>'Brak danych.',
+		)); ?>
+		</tbody>
+	</table>
+</div>

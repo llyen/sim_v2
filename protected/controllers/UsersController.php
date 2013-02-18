@@ -55,9 +55,9 @@ class UsersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Users;
-
+		$units = $this->getUnits();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
@@ -68,6 +68,7 @@ class UsersController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'units'=>$units,
 		));
 	}
 
@@ -80,8 +81,9 @@ class UsersController extends Controller
 	{
 		$model=$this->loadModel($id);
 		unset($model->password);
+		$units = $this->getUnits();
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Users']))
 		{
@@ -92,6 +94,7 @@ class UsersController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'units'=>$units,
 		));
 	}
 
@@ -114,7 +117,8 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Users');
+		$users = Yii::app()->db->createCommand('select usr.id, u.name as unit, usr.username from users usr left join units u on usr.unit_id=u.id order by unit asc')->queryAll();
+		$dataProvider=new CArrayDataProvider($users);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -159,5 +163,15 @@ class UsersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getUnits()
+	{
+		$units = array();
+		$units[0]='-- brak jednostki --';
+		$unitsModel = Units::model()->findAll();
+		foreach($unitsModel as $u)
+			$units[$u->id] = $u->name;
+		return $units;
 	}
 }
