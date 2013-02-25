@@ -63,6 +63,7 @@ class InvoicesController extends Controller
 		$objects = $this->getObjects();
 		$suppliers = $this->getSuppliers();
 		$tariffs = $this->getTariffs();
+		$statuses = $this->getStatuses();
 		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -79,6 +80,7 @@ class InvoicesController extends Controller
 			'objects'=>$objects,
 			'suppliers'=>$suppliers,
 			'tariffs'=>$tariffs,
+			'statuses'=>$statuses,
 		));
 	}
 
@@ -93,6 +95,7 @@ class InvoicesController extends Controller
 		$objects = $this->getObjects();
 		$suppliers = $this->getSuppliers();
 		$tariffs = $this->getTariffs();
+		$statuses = $this->getStatuses();
 		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -101,7 +104,11 @@ class InvoicesController extends Controller
 		{
 			$model->attributes=$_POST['Invoices'];
 			if($model->save())
+			{
+				//if(is_object($model->file_src))
+				//	$model->file_src->saveAs(Yii::app()->basePath.'/../invoices/'.$model->file_src);
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -109,6 +116,7 @@ class InvoicesController extends Controller
 			'objects'=>$objects,
 			'suppliers'=>$suppliers,
 			'tariffs'=>$tariffs,
+			'statuses'=>$statuses,
 		));
 	}
 
@@ -131,11 +139,13 @@ class InvoicesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$statuses = $this->getStatuses();
+		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'statuses'=>$statuses,
 		));
 	}
 
@@ -205,5 +215,11 @@ class InvoicesController extends Controller
 		foreach($tariffsModel as $t)
 			$tariffs[$t->id] = $t->name;
 		return $tariffs;
+	}
+	
+	protected function getStatuses()
+	{
+		$statuses = array(0 => 'nowa', 1 => 'zatwierdzona', 2 => 'odrzucona');
+		return $statuses;
 	}
 }

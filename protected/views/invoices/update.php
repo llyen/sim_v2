@@ -17,4 +17,4 @@ $this->menu=array(
 
 <legend>Edytuj fakturę</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'objects'=>$objects, 'suppliers'=>$suppliers, 'tariffs'=>$tariffs)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'objects'=>$objects, 'suppliers'=>$suppliers, 'tariffs'=>$tariffs, 'statuses'=>$statuses)); ?>

@@ -17,16 +17,18 @@ $this->menu=array(
 	<legend>Zestawienie faktur</legend>
 	<table>
 		<thead>
+			<th>Status</th>
 			<th>Obiekt</th>
 			<th>Dostawca</th>
 			<th>Okres od</th>
 			<th>Okres do</th>
-			<th>Data wystawienia</th>
+			<!--<th>Data wystawienia</th>-->
 			<th>Operacje</th>
 		</thead>
 		<tbody>
 			<?php $this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
+				'viewData'=>array('statuses'=>$statuses),
 				'itemView'=>'_view',
 				'summaryText'=>'',
 				'emptyText'=>'Brak danych.',

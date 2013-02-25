@@ -13,6 +13,42 @@
 )); ?>
 <fieldset>
 	<?php echo $form->errorSummary($model); ?>
+	<?php
+		if(!Yii::app()->user->isGuest && Yii::app()->user->getRole() == 'admin')
+		{
+			echo $form->dropDownListRow($model, 'status', $statuses);
+		}
+		else
+		{
+	?>
+	<div class="control-group">
+		<label class="control-label" for="Invoices_status">Status</label>
+		<div class="controls" style="line-height: 2em;">
+			<?php
+				switch($model->status)
+				{
+					case 1:
+						$type = 'success';
+						break;
+			
+					case 2:
+						$type = 'important';
+						break;
+			
+					default:
+						$type = 'info';
+				}
+		
+			$this->widget('bootstrap.widgets.TbLabel', array(
+				'type'=>$type,
+				'label'=>$statuses[$model->status],
+			));
+			?>
+		</div>
+	</div>
+	<?php
+		}
+	?>
 	<?php echo $form->dropDownListRow($model, 'object_id', $objects); ?>
 	<?php echo $form->dropDownListRow($model, 'supplier_id', $suppliers); ?>
 	<?php echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
