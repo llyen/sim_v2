@@ -15,6 +15,8 @@
  * @property string $create_user
  * @property string $update_date
  * @property string $update_user
+ * @property integer $status
+ * @property string $file_src
  *
  * The followings are the available model relations:
  * @property Tariffs $tariff
@@ -51,12 +53,14 @@ class Invoices extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('tariff_id, object_id, supplier_id, create_date, create_user, update_date, update_user', 'required'),
-			array('tariff_id, object_id, supplier_id', 'numerical', 'integerOnly'=>true),
+			array('tariff_id, object_id, supplier_id, status', 'numerical', 'integerOnly'=>true),
 			array('create_user, update_user', 'length', 'max'=>100),
+			array('file_src', 'length', 'max'=>255),
 			array('period_since, period_to, issue_date', 'safe'),
+			array('file_src', 'file', 'types'=>'pdf, jpg', 'allowEmpty'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),
+			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -92,6 +96,8 @@ class Invoices extends CActiveRecord
 			'create_user' => 'Utworzona przez',
 			'update_date' => 'Data aktualizacji',
 			'update_user' => 'Aktualizowana przez',
+			'status' => 'Status',
+			'file_src' => 'Skan faktury',
 		);
 	}
 
@@ -117,7 +123,9 @@ class Invoices extends CActiveRecord
 		$criteria->compare('create_user',$this->create_user,true);
 		$criteria->compare('update_date',$this->update_date,true);
 		$criteria->compare('update_user',$this->update_user,true);
-
+		$criteria->compare('status',$this->status);
+		$criteria->compare('file_src',$this->file_src,true);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -130,6 +138,7 @@ class Invoices extends CActiveRecord
 		if($this->isNewRecord){
 			$this->create_user=Yii::app()->user->name;
 			$this->create_date=new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+			$this->status=0;
 		}
 
 		return parent::beforeValidate();	

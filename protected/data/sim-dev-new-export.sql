@@ -335,7 +335,7 @@ ALTER TABLE `authitemchild`
 -- Ograniczenia dla tabeli `collection_points`
 --
 ALTER TABLE `collection_points`
-  ADD CONSTRAINT `collection_points_ibfk_1` FOREIGN KEY (`object_id`) REFERENCES `objects` (`id`) ON DELETE NO ACTION;
+  ADD CONSTRAINT `collection_points_ibfk_1` FOREIGN KEY (`object_id`) REFERENCES `objects` (`id`) ON DELETE CASCADE;
 
 --
 -- Ograniczenia dla tabeli `counters`

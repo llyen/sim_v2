@@ -6085,3 +6085,188 @@ Stack trace:
 #18 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
 #19 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/users/create
+2013/02/20 11:03:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "files/DST_DostepDoUSK_Student2.pdf".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('files/DST_Doste...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/files/DST_DostepDoUSK_Student2.pdf
+HTTP_REFERER=https://localhost/sim/objects/view/6
+---
+2013/02/24 20:38:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1117): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('objects/delete')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/objects/delete
+HTTP_REFERER=https://localhost/sim/objects
+---
+2013/02/24 20:40:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('otherConnection...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/otherConnections/view
+---
+2013/02/24 20:40:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('otherConnection...')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/otherConnections/view
+---
+2013/02/24 20:46:50 [error] [php] Undefined variable: model (C:\xampp\htdocs\sim\protected\views\objects\_view.php:13)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\zii\widgets\CListView.php(260): ObjectsController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(161): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(144): preg_replace_callback()
+#4 C:\xampp\htdocs\frameworks\yii\zii\widgets\CBaseListView.php(129): CListView->renderContent()
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): CListView->run()
+#6 C:\xampp\htdocs\sim\protected\views\objects\index.php(31): ObjectsController->widget()
+#7 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#8 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): ObjectsController->renderInternal()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): ObjectsController->renderFile()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): ObjectsController->renderPartial()
+#11 C:\xampp\htdocs\sim\protected\controllers\ObjectsController.php(148): ObjectsController->render()
+#12 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): ObjectsController->actionIndex()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): ObjectsController->runAction()
+#15 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): ObjectsController->filterAccessControl()
+#18 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): ObjectsController->runActionWithFilters()
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): ObjectsController->run()
+#22 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#23 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/objects
+2013/02/24 20:47:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\frameworks\yii\web\CController.php:1119
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('objects/delete')
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/sim/objects/delete/6
+HTTP_REFERER=https://localhost/sim/objects
+---
+2013/02/24 20:48:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`collection_points`, CONSTRAINT `collection_points_ibfk_1` FOREIGN KEY (`object_id`) REFERENCES `objects` (`id`) ON DELETE NO ACTION). The SQL statement executed was: DELETE FROM `objects` WHERE `objects`.`id`=2.
+2013/02/24 20:48:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`collection_points`, CONSTRAINT `collection_points_ibfk_1` FOREIGN KEY (`object_id`) REFERENCES `objects` (`id`) ON DELETE NO ACTION)' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1739): CDbCommand->execute()
+#1 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1162): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\sim\protected\controllers\ObjectsController.php(132): CActiveRecord->delete()
+#3 [internal function]: ObjectsController->actionDelete('2')
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ObjectsController), Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ObjectsController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('objects/delete')
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/sim/objects/delete/2
+HTTP_REFERER=https://localhost/sim/objects/index
+---
+2013/02/24 20:57:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`counters`, CONSTRAINT `counters_ibfk_1` FOREIGN KEY (`collection_point_id`) REFERENCES `collection_points` (`id`) ON DELETE NO ACTION). The SQL statement executed was: DELETE FROM `objects` WHERE `objects`.`id`=2.
+2013/02/24 20:57:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`counters`, CONSTRAINT `counters_ibfk_1` FOREIGN KEY (`collection_point_id`) REFERENCES `collection_points` (`id`) ON DELETE NO ACTION)' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1739): CDbCommand->execute()
+#1 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1162): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\sim\protected\controllers\ObjectsController.php(132): CActiveRecord->delete()
+#3 [internal function]: ObjectsController->actionDelete('2')
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ObjectsController), Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ObjectsController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('objects/delete')
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/sim/objects/delete/2
+HTTP_REFERER=https://localhost/sim/objects/index
+---
+2013/02/24 20:58:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`counters_readings`, CONSTRAINT `counters_readings_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`id`) ON DELETE NO ACTION). The SQL statement executed was: DELETE FROM `objects` WHERE `objects`.`id`=2.
+2013/02/24 20:58:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`sim-dev`.`counters_readings`, CONSTRAINT `counters_readings_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`id`) ON DELETE NO ACTION)' in C:\xampp\htdocs\frameworks\yii\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1739): CDbCommand->execute()
+#1 C:\xampp\htdocs\frameworks\yii\db\ar\CActiveRecord.php(1162): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\sim\protected\controllers\ObjectsController.php(132): CActiveRecord->delete()
+#3 [internal function]: ObjectsController->actionDelete('2')
+#4 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ObjectsController), Array)
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ObjectsController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('delete')
+#15 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('objects/delete')
+#16 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/sim/objects/delete/2
+HTTP_REFERER=https://localhost/sim/objects
+---
