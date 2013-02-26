@@ -79,7 +79,7 @@ class InvoicesController extends Controller
 				mkdir($path, 0755, true);
 			}
 			
-			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.mktime().'_';
+			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.time().'_';
 			
 			if(($model->period_since!=='') && ($model->period_to!==''))
 			{
@@ -95,7 +95,7 @@ class InvoicesController extends Controller
 			}
 			$fileName .= '.pdf';
 			
-			$model->file_src = $fileName;
+			if(is_object($model->file_src)) $model->file_src = $fileName;
 			
 			if($model->save())
 			{
@@ -144,7 +144,7 @@ class InvoicesController extends Controller
 				mkdir($path, 0755, true);
 			}
 			
-			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.mktime().'_';
+			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.time().'_';
 			
 			if(($model->period_since!=='') && ($model->period_to!==''))
 			{
@@ -160,7 +160,7 @@ class InvoicesController extends Controller
 			}
 			$fileName .= '.pdf';
 			
-			$model->file_src = $fileName;
+			if(is_object($model->file_src)) $model->file_src = $fileName;
 			
 			if($model->save())
 			{
@@ -202,7 +202,7 @@ class InvoicesController extends Controller
 	public function actionIndex()
 	{
 		$statuses = $this->getStatuses();
-		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
+		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').') order by i.period_since asc, i.status asc')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 
 		$this->render('index',array(

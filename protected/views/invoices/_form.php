@@ -60,6 +60,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'Invoices_period_since',
 			'name'=>'Invoices[period_since]',
+			'attribute'=>'period_since',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',
@@ -79,6 +81,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'Invoices_period_to',
 			'name'=>'Invoices[period_to]',
+			'attribute'=>'period_to',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',
@@ -98,6 +102,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'Invoices_issue_date',
 			'name'=>'Invoices[issue_date]',
+			'attribute'=>'issue_date',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',
