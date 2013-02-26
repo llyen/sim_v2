@@ -25,6 +25,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'Counters_installation_date',
 			'name'=>'Counters[installation_date]',
+			'attribute'=>'installation_date',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',

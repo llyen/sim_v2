@@ -22,6 +22,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'CountersReadings_reading_date',
 			'name'=>'CountersReadings[reading_date]',
+			'attribute'=>'reading_date',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',
