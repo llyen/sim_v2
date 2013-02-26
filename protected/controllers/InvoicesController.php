@@ -47,8 +47,10 @@ class InvoicesController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$statuses=$this->getStatuses();
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'statuses'=>$statuses,
 		));
 	}
 
