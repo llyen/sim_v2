@@ -57,7 +57,7 @@ class Invoices extends CActiveRecord
 			array('create_user, update_user', 'length', 'max'=>100),
 			array('file_src', 'length', 'max'=>255),
 			array('period_since, period_to, issue_date', 'safe'),
-			array('file_src', 'file', 'types'=>'pdf, jpg', 'allowEmpty'=>true),
+			array('file_src', 'file', 'types'=>'pdf', 'allowEmpty'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src', 'safe', 'on'=>'search'),
@@ -131,8 +131,9 @@ class Invoices extends CActiveRecord
 		));
 	}
 	
-	public function beforeValidate()
+	protected function beforeValidate()
 	{
+		if(is_null($this->file_src)) unset($this->file_src);
 		$this->update_date=new CDbExpression("NOW()");
 		$this->update_user=Yii::app()->user->name;
 		if($this->isNewRecord){
@@ -143,4 +144,5 @@ class Invoices extends CActiveRecord
 
 		return parent::beforeValidate();	
 	}
+	
 }

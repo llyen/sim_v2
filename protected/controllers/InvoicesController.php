@@ -71,8 +71,41 @@ class InvoicesController extends Controller
 		if(isset($_POST['Invoices']))
 		{
 			$model->attributes=$_POST['Invoices'];
+			$file_src=CUploadedFile::getInstance($model, 'file_src');
+			
+			$path = Yii::app()->basePath.'/../invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/';
+			if(!is_dir($path))
+			{
+				mkdir($path, 0755, true);
+			}
+			
+			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.mktime().'_';
+			
+			if(($model->period_since!=='') && ($model->period_to!==''))
+			{
+				$fileName .= $model->period_since.'_'.$model->period_to;
+			}
+			elseif($model->issue_date!=='')
+			{
+				$fileName .= $model->issue_date;
+			}
+			else
+			{
+				$fileName .= new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+			}
+			$fileName .= '.pdf';
+			
+			$model->file_src = $fileName;
+			
 			if($model->save())
+			{
+				if($file_src !== null)
+				{
+					$file_src->saveAs($path.$fileName);
+				}
+				
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -103,10 +136,39 @@ class InvoicesController extends Controller
 		if(isset($_POST['Invoices']))
 		{
 			$model->attributes=$_POST['Invoices'];
+			$file_src=CUploadedFile::getInstance($model, 'file_src');
+			
+			$path = Yii::app()->basePath.'/../invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/';
+			if(!is_dir($path))
+			{
+				mkdir($path, 0755, true);
+			}
+			
+			$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.mktime().'_';
+			
+			if(($model->period_since!=='') && ($model->period_to!==''))
+			{
+				$fileName .= $model->period_since.'_'.$model->period_to;
+			}
+			elseif($model->issue_date!=='')
+			{
+				$fileName .= $model->issue_date;
+			}
+			else
+			{
+				$fileName .= new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+			}
+			$fileName .= '.pdf';
+			
+			$model->file_src = $fileName;
+			
 			if($model->save())
 			{
-				//if(is_object($model->file_src))
-				//	$model->file_src->saveAs(Yii::app()->basePath.'/../invoices/'.$model->file_src);
+				if(is_object($file_src))
+				{
+					$file_src->saveAs($path.$fileName);
+				}
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}

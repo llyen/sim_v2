@@ -6482,3 +6482,131 @@ Stack trace:
 #20 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
 #21 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/invoices/view/2
+2013/02/25 13:59:12 [error] [php] Undefined variable: period_to (C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/25 13:59:39 [error] [php] move_uploaded_file(C:\xampp\htdocs\sim\protected/../invoices/1/1/2013-02-04_2013-02-28.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): InvoicesController->actionCreate()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/26 07:40:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('1')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('1')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invoices/1/1/DS...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/invoices/1/1/DST_DostepDoUSK_Student2.pdf
+HTTP_REFERER=https://localhost/sim/invoices/update/8
+---
+2013/02/26 07:45:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "invs/1/1/DST_DostepDoUSK_Student2.pdf".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('invs/1/1/DST_Do...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/invs/1/1/DST_DostepDoUSK_Student2.pdf
+HTTP_REFERER=https://localhost/sim/invoices/update/8
+---
+2013/02/26 07:46:32 [error] [php] move_uploaded_file(C:\xampp\htdocs\sim\protected/../invs/1/1/2013-02-01_2013-02-06.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): InvoicesController->actionCreate()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/26 07:51:21 [error] [php] move_uploaded_file(/siminvoices/1/1/2013-02-26_2013-02-27.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): InvoicesController->actionCreate()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/26 07:53:56 [error] [php] move_uploaded_file(/sim/invoices/1/1/2013-02-26_2013-02-27.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\frameworks\yii\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): InvoicesController->actionCreate()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#6 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/26 08:00:22 [error] [php] mkdir(): No such file or directory (C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php:82)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create
+2013/02/26 08:01:25 [error] [php] mkdir(): No such file or directory (C:\xampp\htdocs\sim\protected\controllers\InvoicesController.php:83)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): InvoicesController->runAction()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): InvoicesController->filterAccessControl()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): InvoicesController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): InvoicesController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/invoices/create

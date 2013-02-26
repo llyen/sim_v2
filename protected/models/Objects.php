@@ -117,4 +117,10 @@ class Objects extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	protected function beforeValidate()
+	{
+		if(is_null($this->energy_certificate)) unset($this->energy_certificate);
+		return parent::beforeValidate();
+	}
 }

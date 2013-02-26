@@ -10,6 +10,7 @@
 	'id'=>'invoices-form',
 	'enableAjaxValidation'=>true,
 	'type'=>'horizontal',
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 <fieldset>
 	<?php echo $form->errorSummary($model); ?>
@@ -109,6 +110,20 @@
 		?>
 		</div>
 	</div>
+	<?php
+	if(!$model->isNewRecord && !is_null($model->file_src))
+	{
+	?>
+	<div class="control-group">
+		<label class="control-label" for="Invoices_status">Aktualny skan faktury</label>
+		<div class="controls" style="line-height: 2em;">
+		<?php echo '<a href="'.Yii::app()->request->baseUrl.'/invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/'.$model->file_src.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>'; ?>
+		</div>
+	</div>
+	<?php
+	}
+	?>
+	<?php echo $form->fileFieldRow($model, 'file_src'); ?>
 </fieldset>
 <div class="form-actions">
     <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>
