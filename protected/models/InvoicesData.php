@@ -112,6 +112,7 @@ class InvoicesData extends CActiveRecord
 	
 	public function beforeValidate()
 	{
+		$this->value=str_replace(',', '.', $this->value);
 		$this->update_date=new CDbExpression("NOW()");
 		$this->update_user=Yii::app()->user->name;
 		if($this->isNewRecord){

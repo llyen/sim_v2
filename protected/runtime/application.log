@@ -6704,3 +6704,23 @@ Stack trace:
 REQUEST_URI=/sim/invoices/view/14
 HTTP_REFERER=https://localhost/sim/invoices/index
 ---
+2013/02/28 22:32:02 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest.basePath" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\views\layouts\main.php(64): CComponent->__get('basePath')
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(32): CController->render('index')
+#5 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#12 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/sim/
+HTTP_REFERER=https://localhost/sim/counters
+---

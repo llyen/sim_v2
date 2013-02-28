@@ -113,6 +113,7 @@ class CollectionPoints extends CActiveRecord
 	
 	public function beforeValidate()
 	{
+		$this->multiplicand=str_replace(',', '.', $this->multiplicand);
 		$this->update_date=new CDbExpression("NOW()");
 		$this->update_user=Yii::app()->user->name;
 		if($this->isNewRecord) $this->create_user=Yii::app()->user->name;

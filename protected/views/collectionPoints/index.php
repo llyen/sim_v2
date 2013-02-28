@@ -19,7 +19,7 @@ $this->menu=array(
 		<thead>
 			<th>Symbol</th>
 			<th>Obiekt</th>
-			<th>Mnożnik</th>
+			<!--<th>Mnożnik</th>-->
 			<th>Data utworzenia</th>
 			<th>Opcje</th>
 		</thead>
