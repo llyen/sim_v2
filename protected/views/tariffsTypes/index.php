@@ -2,6 +2,8 @@
 /* @var $this TariffsTypesController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Typy taryf';
+
 $this->breadcrumbs=array(
 	'Tariffs Types',
 );

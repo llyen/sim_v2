@@ -2,6 +2,8 @@
 /* @var $this InvoicesController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie faktur';
+
 $this->breadcrumbs=array(
 	'Invoices',
 );

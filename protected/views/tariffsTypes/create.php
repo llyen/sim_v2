@@ -2,6 +2,8 @@
 /* @var $this TariffsTypesController */
 /* @var $model TariffsTypes */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz typ taryfy';
+
 $this->breadcrumbs=array(
 	'Tariffs Types'=>array('index'),
 	'Create',

@@ -2,6 +2,8 @@
 /* @var $this InvoicesDataController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie pozycji na fakturze';
+
 $this->breadcrumbs=array(
 	'Invoices Datas',
 );

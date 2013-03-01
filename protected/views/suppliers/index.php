@@ -2,6 +2,8 @@
 /* @var $this SuppliersController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Dostawcy';
+
 $this->breadcrumbs=array(
 	'Suppliers',
 );

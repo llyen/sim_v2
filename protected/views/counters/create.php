@@ -2,6 +2,8 @@
 /* @var $this CountersController */
 /* @var $model Counters */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz licznik';
+
 $this->breadcrumbs=array(
 	'Counters'=>array('index'),
 	'Create',

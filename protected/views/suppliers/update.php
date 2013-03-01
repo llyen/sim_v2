@@ -2,6 +2,8 @@
 /* @var $this SuppliersController */
 /* @var $model Suppliers */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj dostawcę';
+
 $this->breadcrumbs=array(
 	'Suppliers'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),

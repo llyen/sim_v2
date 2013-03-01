@@ -2,6 +2,8 @@
 /* @var $this UsersController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Użytkownicy';
+
 $this->breadcrumbs=array(
 	'Users',
 );

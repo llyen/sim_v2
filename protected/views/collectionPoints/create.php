@@ -2,6 +2,8 @@
 /* @var $this CollectionPointsController */
 /* @var $model CollectionPoints */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz punkt poboru';
+
 $this->breadcrumbs=array(
 	'Collection Points'=>array('index'),
 	'Create',

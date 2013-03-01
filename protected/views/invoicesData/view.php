@@ -2,6 +2,8 @@
 /* @var $this InvoicesDataController */
 /* @var $model InvoicesData */
 
+$this->pageTitle=Yii::app()->name . ' :: Szczegóły pozycji na fakturze';
+
 $this->breadcrumbs=array(
 	'Invoices Datas'=>array('index'),
 	$model->id,

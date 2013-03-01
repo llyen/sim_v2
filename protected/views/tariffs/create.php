@@ -2,6 +2,8 @@
 /* @var $this TariffsController */
 /* @var $model Tariffs */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz taryfę';
+
 $this->breadcrumbs=array(
 	'Tariffs'=>array('index'),
 	'Create',

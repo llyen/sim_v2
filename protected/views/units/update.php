@@ -2,6 +2,8 @@
 /* @var $this UnitsController */
 /* @var $model Units */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj jednostkę';
+
 $this->breadcrumbs=array(
 	'Units'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),

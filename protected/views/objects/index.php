@@ -2,6 +2,8 @@
 /* @var $this ObjectsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie obiektów';
+
 $this->breadcrumbs=array(
 	'Objects',
 );
@@ -14,7 +16,7 @@ $this->menu=array(
 ?>
 
 <div class="window">
-	<legend>Obiekt</legend>
+	<legend>Zestawienie obiektów</legend>
 	<table>
 		<thead>
 			<th>Jednostka</th>

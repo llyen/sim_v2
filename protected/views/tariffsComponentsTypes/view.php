@@ -2,6 +2,8 @@
 /* @var $this TariffsComponentsTypesController */
 /* @var $model TariffsComponentsTypes */
 
+$this->pageTitle=Yii::app()->name . ' :: Szczegóły typu';
+
 $this->breadcrumbs=array(
 	'Tariffs Components Types'=>array('index'),
 	$model->id,

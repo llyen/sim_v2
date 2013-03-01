@@ -2,6 +2,8 @@
 /* @var $this CountersReadingsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie odczytów';
+
 $this->breadcrumbs=array(
 	'Counters Readings',
 );

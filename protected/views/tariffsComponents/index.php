@@ -2,6 +2,8 @@
 /* @var $this TariffsComponentsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Składniki taryf';
+
 $this->breadcrumbs=array(
 	'Tariffs Components',
 );

@@ -2,6 +2,8 @@
 /* @var $this TariffsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Taryfy';
+
 $this->breadcrumbs=array(
 	'Tariffs',
 );

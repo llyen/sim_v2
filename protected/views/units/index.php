@@ -2,6 +2,8 @@
 /* @var $this UnitsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Jednostki';
+
 $this->breadcrumbs=array(
 	'Units',
 );

@@ -2,6 +2,8 @@
 /* @var $this InvoicesDataController */
 /* @var $model InvoicesData */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz pozycję na fakturze';
+
 $this->breadcrumbs=array(
 	'Invoices Datas'=>array('index'),
 	'Create',

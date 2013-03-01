@@ -2,6 +2,8 @@
 /* @var $this CountersReadingsController */
 /* @var $model CountersReadings */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz odczyt licznika';
+
 $this->breadcrumbs=array(
 	'Counters Readings'=>array('index'),
 	'Create',

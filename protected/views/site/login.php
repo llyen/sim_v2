@@ -3,7 +3,7 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' :: Login';
+$this->pageTitle=Yii::app()->name . ' :: Panel logowania';
 //$this->layout='//layouts/oneCol';
 $this->layout='//layouts/column1';
 ?>

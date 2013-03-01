@@ -2,6 +2,8 @@
 /* @var $this SuppliersController */
 /* @var $model Suppliers */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz dostawcę';
+
 $this->breadcrumbs=array(
 	'Suppliers'=>array('index'),
 	'Create',

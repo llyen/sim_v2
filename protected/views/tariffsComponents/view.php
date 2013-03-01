@@ -2,6 +2,8 @@
 /* @var $this TariffsComponentsController */
 /* @var $model TariffsComponents */
 
+$this->pageTitle=Yii::app()->name . ' :: Szczegóły składnika';
+
 $this->breadcrumbs=array(
 	'Tariffs Components'=>array('index'),
 	$model->name,

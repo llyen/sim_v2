@@ -2,6 +2,8 @@
 /* @var $this MediumsController */
 /* @var $model Mediums */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj medium';
+
 $this->breadcrumbs=array(
 	'Mediums'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),

@@ -6724,3 +6724,14 @@ Stack trace:
 REQUEST_URI=/sim/
 HTTP_REFERER=https://localhost/sim/counters
 ---
+2013/03/01 08:08:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "adminIndex".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('adminIndex')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('adminIndex')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('collectionPoint...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/collectionPoints/adminIndex
+HTTP_REFERER=https://localhost/sim/objects/index
+---

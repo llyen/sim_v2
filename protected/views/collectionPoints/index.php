@@ -2,6 +2,8 @@
 /* @var $this CollectionPointsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie punktów poboru';
+
 $this->breadcrumbs=array(
 	'Collection Points',
 );

@@ -50,6 +50,14 @@
 					array('label'=>'SKŁADNIKI TARYF', 'url'=>array('/tariffsComponents')),
 				      ),
 				),
+				array('label'=>'DANE', 'url'=>'#', 'items'=>
+				      array(
+					array('label'=>'PODGLĄD'),
+					array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionPoints/adminIndex')),
+					array('label'=>'LICZNIKI', 'url'=>array('/counters/adminIndex')),
+					array('label'=>'FAKTURY', 'url'=>array('/invoices/adminIndex')),
+				      ),
+				),
 				array('label'=>'RAPORTY', 'url'=>array('/reports')),
 				//array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'WYLOGUJ ('.Yii::app()->user->name.')', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),

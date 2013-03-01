@@ -2,6 +2,8 @@
 /* @var $this UnitsController */
 /* @var $model Units */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz jednostkę';
+
 $this->breadcrumbs=array(
 	'Units'=>array('index'),
 	'Create',

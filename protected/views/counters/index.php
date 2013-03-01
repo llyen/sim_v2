@@ -2,6 +2,8 @@
 /* @var $this CountersController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Zestawienie liczników';
+
 $this->breadcrumbs=array(
 	'Counters',
 );

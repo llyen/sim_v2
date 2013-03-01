@@ -2,6 +2,8 @@
 /* @var $this ObjectsController */
 /* @var $model Objects */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj obiekt';
+
 $this->breadcrumbs=array(
 	'Objects'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),

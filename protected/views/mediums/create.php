@@ -2,6 +2,8 @@
 /* @var $this MediumsController */
 /* @var $model Mediums */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz medium';
+
 $this->breadcrumbs=array(
 	'Mediums'=>array('index'),
 	'Create',

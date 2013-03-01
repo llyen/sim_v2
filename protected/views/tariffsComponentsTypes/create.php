@@ -2,6 +2,8 @@
 /* @var $this TariffsComponentsTypesController */
 /* @var $model TariffsComponentsTypes */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz typ składnika';
+
 $this->breadcrumbs=array(
 	'Tariffs Components Types'=>array('index'),
 	'Create',

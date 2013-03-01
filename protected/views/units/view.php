@@ -2,6 +2,8 @@
 /* @var $this UnitsController */
 /* @var $model Units */
 
+$this->pageTitle=Yii::app()->name . ' :: Szczegóły jednostki';
+
 $this->breadcrumbs=array(
 	'Units'=>array('index'),
 	$model->name,

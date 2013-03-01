@@ -2,6 +2,8 @@
 /* @var $this InvoicesController */
 /* @var $model Invoices */
 
+$this->pageTitle=Yii::app()->name . ' :: Szczegóły faktury';
+
 $this->breadcrumbs=array(
 	'Invoices'=>array('index'),
 	$model->id,

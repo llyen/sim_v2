@@ -2,6 +2,8 @@
 /* @var $this UsersController */
 /* @var $model Users */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj użytkownika';
+
 $this->breadcrumbs=array(
 	'Users'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),

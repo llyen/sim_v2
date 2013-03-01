@@ -2,6 +2,8 @@
 /* @var $this TariffsComponentsTypesController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Typy składników taryf';
+
 $this->breadcrumbs=array(
 	'Tariffs Components Types',
 );

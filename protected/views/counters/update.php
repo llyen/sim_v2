@@ -2,6 +2,8 @@
 /* @var $this CountersController */
 /* @var $model Counters */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj licznik';
+
 $this->breadcrumbs=array(
 	'Counters'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),

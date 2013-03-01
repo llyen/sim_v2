@@ -2,6 +2,8 @@
 /* @var $this InvoicesController */
 /* @var $model Invoices */
 
+$this->pageTitle=Yii::app()->name . ' :: Edytuj fakturę';
+
 $this->breadcrumbs=array(
 	'Invoices'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),

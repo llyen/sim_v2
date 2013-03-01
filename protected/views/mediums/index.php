@@ -2,6 +2,8 @@
 /* @var $this MediumsController */
 /* @var $dataProvider CActiveDataProvider */
 
+$this->pageTitle=Yii::app()->name . ' :: Medium';
+
 $this->breadcrumbs=array(
 	'Mediums',
 );

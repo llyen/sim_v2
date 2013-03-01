@@ -2,6 +2,8 @@
 /* @var $this ObjectsController */
 /* @var $model Objects */
 
+$this->pageTitle=Yii::app()->name . ' :: Utwórz obiekt';
+
 $this->breadcrumbs=array(
 	'Objects'=>array('index'),
 	'Create',
