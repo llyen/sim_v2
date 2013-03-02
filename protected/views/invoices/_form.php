@@ -59,13 +59,13 @@
 					'type'=>'POST',
 					'data'=>array('supplier_id'=>'js:this.value'),
 					'url'=>CController::createURL('invoices/dynamicTariffs'),
-					'update'=>'#'.CHtml::activeId($model, 'tariff_id')//'#tariff_id', 
+					'update'=>'#'.CHtml::activeId($model, 'tariff_id'),
 				),
 			)
 		);
 	
 	?>
-	<?php echo $form->dropDownListRow($model, 'tariff_id', array());//echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
+	<?php echo $form->dropDownListRow($model, 'tariff_id', array()); ?>
 	<div class="control-group">
 		<label class="control-label" for="Invoices_period_since">Okres od</label>
 		<div class="controls">
