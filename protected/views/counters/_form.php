@@ -39,7 +39,23 @@
 		?>
 		</div>
 	</div>
-	<?php echo $form->dropDownListRow($model, 'archival', array(false=>'nie', true=>'tak')); ?>
+	<div class="control-group">
+		<label class="control-label" for="Counters_archival">Archiwalny</label>
+		<div class="controls">
+		<?php
+		$this->widget('bootstrap.widgets.TbToggleButton', array(
+			'id'=>'Counters_archival',
+			'name'=>'Counters[archival]',
+			'attribute'=>'archival',
+			'model'=>$model,
+			'enabledLabel' => 'TAK',
+			'disabledLabel' => 'NIE',
+			'value'=>false,
+			));
+	
+		?>
+		</div>
+	</div>
 </fieldset>
 <div class="form-actions">
     <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>

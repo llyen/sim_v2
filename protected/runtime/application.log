@@ -6735,3 +6735,33 @@ Stack trace:
 REQUEST_URI=/sim/collectionPoints/adminIndex
 HTTP_REFERER=https://localhost/sim/objects/index
 ---
+2013/03/02 16:06:01 [error] [php] strpos() expects parameter 1 to be string, array given (C:\xampp\htdocs\frameworks\yii\web\helpers\CHtml.php:2106)
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\input\TbInputHorizontal.php(23): TbInputHorizontal->getContainerCssClass()
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(174): TbInputHorizontal->run()
+#2 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbActiveForm.php(681): CountersController->widget()
+#3 C:\xampp\htdocs\sim\protected\extensions\bootstrap\widgets\TbActiveForm.php(85): TbActiveForm->inputRow()
+#4 C:\xampp\htdocs\sim\protected\views\counters\_form.php(42): TbActiveForm->toggleButtonRow()
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#6 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CountersController->renderInternal()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CountersController->renderFile()
+#8 C:\xampp\htdocs\sim\protected\views\counters\create.php(21): CountersController->renderPartial()
+#9 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require()
+#10 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CountersController->renderInternal()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CountersController->renderFile()
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CountersController->renderPartial()
+#13 C:\xampp\htdocs\sim\protected\controllers\CountersController.php(81): CountersController->render()
+#14 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): CountersController->actionCreate()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CountersController->runAction()
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#18 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CountersController->filterAccessControl()
+#20 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#22 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CountersController->runActionWithFilters()
+#23 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CountersController->run()
+#24 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#25 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/counters/create
