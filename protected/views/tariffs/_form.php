@@ -13,7 +13,7 @@
 )); ?>
 
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->dropDownListRow($model, 'type_id', $types); ?>
 	<?php echo $form->dropDownListRow($model, 'supplier_id', $suppliers); ?>
 	<?php echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>255)); ?>

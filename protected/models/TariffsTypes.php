@@ -38,8 +38,8 @@ class TariffsTypes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type', 'required'),
-			array('type', 'length', 'max'=>255),
+			array('type', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
+			array('type', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, type', 'safe', 'on'=>'search'),

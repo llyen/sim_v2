@@ -12,7 +12,7 @@
 	'type'=>'horizontal',
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->hiddenField($model, 'counter_id', array('value'=>$cid)); ?>
 	
 	<div class="control-group">

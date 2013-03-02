@@ -50,10 +50,10 @@ class TariffsComponents extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tariff_id, type_id, medium_id, name', 'required'),
+			array('tariff_id, type_id, medium_id, name', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('tariff_id, type_id, medium_id, vat, archival', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>255),
-			array('unit, price_per_unit, multiplier', 'length', 'max'=>10),
+			array('name', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
+			array('unit, price_per_unit, multiplier', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
 			array('mandatory_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

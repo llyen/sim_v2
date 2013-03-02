@@ -12,7 +12,7 @@
 	'type'=>'horizontal',
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->hiddenField($model, 'invoice_id', array('value'=>$iid)); ?>
 	<?php echo $form->dropDownListRow($model, 'component_id', $tariffsComponents); ?>
 	<?php echo $form->textFieldRow($model, 'value', array('size'=>10, 'maxlength'=>10)); ?>

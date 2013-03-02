@@ -50,11 +50,11 @@ class Counters extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('collection_point_id, medium_id, symbol, unit, create_date, create_user, update_date, update_user', 'required'),
+			array('collection_point_id, medium_id, symbol, unit, create_date, create_user, update_date, update_user', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('collection_point_id, medium_id, archival', 'numerical', 'integerOnly'=>true),
-			array('symbol', 'length', 'max'=>255),
-			array('unit, initial_state', 'length', 'max'=>10),
-			array('create_user, update_user', 'length', 'max'=>100),
+			array('symbol', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
+			array('unit, initial_state', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
+			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			array('installation_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

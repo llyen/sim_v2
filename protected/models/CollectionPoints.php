@@ -45,11 +45,11 @@ class CollectionPoints extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('object_id, create_date, create_user, update_date, update_user', 'required'),
+			array('object_id, create_date, create_user, update_date, update_user', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('object_id', 'numerical', 'integerOnly'=>true),
-			array('symbol', 'length', 'max'=>255),
-			array('multiplicand', 'length', 'max'=>10),
-			array('create_user, update_user', 'length', 'max'=>100),
+			array('symbol', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
+			array('multiplicand', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
+			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, object_id, symbol, multiplicand, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),

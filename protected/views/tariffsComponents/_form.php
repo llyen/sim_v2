@@ -12,7 +12,7 @@
 	'type'=>'horizontal',
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
 	<?php echo $form->dropDownListRow($model, 'type_id', $types); ?>
 	<?php echo $form->dropDownListRow($model, 'medium_id', $mediums); ?>

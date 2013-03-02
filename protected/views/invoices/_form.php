@@ -13,7 +13,7 @@
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php
 		if(!Yii::app()->user->isGuest && Yii::app()->user->getRole() == 'admin')
 		{

@@ -47,11 +47,11 @@ class Objects extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, address', 'required'),
+			array('name, address', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('unit_id', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>100),
-			array('area, cubage', 'length', 'max'=>10),
-			array('address, plot_number, energy_certificate', 'length', 'max'=>255),
+			array('name', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
+			array('area, cubage', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
+			array('address, plot_number, energy_certificate', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
 			array('energy_certificate', 'file', 'types'=>'pdf, doc', 'allowEmpty'=>true),
 			array('additional_information', 'safe'),
 			// The following rule is used by search().

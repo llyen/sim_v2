@@ -45,10 +45,10 @@ class InvoicesData extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('invoice_id, component_id, create_date, create_user, update_date, update_user', 'required'),
+			array('invoice_id, component_id, create_date, create_user, update_date, update_user', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('invoice_id, component_id', 'numerical', 'integerOnly'=>true),
-			array('value', 'length', 'max'=>10),
-			array('create_user, update_user', 'length', 'max'=>100),
+			array('value', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
+			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, invoice_id, component_id, value, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),

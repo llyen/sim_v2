@@ -52,10 +52,10 @@ class Invoices extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tariff_id, object_id, supplier_id, create_date, create_user, update_date, update_user', 'required'),
+			array('tariff_id, object_id, supplier_id, create_date, create_user, update_date, update_user', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('tariff_id, object_id, supplier_id, status', 'numerical', 'integerOnly'=>true),
-			array('create_user, update_user', 'length', 'max'=>100),
-			array('file_src', 'length', 'max'=>255),
+			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
+			array('file_src', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
 			array('period_since, period_to, issue_date', 'safe'),
 			array('file_src', 'file', 'types'=>'pdf', 'allowEmpty'=>true),
 			// The following rule is used by search().

@@ -12,7 +12,7 @@
 	'type'=>'horizontal',
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->dropDownListRow($model, 'collection_point_id', $collectionPoints); ?>
 	<?php echo $form->dropDownListRow($model, 'medium_id', $mediums); ?>
 	<?php echo $form->textFieldRow($model, 'symbol', array('size'=>60, 'maxlength'=>255)); ?>

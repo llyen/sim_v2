@@ -40,10 +40,10 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password', 'required'),
-			array('username', 'unique'),
+			array('username, password', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
+			array('username', 'unique', 'message'=>'Wartość pola {attribute} musi być unikalna'),
 			array('unit_id', 'numerical', 'integerOnly'=>true),
-			array('username, password', 'length', 'max'=>100),
+			array('username, password', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, unit_id, username, password', 'safe', 'on'=>'search'),

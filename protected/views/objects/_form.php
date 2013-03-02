@@ -14,7 +14,7 @@
 )); ?>
 
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->dropDownListRow($model, 'unit_id', $units); ?>
 	<?php echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>100)); ?>
 	<?php echo $form->textFieldRow($model,'address',array('size'=>60,'maxlength'=>255)); ?>

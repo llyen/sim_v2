@@ -43,8 +43,8 @@ class Suppliers extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('medium_id', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>150),
-			array('address', 'length', 'max'=>255),
+			array('name', 'length', 'max'=>150, 'message'=>'{attribute} może mieć maksymalną długość 150 znaków'),
+			array('address', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, medium_id, name, address', 'safe', 'on'=>'search'),

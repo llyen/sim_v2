@@ -12,7 +12,7 @@
 	'type'=>'horizontal',
 )); ?>
 <fieldset>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->textFieldRow($model,'type',array('size'=>60,'maxlength'=>255)); ?>
 </fieldset>
 <div class="form-actions">
