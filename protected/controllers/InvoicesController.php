@@ -16,6 +16,7 @@ class InvoicesController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			//'postOnly + delete', // we only allow deletion via POST request
+			'ajaxOnly + dynamicTariffs',
 		);
 	}
 
@@ -28,7 +29,7 @@ class InvoicesController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index', 'view', 'create', 'update', 'delete'),
+				'actions'=>array('index', 'view', 'create', 'update', 'delete', 'dynamicTariffs'),
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
@@ -228,6 +229,17 @@ class InvoicesController extends Controller
 		));
 	}
 
+	public function actionDynamicTariffs()
+	{
+		$data=Tariffs::model()->findAll('supplier_id=:supplier_id', array(':supplier_id'=>$_POST['supplier_id']));
+		$data=CHtml::listData($data,'id','name');
+
+		foreach ($data as $value=>$name)
+		{
+			echo CHtml::tag('option',array('value'=>$value),CHtml::encode($name),true);
+		}
+	}
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

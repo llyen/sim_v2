@@ -51,8 +51,21 @@
 		}
 	?>
 	<?php echo $form->dropDownListRow($model, 'object_id', $objects); ?>
-	<?php echo $form->dropDownListRow($model, 'supplier_id', $suppliers); ?>
-	<?php echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
+	<?php
+		echo $form->dropDownListRow($model, 'supplier_id', $suppliers,
+			array(
+				'empty'=>'-- proszę wybrać dostawcę --',
+				'ajax'=>array(
+					'type'=>'POST',
+					'data'=>array('supplier_id'=>'js:this.value'),
+					'url'=>CController::createURL('invoices/dynamicTariffs'),
+					'update'=>'#'.CHtml::activeId($model, 'tariff_id')//'#tariff_id', 
+				),
+			)
+		);
+	
+	?>
+	<?php echo $form->dropDownListRow($model, 'tariff_id', array());//echo $form->dropDownListRow($model, 'tariff_id', $tariffs); ?>
 	<div class="control-group">
 		<label class="control-label" for="Invoices_period_since">Okres od</label>
 		<div class="controls">
