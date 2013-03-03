@@ -98,7 +98,7 @@ class InvoicesController extends Controller
 			}
 			$fileName .= '.pdf';
 			
-			if(is_object($model->file_src)) $model->file_src = $fileName;
+			if($file_src !== null) $model->file_src = $fileName;
 			
 			if($model->save())
 			{
@@ -163,7 +163,7 @@ class InvoicesController extends Controller
 			}
 			$fileName .= '.pdf';
 			
-			if(is_object($model->file_src)) $model->file_src = $fileName;
+			if($file_src !== null) $model->file_src = $fileName;
 			
 			if($model->save())
 			{
