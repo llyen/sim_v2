@@ -6765,3 +6765,172 @@ Stack trace:
 #25 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
 #26 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/counters/create
+2013/03/03 15:04:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page&view=".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('page&view=')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('page&view=')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/page&view=')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/site/page&view=
+---
+2013/03/03 15:04:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page&view=about".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('page&view=about')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('page&view=about')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/page&view=...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/site/page&view=about
+---
+2013/03/03 15:04:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\frameworks\yii\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#6 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('page')
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/page/about')
+#8 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/sim/site/page/about
+---
+2013/03/03 15:10:40 [error] [exception.CException] exception 'CException' with message 'SiteController has an extra endWidget() call in its view.' in C:\xampp\htdocs\frameworks\yii\web\CBaseController.php:211
+Stack trace:
+#0 C:\xampp\htdocs\sim\protected\views\site\index.php(41): CBaseController->endWidget()
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#5 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(32): CController->render('index')
+#6 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/
+HTTP_REFERER=https://localhost/sim/index.php?r=site/page&view=about
+---
+2013/03/03 16:05:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('about')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/about
+HTTP_REFERER=https://localhost/sim/
+---
+2013/03/03 16:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "genesis".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('genesis')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/genesis
+HTTP_REFERER=https://localhost/sim/about
+---
+2013/03/03 16:05:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('about')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/about
+HTTP_REFERER=https://localhost/sim/
+---
+2013/03/03 16:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "about".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('about')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/about
+HTTP_REFERER=https://localhost/sim/
+---
+2013/03/03 16:05:37 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('about', NULL, true)
+#1 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(37): CController->render('about')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionAbout()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('about')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/about')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/site/about
+HTTP_REFERER=https://localhost/sim/
+---
+2013/03/03 16:05:40 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "genesis".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('genesis', NULL, true)
+#1 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(42): CController->render('genesis')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionGenesis()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('genesis')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/genesis')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/site/genesis
+HTTP_REFERER=https://localhost/sim/site/about
+---
+2013/03/03 16:26:21 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('about', NULL, true)
+#1 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(37): CController->render('about')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionAbout()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('about')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/about')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/site/about
+HTTP_REFERER=https://localhost/sim/
+---
+2013/03/03 18:33:13 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('about', NULL, true)
+#1 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(37): CController->render('about')
+#2 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionAbout()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('about')
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/about')
+#9 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/sim/site/about
+HTTP_REFERER=http://localhost/sim/
+---
+2013/03/03 18:47:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/reports
+HTTP_REFERER=https://localhost/sim/units
+---

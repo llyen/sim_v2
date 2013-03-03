@@ -17,8 +17,15 @@ $this->pageTitle=Yii::app()->name;
 'size'=>'large',
 'label'=>'Zaloguj się',
 'url'=>array('site/login'),
-)); ?>
+));
+?>
 </p>
+<br>
+<div class="well index">
+	<p>
+		Rozwój cywilizacyjny wymaga ciągłego procesu dostosowywania się do zmieniającej się rzeczywistości. Jednym z takich współczesnych wyzwań jest zapewnienie potrzeb energetycznych w sposób gwarantujący trwałość dostaw, przy zachowaniu racjonalnych kosztów i ograniczeniu wpływu na środowisko. System Informacji o Mediach (SIM) Gminy Śrem w założeniu ma być narzędziem dającym możliwość zarządzania energią na poziomie lokalnym.
+	</p>
+</div>
 <?php }else{ ?>
 <p>Prezentujemy wersję rozwojową aplikacji System Informacji o Mediach. Prosimy o zgłaszanie wszelkich zauważonych błędów bezpośrednio do administratora systemu.</p>
 <?php

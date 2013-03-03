@@ -3,6 +3,7 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8">
+	<meta name="author" content="Jakub Wawrzyniak [jakub.wawrzyniak@urzad.srem.pl]">
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <?php
             $cs = Yii::app()->getClientScript();
@@ -76,6 +77,8 @@
 			'class'=>'bootstrap.widgets.TbMenu',
 			'type'=>'pills',
 			'items'=>array(
+				array('label'=>'CO TO JEST SIM?', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'GENEZA', 'url'=>array('/site/genesis'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionPoints'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'LICZNIKI', 'url'=>array('/counters'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'FAKTURY', 'url'=>array('/invoices'), 'visible'=>!Yii::app()->user->isGuest),
