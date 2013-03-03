@@ -32,7 +32,7 @@ class CollectionPointsController extends Controller
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','adminIndex','adminView'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -135,6 +135,22 @@ class CollectionPointsController extends Controller
 		));
 	}
 
+	public function actionAdminIndex()
+	{
+		$data = Yii::app()->db->createCommand('select cp.id, cp.symbol, o.name as object, cp.multiplicand, cp.create_date, cp.create_user, cp.update_date, cp.update_user from collection_points cp join objects o on cp.object_id=o.id order by object asc, cp.create_date asc')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		$this->render('admin/index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionAdminView($id)
+	{
+		$this->render('admin/view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */
