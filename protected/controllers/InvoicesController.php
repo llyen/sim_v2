@@ -33,7 +33,7 @@ class InvoicesController extends Controller
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin'),
+				'actions'=>array('admin','adminIndex','adminView'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -214,6 +214,45 @@ class InvoicesController extends Controller
 		));
 	}
 
+	public function actionAdminIndex()
+	{
+		$statuses = $this->getStatuses();
+		$data = Yii::app()->db->createCommand('select i.id, u.name as unit, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id join units u on o.unit_id = u.id order by unit asc, i.period_since asc, i.status asc')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+
+		$this->render('admin/index',array(
+			'dataProvider'=>$dataProvider,
+			'statuses'=>$statuses,
+		));
+	}
+	
+	public function actionAdminView($id)
+	{
+		$model=$this->loadModel($id);
+		$objects = $this->getObjects();
+		$suppliers = $this->getSuppliers();
+		$tariffs = $this->getTariffs();
+		$statuses = $this->getStatuses();
+		
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Invoices']))
+		{
+			$model->attributes=$_POST['Invoices'];
+			if($model->save())
+				$this->redirect(array('adminIndex'));
+		}
+		
+		$this->render('admin/view',array(
+			'model'=>$model,
+			'objects'=>$objects,
+			'suppliers'=>$suppliers,
+			'tariffs'=>$tariffs,
+			'statuses'=>$statuses,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */

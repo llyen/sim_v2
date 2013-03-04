@@ -1,0 +1,39 @@
+<?php
+/* @var $this CountersController */
+/* @var $dataProvider CActiveDataProvider */
+
+$this->pageTitle=Yii::app()->name . ' :: Liczniki';
+
+$this->breadcrumbs=array(
+	'Counters',
+);
+
+$this->menu=array(
+        array('label'=>'LICZNIKI'),
+	array('label'=>'Wyświetl liczniki', 'icon'=>'book', 'active'=>true, 'url'=>array('adminIndex')),
+);
+?>
+
+<div class="window">
+	<legend>Zestawienie liczników dla jednostki</legend>
+	<table>
+		<thead>
+			<th>Jednostka</th>
+			<th>Punkt poboru</th>
+			<th>Medium</th>
+			<th>Symbol</th>
+			<th>Data instalacji</th>
+			<!--<th>Archiwalny</th>-->
+			<th>Opcje</th>
+		</thead>
+		<tbody>
+			<?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'itemView'=>'admin/_view',
+				'summaryText'=>'',
+				'emptyText'=>'Brak danych.',
+			)); ?>
+		</tbody>
+	</table>
+</div>
+

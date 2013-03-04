@@ -32,7 +32,7 @@ class InvoicesDataController extends Controller
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin'),
+				'actions'=>array('admin','adminIndex','adminView'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -135,6 +135,24 @@ class InvoicesDataController extends Controller
 		));
 	}
 
+	public function actionAdminIndex($id)
+	{
+		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, (select name from tariffs_components tc where tc.id = ids.component_id) as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id where ids.invoice_id = '.$id)->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		$this->render('admin/index',array(
+			'id'=>$id,
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionAdminView($id, $iid)
+	{
+		$this->render('admin/view',array(
+			'model'=>$this->loadModel($id),
+			'iid'=>$iid,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */

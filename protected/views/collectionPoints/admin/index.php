@@ -18,6 +18,7 @@ $this->menu=array(
 	<legend>Punkty poboru</legend>
 	<table>
 		<thead>
+			<th>Jednostka</th>
 			<th>Symbol</th>
 			<th>Obiekt</th>
 			<!--<th>Mnożnik</th>-->

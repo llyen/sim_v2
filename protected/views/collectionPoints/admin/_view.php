@@ -4,6 +4,7 @@
 ?>
 
 <tr>
+	<td><?php echo CHtml::encode($data['unit']); ?></td>
 	<td><?php echo CHtml::encode($data['symbol']); ?></td>
 	<td><?php echo CHtml::encode($data['object']); ?></td>
 	<!--<td><?php //echo CHtml::encode($data['multiplicand']); ?></td>-->

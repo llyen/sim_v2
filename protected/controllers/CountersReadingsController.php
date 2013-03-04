@@ -32,7 +32,7 @@ class CountersReadingsController extends Controller
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin'),
+				'actions'=>array('admin','adminIndex','adminView'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -131,6 +131,24 @@ class CountersReadingsController extends Controller
 		));
 	}
 
+	public function actionAdminIndex($id)
+	{
+		$countersReadings=Counters::model()->findByPk($id)->countersReadings;
+		$dataProvider=new CArrayDataProvider($countersReadings);
+		$this->render('admin/index',array(
+			'id'=>$id,
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionAdminView($id, $cid)
+	{
+		$this->render('admin/view',array(
+			'model'=>$this->loadModel($id),
+			'cid'=>$cid,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */

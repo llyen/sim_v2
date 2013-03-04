@@ -137,7 +137,7 @@ class CollectionPointsController extends Controller
 
 	public function actionAdminIndex()
 	{
-		$data = Yii::app()->db->createCommand('select cp.id, cp.symbol, o.name as object, cp.multiplicand, cp.create_date, cp.create_user, cp.update_date, cp.update_user from collection_points cp join objects o on cp.object_id=o.id order by object asc, cp.create_date asc')->queryAll();
+		$data = Yii::app()->db->createCommand('select u.name as unit, cp.id, cp.symbol, o.name as object, cp.multiplicand, cp.create_date, cp.create_user, cp.update_date, cp.update_user from collection_points cp join objects o on cp.object_id=o.id join units u on o.unit_id=u.id order by unit asc, object asc, cp.create_date asc')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 		$this->render('admin/index',array(
 			'dataProvider'=>$dataProvider,

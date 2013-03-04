@@ -32,7 +32,7 @@ class CountersController extends Controller
 				'roles'=>array('unit_admin'),
 			),
 			array('allow',
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','adminIndex','adminView'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -136,6 +136,24 @@ class CountersController extends Controller
 		));
 	}
 
+	public function actionAdminIndex()
+	{
+		$data = Yii::app()->db->createCommand('select u.name as unit, cp.symbol as collection_point, m.name as medium, c.id, c.symbol, c.installation_date, c.archival from counters c join collection_points cp on c.collection_point_id=cp.id join mediums m on c.medium_id=m.id join objects o on cp.object_id=o.id join units u on o.unit_id=u.id order by unit asc, collection_point asc, c.installation_date asc')->queryAll();
+		$dataProvider = new CArrayDataProvider($data);
+		$this->render('admin/index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionAdminView($id)
+	{
+		$model=$this->loadModel($id);
+		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
+		$this->render('admin/view',array(
+			'model'=>$model,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */
