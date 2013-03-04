@@ -92,8 +92,11 @@
         ?>
 	
 	<?php echo $content; ?>
+	
 </div><!-- page -->
-
+<div id="footer">
+	<img src="<?php echo Yii::app()->baseUrl.'/images/energetyczny_srem.png' ?>" style="width: 100px; height: 71px;">Urząd Miejski w Śremie Pl. 20 Października 1 63-100 Śrem
+</div>
 </body>
 </html>
 
