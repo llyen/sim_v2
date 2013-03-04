@@ -24,7 +24,7 @@ body
 
 #content
 {
-    padding: 20px;
+    padding: 10px;
 }
 
 #sidebar
@@ -231,8 +231,9 @@ div.search-form
 /*
 other
 */
-.wrapper { width: 950px; padding-top: /*40px*/ 70px; margin: 0 auto; }
+.wrapper { width: 980px; padding-top: /*40px*/ 70px; margin: 0 auto; }
 .span4 { margin: 0 305px; }
+.span9 { width: 730px; }
 .list-view { padding-top: 0px; }
 .window table { width: 100%; }
 .window table td, .window table th { padding: 12px; }

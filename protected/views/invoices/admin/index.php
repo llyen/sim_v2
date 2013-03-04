@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
         array('label'=>'FAKTURY'),
-	array('label'=>'Wyświetl faktury', 'icon'=>'book', 'active'=>true, 'url'=>array('index')),
+	array('label'=>'Wyświetl faktury', 'icon'=>'book', 'active'=>true, 'url'=>array('adminIndex')),
 );
 ?>
 
