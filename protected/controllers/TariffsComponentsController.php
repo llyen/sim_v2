@@ -179,7 +179,7 @@ class TariffsComponentsController extends Controller
 		$tariffs = array();
 		$tariffsModel = Tariffs::model()->findAll();
 		foreach($tariffsModel as $t)
-			$tariffs[$t->id] = $t->name;
+			$tariffs[$t->id] = $t->name.' ('.$t->supplier->name.')';
 		return $tariffs;
 	}
 	
