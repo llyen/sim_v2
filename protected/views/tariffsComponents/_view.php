@@ -4,6 +4,7 @@
 ?>
 
 <tr>
+	<td><?php echo CHtml::encode($data['supplier']); ?></td>
 	<td><?php echo CHtml::encode($data['tariff']); ?></td>
 	<td><?php echo CHtml::encode($data['name']); ?></td>
 	<td><?php echo CHtml::encode($data['medium']); ?></td>

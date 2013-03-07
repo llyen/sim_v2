@@ -19,6 +19,7 @@ $this->menu=array(
 	<legend>Składniki taryf</legend>
 	<table>
 		<thead>
+			<th>Dostawca</th>
 			<th>Taryfa</th>
 			<th>Nazwa</th>
 			<th>Medium</th>

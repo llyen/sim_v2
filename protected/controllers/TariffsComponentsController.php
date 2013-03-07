@@ -126,7 +126,7 @@ class TariffsComponentsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$tariffsComponents=Yii::app()->db->createCommand('select tc.id, t.name as tariff, tc.name, m.name as medium, tc.mandatory_date from tariffs_components tc join tariffs t on tc.tariff_id=t.id join mediums m on tc.medium_id=m.id order by tariff asc, tc.name asc')->queryAll();
+		$tariffsComponents=Yii::app()->db->createCommand('select tc.id, t.name as tariff, s.name as supplier, tc.name, m.name as medium, tc.mandatory_date from tariffs_components tc join tariffs t on tc.tariff_id=t.id join mediums m on tc.medium_id=m.id join suppliers s on t.supplier_id=s.id order by tariff asc, tc.name asc')->queryAll();
 		$dataProvider=new CArrayDataProvider($tariffsComponents);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
