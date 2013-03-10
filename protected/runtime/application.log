@@ -8272,3 +8272,33 @@ Stack trace:
 REQUEST_URI=/sim/changePassword/pass/aa
 HTTP_REFERER=https://localhost/sim/changePassword
 ---
+2013/03/10 22:46:17 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widget.TbDetailView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\frameworks\yii\YiiBase.php:318
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWidgetFactory.php(147): YiiBase::import('bootstrap.widge...', true)
+#1 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(UsersController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\sim\protected\views\users\view.php(27): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\xampp\htdocs\sim\protected\controllers\UsersController.php(48): CController->render('view', Array)
+#9 [internal function]: UsersController->actionView('10')
+#10 C:\xampp\htdocs\frameworks\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#19 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('view')
+#21 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('users/view')
+#22 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sim/users/view/10
+HTTP_REFERER=https://localhost/sim/users
+---

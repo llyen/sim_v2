@@ -10,22 +10,23 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Users', 'url'=>array('index')),
-	array('label'=>'Create Users', 'url'=>array('create')),
-	array('label'=>'Update Users', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Users', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+        array('label'=>'UŻYTKOWNICY'),
+	array('label'=>'Wyświetl listę użytkowników', 'icon'=>'book', 'url'=>array('index')),
+        array('label'=>'Dodaj użytkownika', 'icon'=>'pencil', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Users #<?php echo $model->id; ?></h1>
+<legend>Szczegóły użytkownika</legend>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'unit_id',
+		array(
+		      'name'=>'unit.name',
+		      'label'=>'Jednostka',
+		      'type'=>'raw',
+		      'value'=>(is_null($model->unit_id)) ? '<p style="font-style: italic; margin: 0px;">uprawnienia administracyjne</p>' : $model->unit->name,
+		),
 		'username',
-		'password',
 	),
 )); ?>
