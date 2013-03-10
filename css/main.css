@@ -241,3 +241,4 @@ other
 .window table tbody tr:nth-child(even){  }
 .window table tbody tr:nth-child(odd){ background-color: #fafafa; border-bottom: 1px solid #efefef; border-top: 1px solid #efefef; }
 .index { text-align: justify; font-size: 17px; font-style: italic; }
+.navbar-wrapper .container { width: 980px; }

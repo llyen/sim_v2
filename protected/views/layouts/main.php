@@ -23,6 +23,7 @@
 		'brand'=>CHtml::encode(Yii::app()->name),
 		'brandUrl'=>Yii::app()->baseUrl,
 		'collapse'=>true, // requires bootstrap-responsive.css
+		'htmlOptions'=>array('class'=>'navbar-wrapper'),
 		'items'=>array(
 		array(
 			'class'=>'bootstrap.widgets.TbMenu',
@@ -75,6 +76,7 @@
 		'brand'=>CHtml::encode(Yii::app()->name),
 		'brandUrl'=>Yii::app()->baseUrl,
 		'collapse'=>true, // requires bootstrap-responsive.css
+		'htmlOptions'=>array('class'=>'navbar-wrapper'),
 		'items'=>array(
 		array(
 			'class'=>'bootstrap.widgets.TbMenu',
