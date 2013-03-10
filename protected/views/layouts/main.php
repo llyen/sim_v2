@@ -65,7 +65,7 @@
 				),
 				array('label'=>'RAPORTY', 'url'=>array('/reports')),
 				//array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'WYLOGUJ ('.Yii::app()->user->name.')', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'WYLOGUJ', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		),
 		)));
@@ -94,7 +94,7 @@
 				array('label'=>'LICZNIKI', 'url'=>array('/counters'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'FAKTURY', 'url'=>array('/invoices'), 'visible'=>!Yii::app()->user->isGuest),
 				//array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'WYLOGUJ ('.Yii::app()->user->name.')', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'WYLOGUJ', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		),
 		)));
