@@ -29,7 +29,7 @@ $this->menu=array(
 	<div class="control-group">
 		<label class="control-label" for="Invoices_status">Aktualny skan faktury</label>
 		<div class="controls" style="line-height: 2em;">
-		<?php if(!is_null($model->file_src)) echo '<a href="'.Yii::app()->request->baseUrl.'/invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/'.$model->file_src.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>'; else echo 'Brak powiązanego pliku.' ?>
+		<?php if(!is_null($model->file_src)) echo '<a href="'.Yii::app()->request->baseUrl.'/invs/'.$model->unit_id.'/'.$model->object_id.'/'.$model->file_src.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>'; else echo 'Brak powiązanego pliku.' ?>
 		</div>
 	</div>
 </fieldset>

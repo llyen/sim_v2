@@ -116,6 +116,32 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionChangePassword()
+	{
+		$model = new ChangePasswordForm();
+		if(Yii::app()->user->id)
+		{
+			if(isset($_POST['ajax']) && $_POST['ajax']==='changepassword-form')
+			{
+				echo CActiveForm::validate($model);
+				Yii::app()->end();
+			}
+			
+			if(isset($_POST['ChangePasswordForm']))
+			{
+				$model->attributes=$_POST['ChangePasswordForm'];
+				if($model->validate())
+				{
+					$user = Users::model()->findByAttributes(array('username'=>Yii::app()->user->id));
+					$user->password = $model->newPassword;
+					$user->save();
+					$this->redirect(array($this->redirect(Yii::app()->baseUrl)));
+				}
+			}
+			$this->render('changePassword', array('model'=>$model));
+		}
+	}
 	
 	// https - ! -
 	public function filters()

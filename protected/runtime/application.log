@@ -7316,3 +7316,959 @@ Stack trace:
 #11 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
 #12 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
 REQUEST_URI=/sim/invoicesData/adminIndex/1
+2013/03/07 09:51:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "changePassword".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('changePassword')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('users/changePas...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/users/changePassword
+HTTP_REFERER=https://localhost/sim/index.php
+---
+2013/03/07 21:07:01 [error] [php] Object of class Suppliers could not be converted to string (C:\xampp\htdocs\sim\protected\controllers\TariffsComponentsController.php:182)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): TariffsComponentsController->runAction()
+#2 C:\xampp\htdocs\frameworks\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\frameworks\yii\web\filters\CInlineFilter.php(59): TariffsComponentsController->filterAccessControl()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): TariffsComponentsController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): TariffsComponentsController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/tariffsComponents/create
+2013/03/08 10:12:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "changePassword".' in C:\xampp\htdocs\frameworks\yii\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(271): CController->missingAction('changePassword')
+#1 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#2 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('users/changePas...')
+#3 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sim/users/changePassword
+HTTP_REFERER=https://localhost/sim/index.php
+---
+2013/03/08 10:13:37 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:38 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:39 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:41 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:45 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:46 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:46 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:46 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:46 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:47 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:48 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:13:48 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:14:46 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:14:47 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:14:48 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:14:50 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:38 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:39 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:39 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 10:15:40 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:49:49 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:49:53 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:51:10 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:51:11 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:51:12 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:51:36 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:51:39 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:58:50 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(134): CModel->validate()
+#6 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:59:22 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 12:59:25 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.password" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php(41): CWebUser->__get('password')
+#2 C:\xampp\htdocs\frameworks\yii\validators\CInlineValidator.php(43): ChangePasswordForm->validateCurrentPassword('currentPassword', Array)
+#3 C:\xampp\htdocs\frameworks\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(ChangePasswordForm), 'currentPassword')
+#4 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CValidator->validate(Object(ChangePasswordForm), NULL)
+#5 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): CActiveForm::validate(Object(ChangePasswordForm))
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 13:35:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): ChangePasswordForm->validate()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): validate()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 13:35:36 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): ChangePasswordForm->validate()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): validate()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 13:36:47 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): ChangePasswordForm->validate()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): validate()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 13:36:50 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\sim\protected\models\ChangePasswordForm.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\xampp\htdocs\frameworks\yii\web\widgets\CActiveForm.php(836): ChangePasswordForm->validate()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(127): validate()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 13:41:44 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.userId" is not defined.' in C:\xampp\htdocs\frameworks\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\auth\CWebUser.php(141): CComponent->__get('userId')
+#1 C:\xampp\htdocs\sim\protected\views\site\changePassword.php(34): CWebUser->__get('userId')
+#2 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\frameworks\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): CController->renderPartial('changePassword', Array, true)
+#6 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(142): CController->render('changePassword', Array)
+#7 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#8 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): CController->run('changePassword')
+#13 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('site/changePass...')
+#14 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/sim/changePassword
+HTTP_REFERER=https://localhost/sim/index.php
+---
+2013/03/08 14:15:37 [error] [php] urlencode() expects parameter 1 to be string, object given (C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php:438)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php(325): CUrlManager->createPathInfo()
+#1 C:\xampp\htdocs\frameworks\yii\web\CUrlManager.php(308): CUrlManager->createUrlDefault()
+#2 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(524): CUrlManager->createUrl()
+#3 C:\xampp\htdocs\frameworks\yii\web\CController.php(968): CWebApplication->createUrl()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(1029): SiteController->createUrl()
+#5 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(139): SiteController->redirect()
+#6 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#9 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#12 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#13 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 14:16:41 [error] [php] Undefined variable: pass (C:\xampp\htdocs\sim\protected\views\site\changePassword.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(142): SiteController->render()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 14:16:51 [error] [php] Undefined variable: pass (C:\xampp\htdocs\sim\protected\views\site\changePassword.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(142): SiteController->render()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 14:17:32 [error] [php] Undefined variable: pass (C:\xampp\htdocs\sim\protected\views\site\changePassword.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\frameworks\yii\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\sim\protected\controllers\SiteController.php(142): SiteController->render()
+#3 C:\xampp\htdocs\frameworks\yii\web\actions\CInlineAction.php(50): SiteController->actionChangePassword()
+#4 C:\xampp\htdocs\frameworks\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\frameworks\yii\web\filters\CFilterChain.php(134): SiteController->runAction()
+#6 C:\xampp\htdocs\frameworks\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\frameworks\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\sim\index.php(13): CWebApplication->run()
+REQUEST_URI=/sim/changePassword
+2013/03/08 14:18:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "changePassword/0[pass]/oo".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('changePassword/...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/changePassword/0%5Bpass%5D/oo
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 14:19:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "changePassword/pass/aa".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('changePassword/...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/changePassword/pass/aa
+HTTP_REFERER=https://localhost/sim/changePassword
+---
+2013/03/08 14:20:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "changePassword/pass/aa".' in C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\frameworks\yii\web\CWebApplication.php(142): CWebApplication->runController('changePassword/...')
+#1 C:\xampp\htdocs\frameworks\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sim\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sim/changePassword/pass/aa
+HTTP_REFERER=https://localhost/sim/changePassword
+---

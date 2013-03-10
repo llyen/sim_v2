@@ -54,6 +54,7 @@ return array(
 				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                                 '/login'=>'site/login',
                                 '/logout'=>'site/logout',
+                                '/changePassword'=>'site/changePassword',
                                 //'<controller:\w+>/<id:\d+>'=>'<controller>/index',
                                 'countersReadings/<cid:\d+>'=>'countersReadings/index',
                                 'invoicesData/<iid:\d+>'=>'invoicesData/index',

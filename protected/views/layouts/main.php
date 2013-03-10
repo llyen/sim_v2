@@ -30,6 +30,9 @@
 			'items'=>array(
 				array('label'=>'KONFIGURACJA', 'url'=>'#', 'items'=>
 				      array(
+					array('label'=>'PROFIL'),
+					array('label'=>'ZMIEŃ HASŁO', 'url'=>array('/changePassword')),
+					'---',
 					array('label'=>'OGÓLNE'),
 					array('label'=>'JEDNOSTKI', 'url'=>array('/units')),
 					array('label'=>'OBIEKTY', 'url'=>array('/objects')),
@@ -77,6 +80,12 @@
 			'class'=>'bootstrap.widgets.TbMenu',
 			'type'=>'pills',
 			'items'=>array(
+				array('label'=>'KONFIGURACJA', 'visible'=>!Yii::app()->user->isGuest, 'url'=>'#', 'items'=>
+					array(
+						array('label'=>'PROFIL'),
+						array('label'=>'ZMIEŃ HASŁO', 'url'=>array('/changePassword')),
+					),
+				),
 				array('label'=>'CO TO JEST SIM?', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'GENEZA', 'url'=>array('/site/genesis'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'PUNKTY POBORU', 'url'=>array('/collectionPoints'), 'visible'=>!Yii::app()->user->isGuest),
