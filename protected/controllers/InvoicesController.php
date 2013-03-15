@@ -159,7 +159,7 @@ class InvoicesController extends Controller
 			}
 			else
 			{
-				$fileName .= new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')");
+				$fileName .= new CDbExpression("DATE_FORMAT(NOW(), '%Y-%m-%d')"); //fix!!!
 			}
 			$fileName .= '.pdf';
 			
@@ -233,6 +233,7 @@ class InvoicesController extends Controller
 		$suppliers = $this->getSuppliers();
 		$tariffs = $this->getTariffs();
 		$statuses = $this->getStatuses();
+		$unit = Objects::model()->findByPk($model->object_id);
 		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -250,6 +251,7 @@ class InvoicesController extends Controller
 			'suppliers'=>$suppliers,
 			'tariffs'=>$tariffs,
 			'statuses'=>$statuses,
+			'unit'=>$unit,
 		));
 	}
 	
