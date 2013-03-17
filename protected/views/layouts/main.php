@@ -33,6 +33,8 @@
 				      array(
 					array('label'=>'PROFIL'),
 					array('label'=>'ZMIEŃ HASŁO', 'url'=>array('/changePassword')),
+					array('label'=>'POMOC'),
+					array('label'=>'INSTRUKCJA', 'url'=>array('/files/other/sim_instrukcja_uzytkownika.pdf')),
 					'---',
 					array('label'=>'OGÓLNE'),
 					array('label'=>'JEDNOSTKI', 'url'=>array('/units')),
@@ -86,6 +88,8 @@
 					array(
 						array('label'=>'PROFIL'),
 						array('label'=>'ZMIEŃ HASŁO', 'url'=>array('/changePassword')),
+						array('label'=>'POMOC'),
+						array('label'=>'INSTRUKCJA', 'url'=>array('/files/other/sim_instrukcja_uzytkownika.pdf')),
 					),
 				),
 				array('label'=>'CO TO JEST SIM?', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
