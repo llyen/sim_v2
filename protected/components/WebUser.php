@@ -27,5 +27,11 @@ class WebUser extends CWebUser
       $keys = array_keys($roles);
       return array_shift($keys);
    }
+
+   /*public function getPkId()
+   {
+      $pkId = Users::model()->findByAttributes(array('username' => Yii::app()->user->id));//fix!!!
+      return $pkId;
+   }*/
    
 }

@@ -50,9 +50,19 @@ class CountersController extends Controller
 		$model = Counters::model()->with('collectionPoint', 'medium')->findByPk($id);
 		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
 		
-		$this->render('view',array(
-			'model'=>$model,//$this->loadModel($id),
-		));
+		$object = CollectionPoints::model()->findByPk($model->collection_point_id)->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			$this->render('view',array(
+				'model'=>$model,//$this->loadModel($id),
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -92,21 +102,31 @@ class CountersController extends Controller
 		$collectionPoints=$this->getCollectionPoints();
 		$mediums=$this->getMediums();
 		
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['Counters']))
+		$object = CollectionPoints::model()->findByPk($model->collection_point_id)->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['Counters'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
 
-		$this->render('update',array(
-			'model'=>$model,
-			'collectionPoints'=>$collectionPoints,
-			'mediums'=>$mediums,
-		));
+			if(isset($_POST['Counters']))
+			{
+				$model->attributes=$_POST['Counters'];
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
+
+			$this->render('update',array(
+				'model'=>$model,
+				'collectionPoints'=>$collectionPoints,
+				'mediums'=>$mediums,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**

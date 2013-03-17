@@ -47,10 +47,20 @@ class CountersReadingsController extends Controller
 	 */
 	public function actionView($id, $cid)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-			'cid'=>$cid,
-		));
+		$object = Counters::model()->findByPk($cid)->collectionPoint->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+				'cid'=>$cid,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -59,22 +69,32 @@ class CountersReadingsController extends Controller
 	 */
 	public function actionCreate($id)
 	{
-		$model=new CountersReadings;
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['CountersReadings']))
+		$object = Counters::model()->findByPk($id)->collectionPoint->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['CountersReadings'];
-			if($model->save())
-				$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$id));
-		}
+			$model=new CountersReadings;
 
-		$this->render('create',array(
-			'model'=>$model,
-			'cid'=>$id,
-		));
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
+
+			if(isset($_POST['CountersReadings']))
+			{
+				$model->attributes=$_POST['CountersReadings'];
+				if($model->save())
+					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$id));
+			}
+
+			$this->render('create',array(
+				'model'=>$model,
+				'cid'=>$id,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -84,22 +104,32 @@ class CountersReadingsController extends Controller
 	 */
 	public function actionUpdate($id, $cid)
 	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['CountersReadings']))
+		$object = Counters::model()->findByPk($cid)->collectionPoint->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['CountersReadings'];
-			if($model->save())
-				$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$cid));
-		}
+			$model=$this->loadModel($id);
 
-		$this->render('update',array(
-			'model'=>$model,
-			'cid'=>$cid,
-		));
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
+
+			if(isset($_POST['CountersReadings']))
+			{
+				$model->attributes=$_POST['CountersReadings'];
+				if($model->save())
+					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$cid));
+			}
+
+			$this->render('update',array(
+				'model'=>$model,
+				'cid'=>$cid,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -109,11 +139,22 @@ class CountersReadingsController extends Controller
 	 */
 	public function actionDelete($id, $cid)
 	{
-		$this->loadModel($id)->delete();
+		$object = Counters::model()->findByPk($cid)->collectionPoint->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			
+			$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'cid'=>$cid));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'cid'=>$cid));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -121,14 +162,24 @@ class CountersReadingsController extends Controller
 	 * @param integer $cid the ID of the Counter
 	 */
 	public function actionIndex($cid)
-	{	
-		//$dataProvider=new CActiveDataProvider('CountersReadings');
-		$countersReadings=Counters::model()->findByPk($cid)->countersReadings;
-		$dataProvider=new CArrayDataProvider($countersReadings);
-		$this->render('index',array(
-			'cid'=>$cid,
-			'dataProvider'=>$dataProvider,
-		));
+	{
+		$object = Counters::model()->findByPk($cid)->collectionPoint->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			//$dataProvider=new CActiveDataProvider('CountersReadings');
+			$countersReadings=Counters::model()->findByPk($cid)->countersReadings;
+			$dataProvider=new CArrayDataProvider($countersReadings);
+			$this->render('index',array(
+				'cid'=>$cid,
+				'dataProvider'=>$dataProvider,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	public function actionAdminIndex($id)

@@ -47,10 +47,20 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionView($id, $iid)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-			'iid'=>$iid,
-		));
+		$object = Invoices::model()->findByPk($iid)->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+				'iid'=>$iid,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -59,27 +69,36 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionCreate($id)
 	{
+		$object = Invoices::model()->findByPk($id)->object;
+		$params = array('unit_id'=>$object->unit_id);
 		
-		$model=new InvoicesData;
-		//$invoices = $this->getInvoices();
-		$tariffsComponents = $this->getTariffsComponents($id);
-		
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['InvoicesData']))
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['InvoicesData'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id, 'iid'=>$id));
-		}
+			$model=new InvoicesData;
+			//$invoices = $this->getInvoices();
+			$tariffsComponents = $this->getTariffsComponents($id);
+			
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
+	
+			if(isset($_POST['InvoicesData']))
+			{
+				$model->attributes=$_POST['InvoicesData'];
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id, 'iid'=>$id));
+			}
 
-		$this->render('create',array(
-			'model'=>$model,
-			'iid'=>$id,
-			//'invoices'=>$invoices,
-			'tariffsComponents'=>$tariffsComponents,
-		));
+			$this->render('create',array(
+				'model'=>$model,
+				'iid'=>$id,
+				//'invoices'=>$invoices,
+				'tariffsComponents'=>$tariffsComponents,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -89,23 +108,33 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionUpdate($id, $iid)
 	{
-		$model=$this->loadModel($id);
-		$tariffsComponents = $this->getTariffsComponents($iid);
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['InvoicesData']))
+		$object = Invoices::model()->findByPk($iid)->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['InvoicesData'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id, 'iid'=>$iid));
-		}
+			$model=$this->loadModel($id);
+			$tariffsComponents = $this->getTariffsComponents($iid);
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
+	
+			if(isset($_POST['InvoicesData']))
+			{
+				$model->attributes=$_POST['InvoicesData'];
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id, 'iid'=>$iid));
+			}
 
-		$this->render('update',array(
-			'model'=>$model,
-			'iid'=>$iid,
-			'tariffsComponents'=>$tariffsComponents,
-		));
+			$this->render('update',array(
+				'model'=>$model,
+				'iid'=>$iid,
+				'tariffsComponents'=>$tariffsComponents,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -115,11 +144,21 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionDelete($id, $iid)
 	{
-		$this->loadModel($id)->delete();
-		//$this->redirect(array('invoicesdata/index', 'iid'=>$iid));
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'iid' => $iid)); //invoicesData/index
+		$object = Invoices::model()->findByPk($iid)->object;
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			$this->loadModel($id)->delete();
+			//$this->redirect(array('invoicesdata/index', 'iid'=>$iid));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'iid' => $iid));//invoicesData/index
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**

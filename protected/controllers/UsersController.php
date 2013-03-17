@@ -62,8 +62,26 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
+			$username = $model->username;
+			$unit = $model->unit;
 			if($model->save())
+			{
+				$userAssignment = Yii::app()->db->createCommand('insert into AuthAssignment (itemname, userid, bizrule, data) values (:itemname, :userid, NULL, NULL)');
+				$userAssignment->bindParam(':userid', $username, PDO::PARAM_STR);
+				
+				if(is_null($unit))
+				{
+					$userAssignment->bindValue(':itemname', 'admin');
+					//$userAssignment->bindParam(); bizrule bind
+				}
+				else
+				{
+					$userAssignment->bindValue(':itemname', 'unit_admin');
+					//$userAssignment->bindParam();
+				}
+				$userAssignment->execute();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(

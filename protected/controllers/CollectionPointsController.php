@@ -47,9 +47,21 @@ class CollectionPointsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$model = $this->loadModel($id);
+		$object = Objects::model()->findByPk($model->object_id);
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		{
+			
+			$this->render('view',array(
+				'model'=>$model,
+			));
+		}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
@@ -86,20 +98,30 @@ class CollectionPointsController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$objects = $this->getObjects();
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['CollectionPoints']))
+		$object = Objects::model()->findByPk($model->object_id);
+		$params = array('unit_id'=>$object->unit_id);
+		
+		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
-			$model->attributes=$_POST['CollectionPoints'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			// Uncomment the following line if AJAX validation is needed
+			$this->performAjaxValidation($model);
 
-		$this->render('update',array(
-			'model'=>$model,
-			'objects'=>$objects,
-		));
+			if(isset($_POST['CollectionPoints']))
+			{
+				$model->attributes=$_POST['CollectionPoints'];
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
+
+			$this->render('update',array(
+				'model'=>$model,
+				'objects'=>$objects,
+			));
+			}
+		else
+		{
+			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+		}
 	}
 
 	/**
