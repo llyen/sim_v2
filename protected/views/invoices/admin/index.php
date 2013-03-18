@@ -28,12 +28,19 @@ $this->menu=array(
 			<th>Operacje</th>
 		</thead>
 		<tbody>
-			<?php $this->widget('zii.widgets.CListView', array(
+			<?php
+			$dataProvider->pagination->pageVar='p';
+			$this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'viewData'=>array('statuses'=>$statuses),
 				'itemView'=>'admin/_view',
 				'summaryText'=>'',
 				'emptyText'=>'Brak danych.',
+				'pager'=>array(
+					'nextPageLabel'=>'Następna &raquo;',
+					'prevPageLabel'=>'&laquo; Poprzednia',
+					'header'=>'',
+				),
 			)); ?>
 		</tbody>
 	</table>
