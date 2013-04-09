@@ -31,6 +31,7 @@ $this->menu=array(
 		<?php if(!is_null($model->file_src)) echo '<a href="'.Yii::app()->request->baseUrl.'/invs/'.$unit->unit_id.'/'.$model->object_id.'/'.$model->file_src.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>'; else echo 'Brak powiązanego pliku.' ?>
 		</div>
 	</div>
+	<?php echo $form->textAreaRow($model, 'note', array('class'=>'span6', 'rows'=>8)); ?>
 </fieldset>
 <div class="form-actions">
     <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Zapisz')); ?>

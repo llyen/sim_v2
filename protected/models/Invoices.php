@@ -17,6 +17,7 @@
  * @property string $update_user
  * @property integer $status
  * @property string $file_src
+ * @property string $note
  *
  * The followings are the available model relations:
  * @property Tariffs $tariff
@@ -56,11 +57,11 @@ class Invoices extends CActiveRecord
 			array('tariff_id, object_id, supplier_id, status', 'numerical', 'integerOnly'=>true),
 			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			array('file_src', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
-			array('period_since, period_to, issue_date', 'safe'),
+			array('period_since, period_to, issue_date, note', 'safe'),
 			array('file_src', 'file', 'types'=>'pdf', 'allowEmpty'=>true, 'wrongType'=>'Plik nie może zostać załadowany. Wymagany plik w formacie: pdf.'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src', 'safe', 'on'=>'search'),
+			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src, note', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,6 +99,7 @@ class Invoices extends CActiveRecord
 			'update_user' => 'Aktualizowana przez',
 			'status' => 'Status',
 			'file_src' => 'Skan faktury',
+			'note' => 'Uwagi',
 		);
 	}
 
@@ -125,6 +127,7 @@ class Invoices extends CActiveRecord
 		$criteria->compare('update_user',$this->update_user,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('file_src',$this->file_src,true);
+		$criteria->compare('note',$this->note,true);
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

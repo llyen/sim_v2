@@ -62,6 +62,7 @@ ob_end_clean();
 		      'type'=>'raw',
 		      'value'=>(is_null($model->file_src)) ? 'Brak powiązanego pliku.' : '<a href="'.Yii::app()->request->baseUrl.'/invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/'.$model->file_src.'" title="podgląd dokumentu"><img src="'.Yii::app()->request->baseUrl.'/images/pdf.png" alt="podgląd dokumentu" /></a>',
 		),
+		'note',
 		'create_date',
 		'create_user',
 		'update_date',
