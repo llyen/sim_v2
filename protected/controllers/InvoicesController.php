@@ -265,7 +265,7 @@ class InvoicesController extends Controller
 	public function actionAdminView($id)
 	{
 		$model=$this->loadModel($id);
-		$objects = $this->getObjects();
+		$objects = $this->getAllObjects();
 		$suppliers = $this->getSuppliers();
 		$tariffs = $this->getTariffs();
 		$statuses = $this->getStatuses();
@@ -347,6 +347,15 @@ class InvoicesController extends Controller
 	{
 		$objects = array();
 		$objectsModel = Units::model()->findByPk(Yii::app()->user->getState('unit_id'))->objects;
+		foreach($objectsModel as $o)
+			$objects[$o->id] = $o->name;
+		return $objects;
+	}
+	
+	protected function getAllObjects()
+	{
+		$objects = array();
+		$objectsModel = Objects::model()->findAll();
 		foreach($objectsModel as $o)
 			$objects[$o->id] = $o->name;
 		return $objects;
