@@ -183,6 +183,8 @@ class InvoicesController extends Controller
 				
 				if($file_src !== null) $model->file_src = $fileName;
 				
+				$model->status = 0; //set status "new"
+				
 				if($model->save())
 				{
 					if(is_object($file_src))
