@@ -21,7 +21,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		array('name'=>'medium_id', 'label'=>'Medium'),
+		array('name'=>'medium.name', 'label'=>'Medium'),
 		'name',
 		'address',
 	),
