@@ -52,9 +52,11 @@ class CountersReadingsController extends Controller
 		
 		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
+			$type = Counters::model()->findByPk($cid)->type;
 			$this->render('view',array(
 				'model'=>$this->loadModel($id),
 				'cid'=>$cid,
+				'type'=>$type,
 			));
 		}
 		else
@@ -74,6 +76,7 @@ class CountersReadingsController extends Controller
 		
 		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
+			$type = Counters::model()->findByPk($id)->type;
 			$model=new CountersReadings;
 
 			// Uncomment the following line if AJAX validation is needed
@@ -83,12 +86,13 @@ class CountersReadingsController extends Controller
 			{
 				$model->attributes=$_POST['CountersReadings'];
 				if($model->save())
-					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$id));
+					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$id, 'type'=>$type));
 			}
 
 			$this->render('create',array(
 				'model'=>$model,
 				'cid'=>$id,
+				'type'=>$type,
 			));
 		}
 		else
@@ -109,6 +113,7 @@ class CountersReadingsController extends Controller
 		
 		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
+			$type = Counters::model()->findByPk($cid)->type;
 			$model=$this->loadModel($id);
 
 			// Uncomment the following line if AJAX validation is needed
@@ -118,12 +123,13 @@ class CountersReadingsController extends Controller
 			{
 				$model->attributes=$_POST['CountersReadings'];
 				if($model->save())
-					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$cid));
+					$this->redirect(array('view', 'id'=>$model->id, 'cid'=>$cid, 'type'=>$type));
 			}
 
 			$this->render('update',array(
 				'model'=>$model,
 				'cid'=>$cid,
+				'type'=>$type,
 			));
 		}
 		else
@@ -168,12 +174,14 @@ class CountersReadingsController extends Controller
 		
 		if(Yii::app()->user->checkAccess('manageOwnData', $params))
 		{
+			$type = Counters::model()->findByPk($cid)->type;
 			//$dataProvider=new CActiveDataProvider('CountersReadings');
 			$countersReadings=Counters::model()->findByPk($cid)->countersReadings;
 			$dataProvider=new CArrayDataProvider($countersReadings);
 			$this->render('index',array(
 				'cid'=>$cid,
 				'dataProvider'=>$dataProvider,
+				'type'=>$type,
 			));
 		}
 		else
@@ -184,11 +192,13 @@ class CountersReadingsController extends Controller
 
 	public function actionAdminIndex($id)
 	{
+		$type = Counters::model()->findByPk($id)->type;
 		$countersReadings=Counters::model()->findByPk($id)->countersReadings;
 		$dataProvider=new CArrayDataProvider($countersReadings);
 		$this->render('admin/index',array(
 			'id'=>$id,
 			'dataProvider'=>$dataProvider,
+			'type'=>$type,
 		));
 	}
 	

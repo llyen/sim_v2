@@ -22,6 +22,15 @@ $this->menu=array(
 			<th>Data odczytu</th>
 			<th>Stan licznika</th>
 			<th>Zużycie</th>
+			<?php
+				if($type)
+				{
+			?>
+			<th>Stan licznika (taryfa nocna)</th>
+			<th>Zużycie (taryfa nocna)</th>
+			<?php
+				}
+			?>
 			<th>Data utworzenia</th>
 			<th>Opcje</th>
 		</thead>
@@ -31,6 +40,7 @@ $this->menu=array(
 			$this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'itemView'=>'admin/_view',
+				'viewData'=>array('type'=>$type),
 				'summaryText'=>'',
 				'emptyText'=>'Brak danych.',
 				'pager'=>array(

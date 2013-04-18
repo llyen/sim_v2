@@ -15,9 +15,11 @@
 	<?php echo $form->errorSummary($model, 'Proszę poprawić następujące błędy:'); ?>
 	<?php echo $form->dropDownListRow($model, 'collection_point_id', $collectionPoints); ?>
 	<?php echo $form->dropDownListRow($model, 'medium_id', $mediums); ?>
+	<?php echo $form->dropDownListRow($model, 'type', array(0 => 'jednotaryfowy', 1 => 'dwutaryfowy')); ?>
 	<?php echo $form->textFieldRow($model, 'symbol', array('size'=>60, 'maxlength'=>255)); ?>
 	<?php echo $form->textFieldRow($model, 'unit', array('size'=>10, 'maxlength'=>10)); ?>
 	<?php echo $form->textFieldRow($model, 'initial_state', array('size'=>10, 'maxlength'=>10)); ?>
+	<?php echo $form->textFieldRow($model, 'initial_state_second', array('size'=>10, 'maxlength'=>10)); ?>
 	<div class="control-group">
 		<label class="control-label" for="Counters_installation_date">Data instalacji</label>
 		<div class="controls">

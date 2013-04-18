@@ -12,11 +12,11 @@ $this->breadcrumbs=array(
 $this->menu=array(
         array('label'=>'ODCZYTY LICZNIKA'),
 	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/counters')),
-	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'url'=>array("countersreadings/$cid")),
+	array('label'=>'Wyświetl odczyty', 'icon'=>'book', 'url'=>array("countersReadings/$cid")),
         array('label'=>'Dodaj odczyt', 'icon'=>'pencil', 'active'=>true, 'url'=>"$cid"),
 );
 ?>
 
 <legend>Utwórz odczyt licznika</legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'cid'=>$cid)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'cid'=>$cid, 'type'=>$type)); ?>

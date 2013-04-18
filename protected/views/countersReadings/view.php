@@ -26,6 +26,8 @@ $this->menu=array(
 		'reading_date',
 		'counter_state',
 		'use',
+		'counter_state_second',
+		'use_second',
 		'create_date',
 		'create_user',
 		'update_date',

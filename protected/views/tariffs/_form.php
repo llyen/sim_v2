@@ -24,6 +24,8 @@
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'id'=>'Tariffs_mandatory_date',
 			'name'=>'Tariffs[mandatory_date]',
+			'attribute'=>'mandatory_date',
+			'model'=>$model,
 			// additional javascript options for the date picker plugin
 			'options'=>array(
 			'showAnim'=>'fold',

@@ -39,7 +39,13 @@
 	
 	<?php echo $form->textFieldRow($model, 'counter_state', array('size'=>10, 'maxlength'=>10)); ?>
 	<?php echo $form->textFieldRow($model, 'use', array('size'=>10, 'maxlength'=>10)); ?>
-	
+	<?php
+		if($type)
+		{
+			echo $form->textFieldRow($model, 'counter_state_second', array('size'=>10, 'maxlength'=>10));
+			echo $form->textFieldRow($model, 'use_second', array('size'=>10, 'maxlength'=>10));
+		}
+	?>
 </fieldset>
 <div class="form-actions">
     <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>($model->isNewRecord ? 'Utwórz' : 'Zapisz'))); ?>

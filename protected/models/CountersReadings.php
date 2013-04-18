@@ -9,6 +9,8 @@
  * @property string $reading_date
  * @property string $counter_state
  * @property string $use
+ * @property string $counter_state_second
+ * @property string $use_second
  * @property string $create_date
  * @property string $create_user
  * @property string $update_date
@@ -47,11 +49,11 @@ class CountersReadings extends CActiveRecord
 		return array(
 			array('counter_id, reading_date, counter_state, use, create_date, create_user, update_date, update_user', 'required', 'message'=>'Proszę podaj wartość dla pola {attribute}'),
 			array('counter_id', 'numerical', 'integerOnly'=>true),
-			array('counter_state, use', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
+			array('counter_state, use, counter_state_second, use_second', 'length', 'max'=>10, 'message'=>'{attribute} może mieć maksymalną długość 10 znaków'),
 			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, counter_id, reading_date, counter_state, use, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),
+			array('id, counter_id, reading_date, counter_state, use, counter_state_second, use_second, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +80,8 @@ class CountersReadings extends CActiveRecord
 			'reading_date' => 'Data odczytu',
 			'counter_state' => 'Stan licznika',
 			'use' => 'Zużycie',
+			'counter_state_second' => 'Stan licznika (taryfa nocna)',
+			'use_second' => 'Zużycie (taryfa nocna)',
 			'create_date' => 'Data utworzenia',
 			'create_user' => 'Utworzony przez',
 			'update_date' => 'Data aktualizacji',
@@ -101,6 +105,8 @@ class CountersReadings extends CActiveRecord
 		$criteria->compare('reading_date',$this->reading_date,true);
 		$criteria->compare('counter_state',$this->counter_state,true);
 		$criteria->compare('use',$this->use,true);
+		$criteria->compare('counter_state_second',$this->counter_state,true);
+		$criteria->compare('use_second',$this->use,true);
 		$criteria->compare('create_date',$this->create_date,true);
 		$criteria->compare('create_user',$this->create_user,true);
 		$criteria->compare('update_date',$this->update_date,true);
@@ -115,6 +121,8 @@ class CountersReadings extends CActiveRecord
 	{
 		$this->counter_state=str_replace(',', '.', $this->counter_state);
 		$this->use=str_replace(',', '.', $this->use);
+		$this->counter_state_second=str_replace(',', '.', $this->counter_state_second);
+		$this->use_second=str_replace(',', '.', $this->use_second);
 		$this->update_date=new CDbExpression("NOW()");
 		$this->update_user=Yii::app()->user->name;
 		if($this->isNewRecord){

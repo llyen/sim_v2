@@ -49,6 +49,7 @@ class CountersController extends Controller
 	{
 		$model = Counters::model()->with('collectionPoint', 'medium')->findByPk($id);
 		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
+		$model->type = ($model->type) ? 'dwutaryfowy' : 'jednotaryfowy';
 		
 		$object = CollectionPoints::model()->findByPk($model->collection_point_id)->object;
 		$params = array('unit_id'=>$object->unit_id);
@@ -169,6 +170,7 @@ class CountersController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$model->archival = ($model->archival) ? 'TAK' : 'NIE';
+		$model->type = ($model->type) ? 'dwutaryfowy' : 'jednotaryfowy';
 		$this->render('admin/view',array(
 			'model'=>$model,
 		));

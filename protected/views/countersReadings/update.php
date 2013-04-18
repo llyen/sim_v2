@@ -20,4 +20,4 @@ $this->menu=array(
 
 <legend>Edytuj odczyt licznika <?php echo $model->counter->symbol; ?></legend>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'cid'=>$cid)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'cid'=>$cid, 'type'=>$type)); ?>

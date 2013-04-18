@@ -15,7 +15,7 @@ $this->menu=array(
 ?>
 
 <div class="window">
-	<legend>Zestawienie liczników dla jednostki</legend>
+	<legend>Zestawienie liczników</legend>
 	<table>
 		<thead>
 			<th>Jednostka</th>

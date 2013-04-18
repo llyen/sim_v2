@@ -23,9 +23,11 @@ $this->menu=array(
 	'attributes'=>array(
 		array('name'=>'collectionPoint.symbol', 'label'=>'Punkt poboru'),
 		array('name'=>'medium.name', 'label'=>'Medium'),
+		'type',
 		'symbol',
 		'unit',
 		'initial_state',
+		'initial_state_second',
 		'installation_date',
 		'archival',
 		'create_date',
