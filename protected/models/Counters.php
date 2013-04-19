@@ -134,6 +134,8 @@ class Counters extends CActiveRecord
 	
 	public function beforeValidate()
 	{
+		$this->initial_state=str_replace(',', '.', $this->initial_state);
+		$this->initial_state_second=str_replace(',', '.', $this->initial_state_second);
 		$this->update_date=new CDbExpression("NOW()");
 		$this->update_user=Yii::app()->user->name;
 		if($this->isNewRecord){
