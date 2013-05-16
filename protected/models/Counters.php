@@ -27,6 +27,13 @@
 class Counters extends CActiveRecord
 {
 	/**
+	 * search properties
+	 */
+	public $unit_search;
+	public $collection_point_search;
+	public $medium_search;
+	
+	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Counters the static model class
@@ -60,7 +67,7 @@ class Counters extends CActiveRecord
 			array('installation_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, collection_point_id, medium_id, type, symbol, unit, initial_state, initial_state_second, installation_date, archival, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),
+			array('id, collection_point_id, medium_id, type, symbol, unit, initial_state, initial_state_second, installation_date, archival, create_date, create_user, update_date, update_user, unit_search, collection_point_search, medium_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,6 +105,9 @@ class Counters extends CActiveRecord
 			'create_user' => 'Utworzony przez',
 			'update_date' => 'Data aktualizacji',
 			'update_user' => 'Aktualizowany przez',
+			'unit_search' => 'Jednostka',
+			'collection_point_search' => 'Punkt poboru',
+			'medium_search' => 'Medium',
 		);
 	}
 
@@ -111,10 +121,13 @@ class Counters extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('collectionPoint', 'medium');
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('collection_point_id',$this->collection_point_id);
-		$criteria->compare('medium_id',$this->medium_id);
+		//$criteria->compare('collection_point_id',$this->collection_point_id);
+		$criteria->compare('collectionPoint.symbol',$this->collection_point_search,true);
+		//$criteria->compare('medium_id',$this->medium_id);
+		$criteria->compare('medium.name',$this->medium_search,true);
 		$criteria->compare('type',$this->type);
 		$criteria->compare('symbol',$this->symbol,true);
 		$criteria->compare('unit',$this->unit,true);
@@ -129,6 +142,27 @@ class Counters extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'attributes'=>array(
+					/*'unit_search'=>array(
+						'asc'=>'object.unit.name',
+						'desc'=>'object.unit.name desc',
+					),*/
+					'collection_point_search'=>array(
+						'asc'=>'collectionPoint.symbol',
+						'desc'=>'collectionPoint.symbol desc',
+					),
+					'medium_search'=>array(
+						'asc'=>'medium.name',
+						'desc'=>'medium.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 	

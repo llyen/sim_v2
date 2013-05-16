@@ -16,31 +16,6 @@ $this->menu=array(
 
 <div class="window">
 	<legend>Zestawienie liczników</legend>
-	<table>
-		<thead>
-			<th>Jednostka</th>
-			<th>Punkt poboru</th>
-			<th>Medium</th>
-			<th>Symbol</th>
-			<th>Data instalacji</th>
-			<!--<th>Archiwalny</th>-->
-			<th>Opcje</th>
-		</thead>
-		<tbody>
-			<?php
-			$dataProvider->pagination->pageVar='p';
-			$this->widget('zii.widgets.CListView', array(
-				'dataProvider'=>$dataProvider,
-				'itemView'=>'admin/_view',
-				'summaryText'=>'',
-				'emptyText'=>'Brak danych.',
-				'pager'=>array(
-					'nextPageLabel'=>'Następna &raquo;',
-					'prevPageLabel'=>'&laquo; Poprzednia',
-					'header'=>'',
-				),
-			)); ?>
-		</tbody>
-	</table>
+	<?php $this->renderPartial('admin/_grid', array('model'=>$model)); ?>
 </div>
 
