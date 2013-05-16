@@ -20,6 +20,12 @@
 class CollectionPoints extends CActiveRecord
 {
 	/**
+	 * search properties
+	 */
+	public $unit_search;
+	public $object_search;
+	
+	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return CollectionPoints the static model class
@@ -52,7 +58,7 @@ class CollectionPoints extends CActiveRecord
 			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, object_id, symbol, multiplicand, create_date, create_user, update_date, update_user', 'safe', 'on'=>'search'),
+			array('id, object_id, symbol, multiplicand, create_date, create_user, update_date, update_user, unit_search, object_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -83,6 +89,8 @@ class CollectionPoints extends CActiveRecord
 			'create_user' => 'Utworzony przez',
 			'update_date' => 'Data aktualizacji',
 			'update_user' => 'Aktualizowany przez',
+			'object_search' => 'Obiekt',
+			'unit_search' => 'Jednostka',
 		);
 	}
 
@@ -96,9 +104,11 @@ class CollectionPoints extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('object');
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('object_id',$this->object_id);
+		$criteria->compare('object.name',$this->object_search,true);
+		//$criteria->compare('object_id',$this->object_id);
 		$criteria->compare('symbol',$this->symbol,true);
 		$criteria->compare('multiplicand',$this->multiplicand,true);
 		$criteria->compare('create_date',$this->create_date,true);
@@ -108,6 +118,19 @@ class CollectionPoints extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'attributes'=>array(
+					'object_search'=>array(
+						'asc'=>'object.name',
+						'desc'=>'object.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 	
