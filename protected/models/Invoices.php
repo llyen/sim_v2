@@ -28,6 +28,13 @@
 class Invoices extends CActiveRecord
 {
 	/**
+	 * search properties
+	 */
+	public $unit_search;
+	public $object_search;
+	public $supplier_search;
+	
+	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Invoices the static model class
@@ -61,7 +68,7 @@ class Invoices extends CActiveRecord
 			array('file_src', 'file', 'types'=>'pdf', 'allowEmpty'=>true, 'wrongType'=>'Plik nie może zostać załadowany. Wymagany plik w formacie: pdf.'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src, note', 'safe', 'on'=>'search'),
+			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src, note, unit_search, object_search, supplier_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -100,6 +107,9 @@ class Invoices extends CActiveRecord
 			'status' => 'Status',
 			'file_src' => 'Skan faktury',
 			'note' => 'Uwagi',
+			'unit_search' => 'Jednostka',
+			'object_search' => 'Obiekt',
+			'supplier_search' => 'Dostawca',
 		);
 	}
 
@@ -113,11 +123,14 @@ class Invoices extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('object', 'supplier');
+		
 		$criteria->compare('id',$this->id);
 		$criteria->compare('tariff_id',$this->tariff_id);
-		$criteria->compare('object_id',$this->object_id);
-		$criteria->compare('supplier_id',$this->supplier_id);
+		//$criteria->compare('object_id',$this->object_id);
+		$criteria->compare('object.name',$this->object_search,true);
+		//$criteria->compare('supplier_id',$this->supplier_id);
+		$criteria->compare('supplier.name',$this->supplier_search,true);
 		$criteria->compare('period_since',$this->period_since,true);
 		$criteria->compare('period_to',$this->period_to,true);
 		$criteria->compare('issue_date',$this->issue_date,true);
@@ -131,6 +144,27 @@ class Invoices extends CActiveRecord
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'attributes'=>array(
+					/*'unit_search'=>array(
+						'asc'=>'object.unit.name',
+						'desc'=>'object.unit.name desc',
+					),*/
+					'object_search'=>array(
+						'asc'=>'object.name',
+						'desc'=>'object.name desc',
+					),
+					'supplier_search'=>array(
+						'asc'=>'supplier.name',
+						'desc'=>'supplier.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 	
@@ -146,6 +180,24 @@ class Invoices extends CActiveRecord
 		}
 
 		return parent::beforeValidate();	
+	}
+	
+	public static function getLabel($status)
+	{
+		switch($status)
+		{
+			case 1:
+			$label = array('type'=>'success', 'label'=>'zatwierdzona');
+			break;
+			
+			case 2:
+			$label = array('type'=>'important', 'label'=>'odrzucona');
+			break;
+			
+			default:
+			$label = array('type'=>'info', 'label'=>'nowa');
+		}
+		return $label;
 	}
 	
 }

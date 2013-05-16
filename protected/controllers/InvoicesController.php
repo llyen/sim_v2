@@ -118,7 +118,8 @@ class InvoicesController extends Controller
 					$file_src->saveAs($path.$fileName);
 				}
 				
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('invoicesData/index','iid'=>$model->id));
+				//$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
@@ -192,7 +193,8 @@ class InvoicesController extends Controller
 						$file_src->saveAs($path.$fileName);
 					}
 					
-					$this->redirect(array('view','id'=>$model->id));
+					$this->redirect(array('invoicesData/index','iid'=>$model->id));
+					//$this->redirect(array('view','id'=>$model->id));
 				}
 			}
 
@@ -252,13 +254,13 @@ class InvoicesController extends Controller
 
 	public function actionAdminIndex()
 	{
-		$statuses = $this->getStatuses();
-		$data = Yii::app()->db->createCommand('select i.id, u.name as unit, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id join units u on o.unit_id = u.id order by unit asc, i.period_since asc, i.status asc')->queryAll();
-		$dataProvider = new CArrayDataProvider($data);
+		$model=new Invoices('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Invoices']))
+			$model->attributes=$_GET['Invoices'];
 
-		$this->render('admin/index',array(
-			'dataProvider'=>$dataProvider,
-			'statuses'=>$statuses,
+		$this->render('admin/index', array(
+			'model'=>$model,
 		));
 	}
 	

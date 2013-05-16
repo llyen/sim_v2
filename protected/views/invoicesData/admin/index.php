@@ -12,6 +12,7 @@ $this->menu=array(
         array('label'=>'POZYCJE NA FAKTURZE'),
 	array('label'=>'Powrót', 'icon'=>'chevron-left', 'url'=>array('/invoices/adminIndex')),
 	array('label'=>'Wyświetl pozycje', 'icon'=>'book', 'active'=>true, 'url'=>"$id"),
+	array('label'=>'Faktura', 'icon'=>'list-alt', 'url'=>array("invoices/adminView/$id")),
 );
 ?>
 

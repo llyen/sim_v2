@@ -7,6 +7,7 @@
 $this->menu=array(
         array('label'=>'FAKTURY'),
 	array('label'=>'Wyświetl faktury', 'icon'=>'book', 'url'=>array('adminIndex')),
+	array('label'=>'Pozycje na fakturze', 'icon'=>'list', 'url'=>array("invoicesData/adminIndex/$model->id")),
 );
 ?>
 

@@ -16,34 +16,7 @@ $this->menu=array(
 
 <div class="window">
 	<legend>Zestawienie faktur</legend>
-	<table>
-		<thead>
-			<th>Jednostka</th>
-			<th>Status</th>
-			<th>Obiekt</th>
-			<th>Dostawca</th>
-			<th>Okres od</th>
-			<th>Okres do</th>
-			<!--<th>Data wystawienia</th>-->
-			<th>Operacje</th>
-		</thead>
-		<tbody>
-			<?php
-			$dataProvider->pagination->pageVar='p';
-			$this->widget('zii.widgets.CListView', array(
-				'dataProvider'=>$dataProvider,
-				'viewData'=>array('statuses'=>$statuses),
-				'itemView'=>'admin/_view',
-				'summaryText'=>'',
-				'emptyText'=>'Brak danych.',
-				'pager'=>array(
-					'nextPageLabel'=>'Następna &raquo;',
-					'prevPageLabel'=>'&laquo; Poprzednia',
-					'header'=>'',
-				),
-			)); ?>
-		</tbody>
-	</table>
+	<?php $this->renderPartial('admin/_grid', array('model'=>$model)); ?>
 </div>
 
 

@@ -237,8 +237,11 @@ other
 .list-view { padding-top: 0px; }
 .window table { width: 100%; }
 .window table td, .window table th { padding: 12px; }
-.window table td, .window table th { text-align: center; }
+.window table td, .window table th { text-align: center; vertical-align: middle; }
 .window table tbody tr:nth-child(even){  }
 .window table tbody tr:nth-child(odd){ background-color: #fafafa; border-bottom: 1px solid #efefef; border-top: 1px solid #efefef; }
+.window legend { margin-bottom: 0; }
 .index { text-align: justify; font-size: 17px; font-style: italic; }
 .navbar-wrapper .container { width: 980px; }
+.pagination { margin: 0; }
+ul.yiiPager { display: inline-block; }
