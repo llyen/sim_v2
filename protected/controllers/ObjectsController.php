@@ -142,10 +142,14 @@ class ObjectsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$data = Yii::app()->db->createCommand('select o.id, o.name, o.address, u.name as unit from objects o join units u on o.unit_id=u.id order by u.name, o.name')->queryAll();
-		$dataProvider = new CArrayDataProvider($data);
+		//$data = Yii::app()->db->createCommand('select o.id, o.name, o.address, u.name as unit from objects o join units u on o.unit_id=u.id order by u.name, o.name')->queryAll();
+		//$dataProvider = new CArrayDataProvider($data);
+		$model=new Objects('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Objects']))
+			$model->attributes=$_GET['Objects'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 

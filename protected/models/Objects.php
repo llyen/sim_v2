@@ -21,6 +21,8 @@
  */
 class Objects extends CActiveRecord
 {
+	public $unit_search;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -56,7 +58,7 @@ class Objects extends CActiveRecord
 			array('additional_information', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, unit_id, name, address, plot_number, energy_certificate, area, cubage, additional_information', 'safe', 'on'=>'search'),
+			array('id, unit_id, name, address, plot_number, energy_certificate, area, cubage, additional_information, unit_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -89,6 +91,7 @@ class Objects extends CActiveRecord
 			'area' => 'Powierzchnia',
 			'cubage' => 'Kubatura',
 			'additional_information' => 'Dodatkowe informacje',
+			'unit_search' => 'Jednostka',
 		);
 	}
 
@@ -102,11 +105,13 @@ class Objects extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('unit');
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('unit_id',$this->unit_id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('address',$this->address,true);
+		//$criteria->compare('unit_id',$this->unit_id);
+		$criteria->compare('unit.name',$this->unit_search,true);
+		$criteria->compare('t.name',$this->name,true);//t.name or alias for column
+		$criteria->compare('t.address',$this->address,true);
 		$criteria->compare('plot_number',$this->plot_number,true);
 		$criteria->compare('energy_certificate',$this->energy_certificate,true);
 		$criteria->compare('area',$this->area,true);
@@ -115,6 +120,19 @@ class Objects extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'attributes'=>array(
+					'unit_search'=>array(
+						'asc'=>'unit.name',
+						'desc'=>'unit.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 	

@@ -17,16 +17,17 @@ $this->menu=array(
 
 <div class="window">
 	<legend>Zestawienie obiektów</legend>
-	<table>
+	<!--<table>
 		<thead>
 			<th>Jednostka</th>
 			<th>Nazwa</th>
 			<th>Adres</th>
 			<th>Opcje</th>
 		</thead>
-		<tbody>
+		<tbody>-->
+	<?php $this->renderPartial('_grid', array('model'=>$model)); ?>
 	<?php
-	$dataProvider->pagination->pageVar='p';
+	/*$dataProvider->pagination->pageVar='p';
 	$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
@@ -37,9 +38,9 @@ $this->menu=array(
 		'prevPageLabel'=>'&laquo; Poprzednia',
 		'header'=>'',
 	),
-)); ?>
-		</tbody>
-	</table>
+)); */?>
+		<!--</tbody>
+	</table>-->
 </div>
 
 
