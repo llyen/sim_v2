@@ -91,6 +91,10 @@ class Units extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 }

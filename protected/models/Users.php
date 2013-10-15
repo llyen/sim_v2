@@ -14,6 +14,8 @@
  */
 class Users extends CActiveRecord
 {
+	public $unit_search;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -46,7 +48,7 @@ class Users extends CActiveRecord
 			array('username, password', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, unit_id, username, password', 'safe', 'on'=>'search'),
+			array('id, unit_id, username, password, unit_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,6 +74,7 @@ class Users extends CActiveRecord
 			'unit_id' => 'Jednostka',
 			'username' => 'Użytkownik',
 			'password' => 'Hasło',
+			'unit_search' => 'Jednostka',
 		);
 	}
 
@@ -85,14 +88,29 @@ class Users extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('unit');
 		$criteria->compare('id',$this->id);
 		$criteria->compare('unit_id',$this->unit_id);
+		$criteria->compare('unit.name',$this->unit_search,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'unit_id asc',
+				'attributes'=>array(
+					'unit_search'=>array(
+						'asc'=>'unit.name',
+						'desc'=>'unit.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 	

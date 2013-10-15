@@ -114,9 +114,12 @@ class UnitsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Units');
+		$model=new Units('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Units']))
+			$model->attributes=$_GET['Units'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 

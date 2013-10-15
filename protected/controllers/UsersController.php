@@ -135,10 +135,13 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$users = Yii::app()->db->createCommand('select usr.id, u.name as unit, usr.username from users usr left join units u on usr.unit_id=u.id order by unit asc')->queryAll();
-		$dataProvider=new CArrayDataProvider($users);
+		//$users = Yii::app()->db->createCommand('select usr.id, u.name as unit, usr.username from users usr left join units u on usr.unit_id=u.id order by unit asc')->queryAll();
+		$model=new Users('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Users']))
+			$model->attributes=$_GET['Users'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
