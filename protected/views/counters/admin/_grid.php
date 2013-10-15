@@ -7,7 +7,7 @@
     'filter'=>$model,
     //'enablePagination'=>true,
     'columns'=>array(
-        array('name'=>'unit_search', 'value'=>'$data->collectionPoint->object->name'),
+        array('name'=>'unit_search', 'value'=>'$data->collectionPoint->object->unit->name'),
 	array('name'=>'collection_point_search', 'value'=>'$data->collectionPoint->symbol'),
         array('name'=>'medium_search', 'value'=>'$data->medium->name'),
 	'symbol',
