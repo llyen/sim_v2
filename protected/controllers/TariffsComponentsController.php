@@ -126,10 +126,16 @@ class TariffsComponentsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$tariffsComponents=Yii::app()->db->createCommand('select tc.id, t.name as tariff, s.name as supplier, tc.name, m.name as medium, tc.mandatory_date from tariffs_components tc join tariffs t on tc.tariff_id=t.id join mediums m on tc.medium_id=m.id join suppliers s on t.supplier_id=s.id order by tariff asc, tc.name asc')->queryAll();
-		$dataProvider=new CArrayDataProvider($tariffsComponents);
+		//$tariffsComponents=Yii::app()->db->createCommand('select tc.id, t.name as tariff, s.name as supplier, tc.name, m.name as medium, tc.mandatory_date from tariffs_components tc join tariffs t on tc.tariff_id=t.id join mediums m on tc.medium_id=m.id join suppliers s on t.supplier_id=s.id order by tariff asc, tc.name asc')->queryAll();
+		$model=new TariffsComponents('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['TariffsComponents']))
+			$model->attributes=$_GET['TariffsComponents'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			'suppliers'=>$this->getSuppliers(),
+			'tariffs'=>$this->getTariffs(),
+			'mediums'=>$this->getMediums(),
 		));
 	}
 
@@ -172,6 +178,15 @@ class TariffsComponentsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function getSuppliers()
+	{
+		$suppliers = array();
+		$suppliersModel = Suppliers::model()->findAll();
+		foreach($suppliersModel as $s)
+			$suppliers[$s->id] = $s->name;
+		return $suppliers;
 	}
 	
 	protected function getTariffs()

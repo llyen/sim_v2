@@ -17,27 +17,5 @@ $this->menu=array(
 
 <div class="window">
 	<legend>Dostawcy</legend>
-	<table>
-		<thead>
-			<th>Nazwa</th>
-			<th>Medium</th>
-			<th>Adres</th>
-			<th>Operacje</th>
-		</thead>
-		<tbody>
-			<?php
-			$dataProvider->pagination->pageVar='p';
-			$this->widget('zii.widgets.CListView', array(
-			'dataProvider'=>$dataProvider,
-			'itemView'=>'_view',
-			'summaryText'=>'',
-			'emptyText'=>'Brak danych.',
-			'pager'=>array(
-				'nextPageLabel'=>'Następna &raquo;',
-				'prevPageLabel'=>'&laquo; Poprzednia',
-				'header'=>'',
-			),
-			)); ?>
-		</tbody>
-	</table>
+	<?php $this->renderPartial('_grid', array('model'=>$model,'mediums'=>$mediums)); ?>
 </div>

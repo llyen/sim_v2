@@ -91,6 +91,13 @@ class Mediums extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'name asc',
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 }

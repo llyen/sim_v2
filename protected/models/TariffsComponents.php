@@ -24,6 +24,10 @@
  */
 class TariffsComponents extends CActiveRecord
 {
+	public $supplier_search;
+	public $tariff_search;
+	public $medium_search;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -57,7 +61,7 @@ class TariffsComponents extends CActiveRecord
 			array('mandatory_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, tariff_id, type_id, medium_id, name, unit, mandatory_date, price_per_unit, vat, multiplier, archival', 'safe', 'on'=>'search'),
+			array('id, tariff_id, type_id, medium_id, name, unit, mandatory_date, price_per_unit, vat, multiplier, archival, supplier_search, tariff_search, medium_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,6 +97,9 @@ class TariffsComponents extends CActiveRecord
 			'vat' => 'Vat',
 			'multiplier' => 'Mnożnik',
 			'archival' => 'Czy archiwalny',
+			'supplier_search' => 'Dostawca',
+			'tariff_search' => 'Taryfa',
+			'medium_search' => 'Medium',
 		);
 	}
 
@@ -106,12 +113,14 @@ class TariffsComponents extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('tariff', 'medium');
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('tariff_id',$this->tariff_id);
+		$criteria->compare('tariff.supplier_id',$this->supplier_search);
+		$criteria->compare('tariff_id',$this->tariff_search);
 		$criteria->compare('type_id',$this->type_id);
-		$criteria->compare('medium_id',$this->medium_id);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('medium_id',$this->medium_search);
+		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('unit',$this->unit,true);
 		$criteria->compare('mandatory_date',$this->mandatory_date,true);
 		$criteria->compare('price_per_unit',$this->price_per_unit,true);
@@ -121,6 +130,28 @@ class TariffsComponents extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'tariff.supplier_id asc',
+				'attributes'=>array(
+					'supplier_search'=>array(
+						'asc'=>'tariff.supplier_id',
+						'desc'=>'tariff.supplier_id desc',
+					),
+					'tariff_search'=>array(
+						'asc'=>'tariff.name',
+						'desc'=>'tariff.name desc',
+					),
+					'medium_search'=>array(
+						'asc'=>'medium.name',
+						'desc'=>'medium.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 }

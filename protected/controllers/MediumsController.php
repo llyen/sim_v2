@@ -114,9 +114,12 @@ class MediumsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Mediums');
+		$model=new Mediums('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Mediums']))
+			$model->attributes=$_GET['Mediums'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 

@@ -116,10 +116,13 @@ class SuppliersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$suppliers=Yii::app()->db->createCommand('select s.id, s.name, m.name as medium, s.address from suppliers s join mediums m on s.medium_id=m.id order by medium asc')->queryAll();
-		$dataProvider=new CArrayDataProvider($suppliers);
+		$model=new Suppliers('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Suppliers']))
+			$model->attributes=$_GET['Suppliers'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			'mediums'=>$this->getMediums(),
 		));
 	}
 

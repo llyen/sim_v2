@@ -120,10 +120,13 @@ class TariffsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$tariffs=Yii::app()->db->createCommand('select t.id, t.name, tt.type, t.mandatory_date, s.name as supplier from tariffs t join suppliers s on t.supplier_id=s.id join tariffs_types tt on t.type_id=tt.id')->queryAll();
-		$dataProvider=new CArrayDataProvider($tariffs);
+		$model=new Tariffs('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Tariffs']))
+			$model->attributes=$_GET['Tariffs'];
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			'suppliers'=>$this->getSuppliers(),
 		));
 	}
 

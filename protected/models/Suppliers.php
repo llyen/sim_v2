@@ -16,6 +16,8 @@
  */
 class Suppliers extends CActiveRecord
 {
+	public $medium_search;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -47,7 +49,7 @@ class Suppliers extends CActiveRecord
 			array('address', 'length', 'max'=>255, 'message'=>'{attribute} może mieć maksymalną długość 255 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, medium_id, name, address', 'safe', 'on'=>'search'),
+			array('id, medium_id, name, address, medium_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +77,7 @@ class Suppliers extends CActiveRecord
 			'medium_id' => 'Medium',
 			'name' => 'Nazwa',
 			'address' => 'Adres',
+			'medium_search'=> 'Medium',
 		);
 	}
 
@@ -88,14 +91,30 @@ class Suppliers extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('medium');
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('medium_id',$this->medium_id);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('medium_id',$this->medium_search);
+		//$criteria->compare('medium.name',$this->medium_search,true);
+		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('address',$this->address,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'medium.name asc',
+				'attributes'=>array(
+					'medium_search'=>array(
+						'asc'=>'medium.name',
+						'desc'=>'medium.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 }

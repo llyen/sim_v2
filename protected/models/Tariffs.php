@@ -18,6 +18,8 @@
  */
 class Tariffs extends CActiveRecord
 {
+	public $supplier_search;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -50,7 +52,7 @@ class Tariffs extends CActiveRecord
 			array('mandatory_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type_id, supplier_id, name, mandatory_date', 'safe', 'on'=>'search'),
+			array('id, type_id, supplier_id, name, mandatory_date, supplier_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +82,7 @@ class Tariffs extends CActiveRecord
 			'supplier_id' => 'Dostawca',
 			'name' => 'Nazwa',
 			'mandatory_date' => 'Data obowiązywania',
+			'supplier_search' => 'Dostawca',
 		);
 	}
 
@@ -93,15 +96,30 @@ class Tariffs extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('supplier');
+		
 		$criteria->compare('id',$this->id);
 		$criteria->compare('type_id',$this->type_id);
-		$criteria->compare('supplier_id',$this->supplier_id);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('supplier_id',$this->supplier_search);
+		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('mandatory_date',$this->mandatory_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'supplier.name asc',
+				'attributes'=>array(
+					'supplier_search'=>array(
+						'asc'=>'supplier.name',
+						'desc'=>'supplier.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
 		));
 	}
 }
