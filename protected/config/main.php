@@ -20,6 +20,8 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.extensions.OpenFlashChart2Widget.OpenFlashChart2Loader', // wykresy
+        'application.extensions.mpdf.*', // pdf
 	),
 
 	'modules'=>array(
@@ -60,6 +62,7 @@ return array(
                                 'invoicesData/<iid:\d+>'=>'invoicesData/index',
                                 'countersReadings/<action:\w+>/<cid:\d+>/<id:\d+>'=>'<controller>/<action>',
                                 'invoicesData/<action:\w+>/<iid:\d+>/<id:\d+>'=>'<controller>/<action>',
+                                //'<controller:\w+>/<action:\w+>/<year:\d+>'=>'<controller>/<action>', //bad rule
                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', //default route
 			),

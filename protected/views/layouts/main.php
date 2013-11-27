@@ -65,7 +65,17 @@
 					array('label'=>'FAKTURY', 'url'=>array('/invoices/adminIndex')),
 				      ),
 				),
-				array('label'=>'RAPORTY', 'url'=>array('/reports')),
+				array('label'=>'ANALIZA', 'url'=>'#', 'items'=>
+					  array(
+						array('label'=>'WYKRESY', 'url'=>array('/charts')),//label group !!
+						array('label'=>'ZESTAWIENIA', 'url'=>'#', 'items'=>
+							array(
+								array('label'=>'OBIEKTY', 'url'=>array('/statements/objects')),
+								array('label'=>'KARTA OBIEKTU', 'url'=>array('/statements/objectResume')),
+							),
+						),//'url'=>array('/statements/objects')),//link
+						array('label'=>'RAPORTY', 'url'=>array('/reports')),
+					  )),
 				//array('label'=>'ZALOGUJ', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'WYLOGUJ', 'url'=>array('/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
