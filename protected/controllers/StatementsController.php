@@ -39,7 +39,7 @@ class StatementsController extends Controller
     
 	public function actionObjects()
 	{
-		$model = Objects::model()->findAll();
+		$model = Objects::model()->with('unit')->findAll(array('order'=>'unit.name asc, t.name asc'));
 		$mpdf=new mpdf('utf-8','A4-L','','',20,20,20,20,5,0);
 		$mpdf->useOnlyCoreFonts = true;    // false is default
 		$mpdf->SetProtection(array('print'));
@@ -264,10 +264,10 @@ class StatementsController extends Controller
     public function actionObjectResume()
     {
 		$model = new StatementsObjectForm();
-		$objectsModel = Objects::model()->findAll();
+		$objectsModel = Objects::model()->with('unit')->findAll(array('order'=>'unit.name asc, t.name asc'));
 		$objects = array();
 		foreach($objectsModel as $o)
-				$objects[$o->id] = $o->name;
+				$objects[$o->id] = $o->unit->name.' ('.$o->name.')';
 		//if(Yii::app()->user->id)
 		//{
 			if(isset($_POST['ajax']) && $_POST['ajax']==='statementsobject-form')

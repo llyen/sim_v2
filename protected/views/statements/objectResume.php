@@ -10,7 +10,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
     array('label'=>'ZESTAWIENIA'),
-	array('label'=>'Karta obiektu', 'icon'=>'book', 'active'=>true, 'url'=>array('objects')),
+    array('label'=>'Obiekty', 'icon'=>'list', 'active'=>false, 'url'=>array('objects')),
+	array('label'=>'Karta obiektu', 'icon'=>'book', 'active'=>true, 'url'=>array('objectResume')),
 );
 ?>
 
