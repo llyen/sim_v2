@@ -47,7 +47,8 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionView($id, $iid)
 	{
-		$object = Invoices::model()->findByPk($iid)->object;
+		$invoice = Invoices::model()->findByPk($iid);
+		$object = $invoice->object;
 		$params = array('unit_id'=>$object->unit_id);
 		
 		if(Yii::app()->user->checkAccess('manageOwnData', $params))
@@ -55,6 +56,7 @@ class InvoicesDataController extends Controller
 			$this->render('view',array(
 				'model'=>$this->loadModel($id),
 				'iid'=>$iid,
+				'invoice'=>$invoice,
 			));
 		}
 		else
@@ -69,36 +71,49 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionCreate($id)
 	{
-		$object = Invoices::model()->findByPk($id)->object;
-		$params = array('unit_id'=>$object->unit_id);
-		
-		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		$invoice = Invoices::model()->findByPk($id);
+		if($invoice->status != 1)
 		{
-			$model=new InvoicesData;
-			//$invoices = $this->getInvoices();
-			$tariffsComponents = $this->getTariffsComponents($id);
-			
-			// Uncomment the following line if AJAX validation is needed
-			$this->performAjaxValidation($model);
-	
-			if(isset($_POST['InvoicesData']))
+			$object = $invoice->object;
+			$params = array('unit_id'=>$object->unit_id);
+		
+			if(Yii::app()->user->checkAccess('manageOwnData', $params))
 			{
-				$model->attributes=$_POST['InvoicesData'];
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->id, 'iid'=>$id));
-			}
+				$model=new InvoicesData;
+				//$invoices = $this->getInvoices();
+				$tariffsComponents = $this->getTariffsComponents($id);
+				
+				// Uncomment the following line if AJAX validation is needed
+				$this->performAjaxValidation($model);
+	
+				if(isset($_POST['InvoicesData']))
+				{
+					$model->attributes=$_POST['InvoicesData'];
+					if($model->save())
+					{
+						$invoice->status = 0;
+						if($invoice->save())
+							$this->redirect(array('view','id'=>$model->id, 'iid'=>$id));
+					}
+				}
 
-			$this->render('create',array(
-				'model'=>$model,
-				'iid'=>$id,
-				//'invoices'=>$invoices,
-				'tariffsComponents'=>$tariffsComponents,
-			));
+				$this->render('create',array(
+					'model'=>$model,
+					'iid'=>$id,
+					//'invoices'=>$invoices,
+					'tariffsComponents'=>$tariffsComponents,
+				));
+			}
+			else
+			{
+				throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			}
 		}
 		else
 		{
-			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			throw new CHttpException(423, 'Faktura została już zaakceptowana.');
 		}
+		
 	}
 
 	/**
@@ -108,32 +123,44 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionUpdate($id, $iid)
 	{
-		$object = Invoices::model()->findByPk($iid)->object;
-		$params = array('unit_id'=>$object->unit_id);
-		
-		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		$invoice = Invoices::model()->findByPk($iid);
+		if($invoice->status != 1) //fv zaakceptowana
 		{
-			$model=$this->loadModel($id);
-			$tariffsComponents = $this->getTariffsComponents($iid);
-			// Uncomment the following line if AJAX validation is needed
-			$this->performAjaxValidation($model);
-	
-			if(isset($_POST['InvoicesData']))
+			$object = $invoice->object;
+			$params = array('unit_id'=>$object->unit_id);
+		
+			if(Yii::app()->user->checkAccess('manageOwnData', $params))
 			{
-				$model->attributes=$_POST['InvoicesData'];
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->id, 'iid'=>$iid));
-			}
+				$model=$this->loadModel($id);
+				$tariffsComponents = $this->getTariffsComponents($iid);
+				// Uncomment the following line if AJAX validation is needed
+				$this->performAjaxValidation($model);
+	
+				if(isset($_POST['InvoicesData']))
+				{
+					$model->attributes=$_POST['InvoicesData'];
+					if($model->save())
+					{
+						$invoice->status = 0;
+						if($invoice->save())
+							$this->redirect(array('view','id'=>$model->id, 'iid'=>$iid));
+					}
+				}
 
-			$this->render('update',array(
-				'model'=>$model,
-				'iid'=>$iid,
-				'tariffsComponents'=>$tariffsComponents,
-			));
+				$this->render('update',array(
+					'model'=>$model,
+					'iid'=>$iid,
+					'tariffsComponents'=>$tariffsComponents,
+				));
+			}
+			else
+			{
+				throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			}	
 		}
 		else
 		{
-			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			throw new CHttpException(423, 'Faktura została już zaakceptowana.');
 		}
 	}
 
@@ -144,20 +171,28 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionDelete($id, $iid)
 	{
-		$object = Invoices::model()->findByPk($iid)->object;
-		$params = array('unit_id'=>$object->unit_id);
-		
-		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		$invoice = Invoices::model()->findByPk($iid);
+		if($invoice->status != 1)
 		{
-			$this->loadModel($id)->delete();
-			//$this->redirect(array('invoicesdata/index', 'iid'=>$iid));
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'iid' => $iid));//invoicesData/index
+			$object = $invoice->object;
+			$params = array('unit_id'=>$object->unit_id);
+			
+			if(Yii::app()->user->checkAccess('manageOwnData', $params))
+			{
+				$this->loadModel($id)->delete();
+				//$this->redirect(array('invoicesdata/index', 'iid'=>$iid));
+				// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+				if(!isset($_GET['ajax']))
+					$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index', 'iid' => $iid));//invoicesData/index
+			}
+			else
+			{
+				throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			}	
 		}
 		else
 		{
-			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			throw new CHttpException(423, 'Faktura została już zaakceptowana.');
 		}
 	}
 
@@ -166,10 +201,13 @@ class InvoicesDataController extends Controller
 	 */
 	public function actionIndex($iid)
 	{
+		$invoice = Invoices::model()->findByPk($iid);
 		$data = Yii::app()->db->createCommand('select ids.id, ids.invoice_id, t.name as tariff, (select name from tariffs_components tc where tc.id = ids.component_id) as component, ids.value, ids.create_date from invoices_data ids join invoices i on ids.invoice_id = i.id join tariffs t on i.tariff_id = t.id where ids.invoice_id = '.$iid.' and i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').')')->queryAll();
 		$dataProvider = new CArrayDataProvider($data);
 		$this->render('index',array(
 			'iid'=>$iid,
+			'invoice'=>$invoice,
+			//'accepted'=>($invoice->status == 1) ? true : false,
 			'dataProvider'=>$dataProvider,
 		));
 	}

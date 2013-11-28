@@ -140,76 +140,83 @@ class InvoicesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		
-		$object = Objects::model()->findByPk($model->object_id);
-		$params = array('unit_id'=>$object->unit_id);
-		
-		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		if($model->status != 1)
 		{
-		
-			$objects = $this->getObjects();
-			$suppliers = $this->getSuppliers();
-			$tariffs = $this->getTariffs();
-			$statuses = $this->getStatuses();
-		
-			// Uncomment the following line if AJAX validation is needed
-			$this->performAjaxValidation($model);
-	
-			if(isset($_POST['Invoices']))
+			$object = Objects::model()->findByPk($model->object_id);
+			$params = array('unit_id'=>$object->unit_id);
+			
+			if(Yii::app()->user->checkAccess('manageOwnData', $params))
 			{
-				$model->attributes=$_POST['Invoices'];
-				$file_src=CUploadedFile::getInstance($model, 'file_src');
-				
-				$path = Yii::app()->basePath.'/../invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/';
-				if(!is_dir($path))
+			
+				$objects = $this->getObjects();
+				$suppliers = $this->getSuppliers();
+				$tariffs = $this->getTariffs();
+				$statuses = $this->getStatuses();
+			
+				// Uncomment the following line if AJAX validation is needed
+				$this->performAjaxValidation($model);
+		
+				if(isset($_POST['Invoices']))
 				{
-					mkdir($path, 0755, true);
-				}
-				
-				$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.time().'_';
-				
-				if(($model->period_since!=='') && ($model->period_to!==''))
-				{
-					$fileName .= $model->period_since.'_'.$model->period_to;
-				}
-				elseif($model->issue_date!=='')
-				{
-					$fileName .= $model->issue_date;
-				}
-				else
-				{
-					$fileName .= date('Y-m-d');
-				}
-				$fileName .= '.pdf';
-				
-				if($file_src !== null) $model->file_src = $fileName;
-				
-				$model->status = 0; //set status "new"
-				
-				if($model->save())
-				{
-					if(is_object($file_src))
+					$model->attributes=$_POST['Invoices'];
+					$file_src=CUploadedFile::getInstance($model, 'file_src');
+					
+					$path = Yii::app()->basePath.'/../invs/'.Yii::app()->user->getState('unit_id').'/'.$model->object_id.'/';
+					if(!is_dir($path))
 					{
-						$file_src->saveAs($path.$fileName);
+						mkdir($path, 0755, true);
 					}
 					
-					$this->redirect(array('invoicesData/index','iid'=>$model->id));
-					//$this->redirect(array('view','id'=>$model->id));
+					$fileName = $model->supplier_id.'_'.$model->tariff_id.'_'.time().'_';
+					
+					if(($model->period_since!=='') && ($model->period_to!==''))
+					{
+						$fileName .= $model->period_since.'_'.$model->period_to;
+					}
+					elseif($model->issue_date!=='')
+					{
+						$fileName .= $model->issue_date;
+					}
+					else
+					{
+						$fileName .= date('Y-m-d');
+					}
+					$fileName .= '.pdf';
+					
+					if($file_src !== null) $model->file_src = $fileName;
+					
+					$model->status = 0; //set status "new"
+					
+					if($model->save())
+					{
+						if(is_object($file_src))
+						{
+							$file_src->saveAs($path.$fileName);
+						}
+						
+						$this->redirect(array('invoicesData/index','iid'=>$model->id));
+						//$this->redirect(array('view','id'=>$model->id));
+					}
 				}
+	
+				$this->render('update',array(
+					'model'=>$model,
+					'objects'=>$objects,
+					'suppliers'=>$suppliers,
+					'tariffs'=>$tariffs,
+					'statuses'=>$statuses,
+				));
 			}
-
-			$this->render('update',array(
-				'model'=>$model,
-				'objects'=>$objects,
-				'suppliers'=>$suppliers,
-				'tariffs'=>$tariffs,
-				'statuses'=>$statuses,
-			));
+			else
+			{
+				throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			}	
 		}
 		else
 		{
-			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			throw new CHttpException(423, 'Faktura została już zaakceptowana.');
 		}
+		
 	}
 
 	/**
@@ -220,20 +227,27 @@ class InvoicesController extends Controller
 	public function actionDelete($id)
 	{
 		$model = $this->loadModel($id);
-		$object = Objects::model()->findByPk($model->object_id);
-		$params = array('unit_id'=>$object->unit_id);
-		
-		if(Yii::app()->user->checkAccess('manageOwnData', $params))
+		if($model->status != 1)
 		{
-			$model->delete();
+			$object = Objects::model()->findByPk($model->object_id);
+			$params = array('unit_id'=>$object->unit_id);
+		
+			if(Yii::app()->user->checkAccess('manageOwnData', $params))
+			{
+				$model->delete();
 	
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+				// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+				if(!isset($_GET['ajax']))
+					$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			}
+			else
+			{
+				throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			}
 		}
 		else
 		{
-			throw new CHttpException(403,'Brak uprawnień do wykonania operacji.');
+			throw new CHttpException(423, 'Faktura została już zaakceptowana.');
 		}
 	}
 
