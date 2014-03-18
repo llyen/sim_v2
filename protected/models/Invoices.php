@@ -32,6 +32,7 @@ class Invoices extends CActiveRecord
 	 */
 	public $unit_search;
 	public $object_search;
+	public $objects_search;
 	public $supplier_search;
 	
 	/**
@@ -68,7 +69,7 @@ class Invoices extends CActiveRecord
 			array('file_src', 'file', 'types'=>'pdf', 'allowEmpty'=>true, 'wrongType'=>'Plik nie może zostać załadowany. Wymagany plik w formacie: pdf.'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src, note, unit_search, object_search, supplier_search', 'safe', 'on'=>'search'),
+			array('id, tariff_id, object_id, supplier_id, period_since, period_to, issue_date, create_date, create_user, update_date, update_user, status, file_src, note, unit_search, object_search, objects_search, supplier_search', 'safe', 'on'=>'search, searchByObject'),
 		);
 	}
 
@@ -145,6 +146,51 @@ class Invoices extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'sort'=>array(
+				'attributes'=>array(
+					/*'unit_search'=>array(
+						'asc'=>'object.unit.name',
+						'desc'=>'object.unit.name desc',
+					),*/
+					'object_search'=>array(
+						'asc'=>'object.name',
+						'desc'=>'object.name desc',
+					),
+					'supplier_search'=>array(
+						'asc'=>'supplier.name',
+						'desc'=>'supplier.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
+		));
+	}
+	
+	public function searchByObject()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->with = array('object', 'supplier');
+		
+		$criteria->compare('id',$this->id);
+		$criteria->compare('tariff_id',$this->tariff_id);
+		$criteria->compare('object.name',$this->object_search,true);
+		$criteria->compare('supplier.name',$this->supplier_search,true);
+		$criteria->compare('period_since',$this->period_since,true);
+		$criteria->compare('period_to',$this->period_to,true);
+		$criteria->compare('status',$this->status);
+		
+		$criteria->addInCondition('object_id',$this->objects_search);
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'status asc, period_since desc',
 				'attributes'=>array(
 					/*'unit_search'=>array(
 						'asc'=>'object.unit.name',

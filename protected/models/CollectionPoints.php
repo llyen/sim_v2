@@ -24,6 +24,7 @@ class CollectionPoints extends CActiveRecord
 	 */
 	public $unit_search;
 	public $object_search;
+	public $objects_search;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -58,7 +59,7 @@ class CollectionPoints extends CActiveRecord
 			array('create_user, update_user', 'length', 'max'=>100, 'message'=>'{attribute} może mieć maksymalną długość 100 znaków'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, object_id, symbol, multiplicand, create_date, create_user, update_date, update_user, unit_search, object_search', 'safe', 'on'=>'search'),
+			array('id, object_id, symbol, multiplicand, create_date, create_user, update_date, update_user, unit_search, object_search, objects_search', 'safe', 'on'=>'search, searchByObject'),
 		);
 	}
 
@@ -115,10 +116,53 @@ class CollectionPoints extends CActiveRecord
 		$criteria->compare('create_user',$this->create_user,true);
 		$criteria->compare('update_date',$this->update_date,true);
 		$criteria->compare('update_user',$this->update_user,true);
-
+		
+		//$criteria->addInCondition('object_id',$this->objects_search);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'sort'=>array(
+				'attributes'=>array(
+					'object_search'=>array(
+						'asc'=>'object.name',
+						'desc'=>'object.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
+		));
+	}
+	
+	public function searchByObject()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->with = array('object');
+		
+		$criteria->compare('id',$this->id);
+		$criteria->compare('symbol',$this->symbol,true);
+		$criteria->compare('create_date',$this->create_date,true);
+		$criteria->compare('object.name',$this->object_search,true);
+		//$criteria->compare('object_id',$this->object_id);
+		//$criteria->compare('symbol',$this->symbol,true);
+		//$criteria->compare('multiplicand',$this->multiplicand,true);
+		//$criteria->compare('create_date',$this->create_date,true);
+		//$criteria->compare('create_user',$this->create_user,true);
+		//$criteria->compare('update_date',$this->update_date,true);
+		//$criteria->compare('update_user',$this->update_user,true);
+		
+		$criteria->addInCondition('object_id',$this->objects_search);
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'symbol asc, object.name asc',
 				'attributes'=>array(
 					'object_search'=>array(
 						'asc'=>'object.name',

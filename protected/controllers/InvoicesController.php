@@ -256,13 +256,29 @@ class InvoicesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$statuses = $this->getStatuses();
-		$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').') order by i.period_since asc, i.status asc')->queryAll();
-		$dataProvider = new CArrayDataProvider($data);
+		//$statuses = $this->getStatuses();
+		//$data = Yii::app()->db->createCommand('select i.id, o.name as object, s.name as supplier, i.period_since, i.period_to, i.issue_date, i.status from invoices i join suppliers s on i.supplier_id = s.id join objects o on i.object_id = o.id where i.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').') order by i.period_since asc, i.status asc')->queryAll();
+		//$dataProvider = new CArrayDataProvider($data);
 
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-			'statuses'=>$statuses,
+		//$this->render('index',array(
+			//'dataProvider'=>$dataProvider,
+			//'statuses'=>$statuses,
+		//));
+		
+		$model = new Invoices('searchByObject');
+		$model->unsetAttributes();
+		
+		if(isset($_GET['Invoices']))
+			$model->attributes = $_GET['Invoices'];
+
+		$objects = array();
+		$obj = $this->getObjects();
+		foreach($obj as $id => $val)
+			$objects[] = $id;
+		$model->objects_search = $objects;
+			
+		$this->render('index', array(
+			'model'=>$model,
 		));
 	}
 

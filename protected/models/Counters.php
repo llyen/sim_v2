@@ -31,6 +31,7 @@ class Counters extends CActiveRecord
 	 */
 	public $unit_search;
 	public $collection_point_search;
+	public $collection_points_search;
 	public $medium_search;
 	
 	/**
@@ -67,7 +68,7 @@ class Counters extends CActiveRecord
 			array('installation_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, collection_point_id, medium_id, type, symbol, unit, initial_state, initial_state_second, installation_date, archival, create_date, create_user, update_date, update_user, unit_search, collection_point_search, medium_search', 'safe', 'on'=>'search'),
+			array('id, collection_point_id, medium_id, type, symbol, unit, initial_state, initial_state_second, installation_date, archival, create_date, create_user, update_date, update_user, unit_search, collection_point_search, collection_points_search, medium_search', 'safe', 'on'=>'search, searchByCollectionPoint'),
 		);
 	}
 
@@ -166,6 +167,46 @@ class Counters extends CActiveRecord
 		));
 	}
 	
+	public function searchByCollectionPoint()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->with = array('collectionPoint', 'medium');
+		
+		$criteria->compare('id',$this->id);
+		$criteria->compare('collectionPoint.symbol',$this->collection_point_search,true);
+		$criteria->compare('medium.name',$this->medium_search,true);
+		$criteria->compare('t.symbol',$this->symbol,true);
+		$criteria->compare('installation_date',$this->installation_date,true);
+		$criteria->compare('archival',$this->archival);
+
+		$criteria->addInCondition('collection_point_id', $this->collection_points_search);
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'collectionPoint.symbol asc, medium.name asc',
+				'attributes'=>array(
+					'collection_point_search'=>array(
+						'asc'=>'collectionPoint.symbol',
+						'desc'=>'collectionPoint.symbol desc',
+					),
+					'medium_search'=>array(
+						'asc'=>'medium.name',
+						'desc'=>'medium.name desc',
+					),
+					'*',
+				),
+			),
+			'pagination'=>array(
+				'pageSize'=>15,
+				'pageVar'=>'p',
+			),
+		));
+	}
+	
 	public function beforeValidate()
 	{
 		$this->initial_state=str_replace(',', '.', $this->initial_state);
@@ -178,5 +219,19 @@ class Counters extends CActiveRecord
 		}
 
 		return parent::beforeValidate();	
+	}
+	
+	public static function getLabel($archival)
+	{
+		switch($archival)
+		{
+			case 1:
+			$label = array('type'=>'important', 'label'=>'tak');
+			break;
+			
+			default:
+			$label = array('type'=>'info', 'label'=>'nie');
+		}
+		return $label;
 	}
 }

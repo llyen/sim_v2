@@ -148,12 +148,20 @@ class CountersController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
-		$data = Yii::app()->db->createCommand('select cp.symbol as collection_point, m.name as medium, c.id, c.symbol, c.installation_date, c.archival from counters c join collection_points cp on c.collection_point_id=cp.id join mediums m on c.medium_id=m.id where c.collection_point_id in (select cp.id from collection_points cp where cp.object_id in (select o.id from objects o where o.unit_id = '.Yii::app()->user->getState('unit_id').'))')->queryAll();
-		$dataProvider = new CArrayDataProvider($data);
-		//$dataProvider=new CActiveDataProvider('Counters');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+	{	
+		$model = new Counters('searchByCollectionPoint');
+		$model->unsetAttributes();
+		if(isset($_GET['Counters']))
+			$model->attributes=$_GET['Counters'];
+		
+		$collectionPoints = array();
+		$cp = $this->getCollectionPoints();
+		foreach($cp as $id => $val)
+			$collectionPoints[] = $id;
+		$model->collection_points_search = $collectionPoints;
+		
+		$this->render('index', array(
+			'model'=>$model,
 		));
 	}
 

@@ -143,17 +143,23 @@ class CollectionPointsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$data = Yii::app()->db->createCommand('select cp.id, cp.symbol, o.name as object, cp.multiplicand, cp.create_date, cp.create_user, cp.update_date, cp.update_user from collection_points cp join objects o on cp.object_id=o.id where cp.object_id in (select o.id from objects o where o.unit_id ='.Yii::app()->user->getState('unit_id').')')->queryAll();
-		$dataProvider = new CArrayDataProvider($data);
-		/*$dataProvider = new CActiveDataProvider('CollectionPoints', array(
-					'criteria' => array(
-						//'with' => 'object',
-						'condition' => 'object_id=:object_id',
-						'params' => array(':object_id'=>Objects::model()->find('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')))->id), // WYSZUKIWANIE WSZYSTKICH PUNKTÓW !!!!!?
-					),
-				));*/
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+		$model = new CollectionPoints('searchByObject');
+		$model->unsetAttributes();
+		
+		if(isset($_GET['CollectionPoints']))
+			$model->attributes = $_GET['CollectionPoints'];
+
+		$objects = array();
+		$obj = $this->getObjects();
+		foreach($obj as $id => $val)
+			$objects[] = $id;
+		//$obj = Objects::model()->findAll('unit_id=:unit_id', array(':unit_id'=>(int) Yii::app()->user->getState('unit_id')));
+		//foreach($obj as $o)
+		//	$objects[] = $o->id;
+		$model->objects_search = $objects;
+			
+		$this->render('index', array(
+			'model'=>$model,
 		));
 	}
 
